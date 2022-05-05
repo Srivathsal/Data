@@ -1,0 +1,18 @@
+[
+  {
+    "competitorProduct":"Taxcycle_T1",
+    "intuitProduct":"Protax",
+    "taxYearFrom":"2018",
+    "taxYearTo":"2018",
+    "statusPollIntervalInSeconds":60,
+    "conversionPollIntervalInSeconds":30
+  },
+  {
+  "competitorProduct":"Taxcycle_T2",
+  "intuitProduct":"Protax",
+  "taxYearFrom":"2018",
+  "taxYearTo":"2018",
+  "statusPollIntervalInSeconds":60,
+  "conversionPollIntervalInSeconds":30
+  }
+  ]

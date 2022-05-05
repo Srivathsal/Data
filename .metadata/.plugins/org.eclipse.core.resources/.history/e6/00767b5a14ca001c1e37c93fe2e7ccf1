@@ -1,0 +1,22 @@
+{
+  "jobId": "K917c",
+  "authId": "7465465432",
+  "realmId": "#(realmId)",
+  "fullName": "Sharath Shashidhar",
+  "notifyEmailAddress": "#(oinpNotifyEmailAddress)",
+  "sourceProduct": "UltraTaxCS",
+  "destinationProduct": "TaxOnline",
+  "jobStatus": "CompletedWithDuplicates",
+  "customMessage":"This is a custom message",
+  "conversionStatus": {
+    "Message": "Conversion is complete",
+    "Success": true,
+    "DemoFiles": 0,
+    "ErrorCode": 2000,
+    "ConvertedFiles": 16,
+    "NumberOfInputFiles": 16,
+    "ProgressPercentage": 100,
+    "ConversionFailedCount": 0,
+    "ExtractionFailedCount": 0
+  }
+}

@@ -1,0 +1,266 @@
+[
+  {
+    "competitorProduct": "proseries",
+    "intuitProduct": "lacerte",
+    "taxYearFrom": "2019",
+    "taxYearTo": "2019",
+    "statusPollIntervalInSeconds": 60,
+    "conversionPollIntervalInSeconds": 30
+  },
+  {
+    "competitorProduct": "proseries",
+    "intuitProduct": "lacerte",
+    "taxYearFrom": "2019",
+    "taxYearTo": "2020",
+    "statusPollIntervalInSeconds": 60,
+    "conversionPollIntervalInSeconds": 30
+  },
+  {
+    "competitorProduct": "proseries",
+    "intuitProduct": "taxonline",
+    "taxYearFrom": "2019",
+    "taxYearTo": "2020",
+    "statusPollIntervalInSeconds": 60,
+    "conversionPollIntervalInSeconds": 30
+  },
+  {
+    "competitorProduct": "ultrataxcs",
+    "intuitProduct": "lacerte",
+    "taxYearFrom": "2019",
+    "taxYearTo": "2019",
+    "statusPollIntervalInSeconds": 60,
+    "conversionPollIntervalInSeconds": 30
+  },
+  {
+    "competitorProduct": "ultrataxcs",
+    "intuitProduct": "lacerte",
+    "taxYearFrom": "2019",
+    "taxYearTo": "2020",
+    "statusPollIntervalInSeconds": 60,
+    "conversionPollIntervalInSeconds": 30
+  },
+  {
+    "competitorProduct": "ultrataxcs",
+    "intuitProduct": "proseries",
+    "taxYearFrom": "2019",
+    "taxYearTo": "2019",
+    "statusPollIntervalInSeconds": 60,
+    "conversionPollIntervalInSeconds": 30
+  },
+  {
+    "competitorProduct": "ultrataxcs",
+    "intuitProduct": "taxonline",
+    "taxYearFrom": "2019",
+    "taxYearTo": "2020",
+    "statusPollIntervalInSeconds": 60,
+    "conversionPollIntervalInSeconds": 30
+  },
+  {
+    "competitorProduct": "taxwise",
+    "intuitProduct": "lacerte",
+    "taxYearFrom": "2019",
+    "taxYearTo": "2019",
+    "statusPollIntervalInSeconds": 60,
+    "conversionPollIntervalInSeconds": 30
+  },
+  {
+    "competitorProduct": "taxwise",
+    "intuitProduct": "lacerte",
+    "taxYearFrom": "2019",
+    "taxYearTo": "2020",
+    "statusPollIntervalInSeconds": 60,
+    "conversionPollIntervalInSeconds": 30
+  },
+  {
+    "competitorProduct": "taxwise",
+    "intuitProduct": "proseries",
+    "taxYearFrom": "2019",
+    "taxYearTo": "2019",
+    "statusPollIntervalInSeconds": 60,
+    "conversionPollIntervalInSeconds": 30
+  },
+  {
+    "competitorProduct": "taxwise",
+    "intuitProduct": "taxonline",
+    "taxYearFrom": "2019",
+    "taxYearTo": "2020",
+    "statusPollIntervalInSeconds": 60,
+    "conversionPollIntervalInSeconds": 30
+  },
+  {
+    "competitorProduct": "drake",
+    "intuitProduct": "lacerte",
+    "taxYearFrom": "2019",
+    "taxYearTo": "2019",
+    "statusPollIntervalInSeconds": 60,
+    "conversionPollIntervalInSeconds": 30
+  },
+  {
+    "competitorProduct": "drake",
+    "intuitProduct": "lacerte",
+    "taxYearFrom": "2019",
+    "taxYearTo": "2020",
+    "statusPollIntervalInSeconds": 60,
+    "conversionPollIntervalInSeconds": 30
+  },
+  {
+    "competitorProduct": "drake",
+    "intuitProduct": "proseries",
+    "taxYearFrom": "2019",
+    "taxYearTo": "2019",
+    "statusPollIntervalInSeconds": 60,
+    "conversionPollIntervalInSeconds": 30
+  },
+  {
+    "competitorProduct": "drake",
+    "intuitProduct": "taxonline",
+    "taxYearFrom": "2019",
+    "taxYearTo": "2020",
+    "statusPollIntervalInSeconds": 60,
+    "conversionPollIntervalInSeconds": 30
+  },
+  {
+    "competitorProduct": "lacerte",
+    "intuitProduct": "proseries",
+    "taxYearFrom": "2019",
+    "taxYearTo": "2019",
+    "statusPollIntervalInSeconds": 60,
+    "conversionPollIntervalInSeconds": 30
+  },
+  {
+    "competitorProduct": "lacerte",
+    "intuitProduct": "taxonline",
+    "taxYearFrom": "2019",
+    "taxYearTo": "2020",
+    "statusPollIntervalInSeconds": 60,
+    "conversionPollIntervalInSeconds": 30
+  },
+  {
+    "competitorProduct": "atx",
+    "intuitProduct": "lacerte",
+    "taxYearFrom": "2019",
+    "taxYearTo": "2019",
+    "statusPollIntervalInSeconds": 60,
+    "conversionPollIntervalInSeconds": 30
+  },
+  {
+    "competitorProduct": "atx",
+    "intuitProduct": "lacerte",
+    "taxYearFrom": "2019",
+    "taxYearTo": "2020",
+    "statusPollIntervalInSeconds": 60,
+    "conversionPollIntervalInSeconds": 30
+  },
+  {
+    "competitorProduct": "atx",
+    "intuitProduct": "proseries",
+    "taxYearFrom": "2019",
+    "taxYearTo": "2019",
+    "statusPollIntervalInSeconds": 60,
+    "conversionPollIntervalInSeconds": 30
+  },
+  {
+    "competitorProduct": "atx",
+    "intuitProduct": "taxonline",
+    "taxYearFrom": "2019",
+    "taxYearTo": "2020",
+    "statusPollIntervalInSeconds": 60,
+    "conversionPollIntervalInSeconds": 30
+  },
+  {
+    "competitorProduct": "taxact",
+    "intuitProduct": "lacerte",
+    "taxYearFrom": "2019",
+    "taxYearTo": "2019",
+    "statusPollIntervalInSeconds": 60,
+    "conversionPollIntervalInSeconds": 30
+  },
+  {
+    "competitorProduct": "taxact",
+    "intuitProduct": "lacerte",
+    "taxYearFrom": "2019",
+    "taxYearTo": "2020",
+    "statusPollIntervalInSeconds": 60,
+    "conversionPollIntervalInSeconds": 30
+  },
+  {
+    "competitorProduct": "taxact",
+    "intuitProduct": "proseries",
+    "taxYearFrom": "2019",
+    "taxYearTo": "2019",
+    "statusPollIntervalInSeconds": 60,
+    "conversionPollIntervalInSeconds": 30
+  },
+  {
+    "competitorProduct": "taxact",
+    "intuitProduct": "taxonline",
+    "taxYearFrom": "2019",
+    "taxYearTo": "2020",
+    "statusPollIntervalInSeconds": 60,
+    "conversionPollIntervalInSeconds": 30
+  },
+  {
+    "competitorProduct": "taxslayer",
+    "intuitProduct": "lacerte",
+    "taxYearFrom": "2019",
+    "taxYearTo": "2019",
+    "statusPollIntervalInSeconds": 60,
+    "conversionPollIntervalInSeconds": 30
+  },
+  {
+    "competitorProduct": "taxslayer",
+    "intuitProduct": "lacerte",
+    "taxYearFrom": "2019",
+    "taxYearTo": "2020",
+    "statusPollIntervalInSeconds": 60,
+    "conversionPollIntervalInSeconds": 30
+  },
+  {
+    "competitorProduct": "taxslayer",
+    "intuitProduct": "proseries",
+    "taxYearFrom": "2019",
+    "taxYearTo": "2018",
+    "statusPollIntervalInSeconds": 60,
+    "conversionPollIntervalInSeconds": 30
+  },
+  {
+    "competitorProduct": "taxslayer",
+    "intuitProduct": "taxonline",
+    "taxYearFrom": "2018",
+    "taxYearTo": "2020",
+    "statusPollIntervalInSeconds": 60,
+    "conversionPollIntervalInSeconds": 30
+  },
+  {
+    "competitorProduct": "prosystemfx",
+    "intuitProduct": "lacerte",
+    "taxYearFrom": "2018",
+    "taxYearTo": "2018",
+    "statusPollIntervalInSeconds": 60,
+    "conversionPollIntervalInSeconds": 30
+  },
+  {
+    "competitorProduct": "prosystemfx",
+    "intuitProduct": "lacerte",
+    "taxYearFrom": "2018",
+    "taxYearTo": "2020",
+    "statusPollIntervalInSeconds": 60,
+    "conversionPollIntervalInSeconds": 30
+  },
+  {
+    "competitorProduct": "prosystemfx",
+    "intuitProduct": "proseries",
+    "taxYearFrom": "2018",
+    "taxYearTo": "2018",
+    "statusPollIntervalInSeconds": 60,
+    "conversionPollIntervalInSeconds": 30
+  },
+  {
+    "competitorProduct": "prosystemfx",
+    "intuitProduct": "taxonline",
+    "taxYearFrom": "2018",
+    "taxYearTo": "2020",
+    "statusPollIntervalInSeconds": 60,
+    "conversionPollIntervalInSeconds": 30
+  }
+]

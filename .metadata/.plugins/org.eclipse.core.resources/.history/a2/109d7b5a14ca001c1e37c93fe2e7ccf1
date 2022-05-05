@@ -1,0 +1,11 @@
+package com.intuit.apd.services.tests.get;
+
+import com.intuit.karate.junit4.Karate;
+import org.junit.runner.RunWith;
+
+/**
+ * Created by sshashidhar on 5/15/17.
+ */
+@RunWith(Karate.class)
+public class DCMGetAutomatableSoftwareRunner {
+}

@@ -1,0 +1,56 @@
+networks:
+  dsr: {external: true}
+secrets:
+  services_dataconversionsmanager_service_app_secret: {external: true}
+  services_dataconversionsmanager_service_idps_secret: {external: true}
+services:
+  app:
+    deploy:
+      labels: [com.docker.ucp.access.label=services, 'com.intuit.pcg.service=services-dataconversionsmanager-service-${CFG_ENV}-${APP_ENV}']
+      mode: replicated
+      replicas: 2
+      resources:
+        limits:
+          cpus: '1'
+          memory: 4G
+        reservations:
+          cpus: '1'
+          memory: 4G
+      restart_policy:
+        condition: on-failure
+        delay: 5s
+        max_attempts: 3
+        window: 300s
+      update_config:
+        delay: 10s
+        parallelism: 1
+      placement:
+        constraints:
+          - 'node.role != manager'
+          - 'node.labels.com.intuit.app != walker'
+          - 'engine.labels.com.intuit.machine_type != VM'
+    environment: [DC_VERSION=1.0.8, C_LIMIT_CPU=1, 'APP_ENV=${APP_ENV}', 'CFG_DC=${DC}', CFG_SERVICE_NAME=pcgdcmanager,
+      'CFG_ENV=${CFG_ENV}', APP_ID=Intuit.accountant.dataconversions.dcmanager, 'CFG_BG=${CFG_BG}', 'CFG_TAG=${CFG_TAG}']
+    image: ${IMAGE}
+    networks:
+      dsr:
+        aliases: ['services-dataconversionsmanager-service-${CFG_ENV}-${APP_ENV}']
+    ports: ['${SERVICE_PORT}:8080']
+    secrets:
+      - gid: '0'
+        mode: 420
+        source: services_dataconversionsmanager_service_app_secret
+        target: appsecret
+        uid: '0'
+      - gid: '0'
+        mode: 420
+        source: services_dataconversionsmanager_service_idps_secret
+        target: dcm-service-idps.pem
+        uid: '0'
+    user: app
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8080/dataconversionsmanager-service/v1/health/full"]
+      interval: 5s
+      timeout: 3s
+      retries: 25
+version: '3.1'

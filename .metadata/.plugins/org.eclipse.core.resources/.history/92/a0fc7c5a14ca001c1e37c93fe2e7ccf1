@@ -1,0 +1,22 @@
+package com.intuit.apd.services.tests.perf;
+
+import com.intuit.karate.gatling.PreDef._
+import io.gatling.core.Predef._
+import scala.concurrent.duration._
+
+class PerfTest extends Simulation {
+
+  val create = scenario("get automatablesoftwares").exec(karateFeature("classpath:com/intuit/apd/services/tests/get/dcm-automatable-software.feature"))
+
+  val protocol = karateProtocol(
+
+    "/conversionjobs/automatablesoftwares" -> Nil
+  )
+
+  protocol.nameResolver = (req, ctx) => req.getHeader("karate-name")
+
+    setUp(
+      create.inject(rampUsers(5) during (20 seconds)).protocols(protocol)
+  )
+
+}

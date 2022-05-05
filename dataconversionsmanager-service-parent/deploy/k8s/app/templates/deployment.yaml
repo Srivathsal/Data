@@ -1,0 +1,74 @@
+apiVersion: apps/v1beta2
+kind: Deployment
+metadata:
+  name: {{ template "app.fullname" . }}
+  labels:
+    app: {{ template "app.name" . }}
+    chart: {{ template "app.chart" . }}
+    release: {{ .Release.Name }}
+    heritage: {{ .Release.Service }}
+spec:
+  replicas: {{ .Values.replicaCount }}
+  selector:
+    matchLabels:
+      app: {{ template "app.name" . }}
+      release: {{ .Release.Name }}
+  template:
+    metadata:
+      labels:
+        app: {{ template "app.name" . }}
+        release: {{ .Release.Name }}
+    spec:
+      imagePullSecrets:
+    {{- with .Values.image.imagePullSecrets }}
+{{ toYaml . | indent 8 }}
+    {{- end }}
+      volumes:
+        - name: dcm-idps
+          secret:
+            secretName: dcm-idps
+      containers:
+        - name: {{ .Chart.Name }}
+          volumeMounts:
+          - name: dcm-idps
+            mountPath: "/run/kube/dcm-idps"
+            readOnly: true
+          image: "{{ .Values.image.repository }}:{{ .Values.image.tag }}"
+          imagePullPolicy: {{ .Values.image.pullPolicy }}
+          ports:
+            - name: http
+              containerPort: {{ .Values.service.port }}
+              protocol: TCP
+          livenessProbe:
+            periodSeconds: {{ .Values.service.livenessPeriodSeconds }}
+            httpGet:
+              path: {{ .Values.service.livenessProbePath }}
+              port: http
+            initialDelaySeconds: {{ .Values.service.readinessPeriodSeconds }}
+          readinessProbe:
+            periodSeconds: {{ .Values.service.readinessPeriodSeconds }}
+            initialDelaySeconds: {{ .Values.service.readinessPeriodSeconds }}
+            httpGet:
+              path: {{ .Values.service.readinessProbePath }}
+              port: http
+{{- if .Values.environment }}
+          env:
+{{- range $key, $value := .Values.environment }}
+            - name: {{ $key }}
+              value: {{ $value }}
+{{- end}}
+{{- end }}
+          resources:
+{{ toYaml .Values.resources | indent 12 }}
+    {{- with .Values.nodeSelector }}
+      nodeSelector:
+{{ toYaml . | indent 8 }}
+    {{- end }}
+    {{- with .Values.affinity }}
+      affinity:
+{{ toYaml . | indent 8 }}
+    {{- end }}
+    {{- with .Values.tolerations }}
+      tolerations:
+{{ toYaml . | indent 8 }}
+    {{- end }}

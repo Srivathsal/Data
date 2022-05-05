@@ -1,0 +1,164 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<parent>
+		<groupId>com.intuit.ptg.services</groupId>
+		<artifactId>dataconversionsmanager-service-parent</artifactId>
+		<version>0.0.1-SNAPSHOT</version>
+	</parent>
+	<artifactId>webapp</artifactId>
+	<name>webapp</name>
+
+	<properties></properties>
+
+
+	<dependencies>
+
+
+		<dependency>
+			<groupId>com.intuit.platform.jsk</groupId>
+			<artifactId>jsk-spring-boot-starter-mvc</artifactId>
+			<exclusions>
+				<exclusion>
+					<groupId>io.micrometer</groupId>
+					<artifactId>micrometer-core</artifactId>
+				</exclusion>
+			</exclusions>
+		</dependency>
+
+
+		<!-- ACCOUNTANT SERVICES COMMON -->
+
+		<dependency>
+			<groupId>com.intuit.accountant.services.common</groupId>
+			<artifactId>services-util</artifactId>
+			<version>${common-services.version}</version>
+		</dependency>
+
+
+  
+		<dependency>
+			<groupId>com.intuit.platform.jsk.messaging</groupId>
+			<artifactId>jsk-messaging-jms</artifactId>
+		</dependency>
+		
+
+		<dependency>
+			<groupId>org.apache.activemq</groupId>
+			<artifactId>activemq-client</artifactId>
+			<exclusions>
+				<exclusion>
+					<groupId>org.slf4j</groupId>
+					<artifactId>slf4j-api</artifactId>
+				</exclusion>
+			</exclusions>
+		</dependency>
+
+		<dependency>
+			<groupId>com.atlassian.clover</groupId>
+			<artifactId>clover</artifactId>
+			<version>${clover.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>log4j</groupId>
+			<artifactId>log4j</artifactId>
+			<version>${log4j.version}</version>
+		</dependency>
+
+
+		<!-- UNIT TESTING DEPENDENCIES -->
+
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-test</artifactId>
+			<scope>test</scope>
+			<exclusions>
+				<exclusion>
+					<groupId>com.vaadin.external.google</groupId>
+					<artifactId>android-json</artifactId>
+				</exclusion>
+			</exclusions>
+		</dependency>
+
+		<dependency>
+			<groupId>junit</groupId>
+			<artifactId>junit</artifactId>
+			<scope>test</scope>
+			<exclusions>
+				<exclusion>
+					<groupId>org.harmcrest</groupId>
+					<artifactId>hamcrest-core</artifactId>
+				</exclusion>
+			</exclusions>
+		</dependency>
+
+
+	</dependencies>
+
+	<dependencyManagement>
+		<dependencies>
+			<dependency>
+				<groupId>com.intuit.platform.jsk</groupId>
+				<artifactId>jsk-bom</artifactId>
+				<version>${jskbom.version}</version>
+				<type>pom</type>
+				<scope>import</scope>
+			</dependency>
+		</dependencies>
+	</dependencyManagement>
+
+
+	<build>
+		<plugins>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<version>${maven.compiler.version}</version>
+				<inherited>true</inherited>
+				<configuration>
+					<source>${java.version}</source>
+					<target>${java.version}</target>
+				</configuration>
+			</plugin>
+
+
+			<!--Unit Test Regression Execution -->
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-surefire-plugin</artifactId>
+				<configuration>
+					<!--<forkMode>pertest</forkMode>-->
+					<!--Fork is failing cassandra tests-->
+					<forkCount>1</forkCount>
+					<reuseForks>false</reuseForks>
+					<printSummary>true</printSummary>
+					<!--<redirectTestOutputToFile>true</redirectTestOutputToFile>-->
+					<excludes>
+						<exclude>**/integration/*.java</exclude>
+					</excludes>
+					<runOrder>alphabetical</runOrder>
+				</configuration>
+			</plugin>
+
+
+		</plugins>
+		<pluginManagement>
+			<plugins>
+				<plugin>
+					<groupId>org.apache.maven.plugins</groupId>
+					<artifactId>maven-surefire-plugin</artifactId>
+					<version>2.19.1</version>
+					<configuration>
+						<systemPropertyVariables>
+							<coverage-outputDir>target/jmockit-coverage-report</coverage-outputDir>
+							<!-- other properties, if needed -->
+						</systemPropertyVariables>
+						<excludes>
+							<exclude>**/*$*</exclude>
+						</excludes>
+					</configuration>
+				</plugin>
+			</plugins>
+		</pluginManagement>
+	</build>
+
+</project>

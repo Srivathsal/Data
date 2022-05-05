@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename resource &apos;webapp/src/main/resources/bootsrap.properties&apos; to &apos;bootstrap.properties&apos;" description="Rename resource &apos;bootsrap.properties&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="src/main/resources/bootsrap.properties" name="bootstrap.properties" stamp="1651224355561" updateReferences="true"/>
+</session>

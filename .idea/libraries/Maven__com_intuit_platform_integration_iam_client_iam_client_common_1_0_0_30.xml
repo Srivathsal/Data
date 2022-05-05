@@ -1,0 +1,13 @@
+<component name="libraryTable">
+  <library name="Maven: com.intuit.platform.integration.iam.client:iam-client-common:1.0.0.30">
+    <CLASSES>
+      <root url="jar://$MAVEN_REPOSITORY$/com/intuit/platform/integration/iam/client/iam-client-common/1.0.0.30/iam-client-common-1.0.0.30.jar!/" />
+    </CLASSES>
+    <JAVADOC>
+      <root url="jar://$MAVEN_REPOSITORY$/com/intuit/platform/integration/iam/client/iam-client-common/1.0.0.30/iam-client-common-1.0.0.30-javadoc.jar!/" />
+    </JAVADOC>
+    <SOURCES>
+      <root url="jar://$MAVEN_REPOSITORY$/com/intuit/platform/integration/iam/client/iam-client-common/1.0.0.30/iam-client-common-1.0.0.30-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

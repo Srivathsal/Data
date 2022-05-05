@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <name>{RPM} dataconversionsmanager-service</name>
+    <artifactId>dataconversionsmanager-service-application</artifactId>
+    <version>1.0.0-SNAPSHOT</version>
+    <packaging>rpm</packaging>
+
+    <parent>
+        <groupId>com.intuit.ptg.services</groupId>
+        <artifactId>dataconversionsmanager-service-parent</artifactId>
+        <version>1.0.0-SNAPSHOT</version>
+        <relativePath>../../pom.xml</relativePath>
+    </parent>
+
+    <properties>
+        <maven-scm-plugin>1.8.1</maven-scm-plugin>
+        <appserver-deploy>/usr/local/whp-tomcat-7/webapps</appserver-deploy>
+        <appserver-lib>/usr/local/whp-tomcat-7/lib</appserver-lib>
+    </properties>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-dependency-plugin</artifactId>
+                <executions>
+                    <execution>
+                        <id>copy-installed</id>
+                        <phase>compile</phase>
+                        <goals>
+                            <goal>copy</goal>
+                        </goals>
+                        <configuration>
+                            <artifactItems>
+                                <artifactItem>
+                                    <groupId>com.intuit.ptg.services</groupId>
+                                    <artifactId> dataconversionsmanager-service</artifactId>
+                                    <version>${project.version}</version>
+                                    <type>war</type>
+                                    <outputDirectory>${project.build.directory}/deploy</outputDirectory>
+                                    <overWrite>true</overWrite>
+                                    <destFileName> dataconversionsmanager-service.war</destFileName>
+                                </artifactItem>
+                            </artifactItems>
+                        </configuration>
+                    </execution>
+                </executions>
+            </plugin>
+            <!-- use rpm-maven-plugin to package into an rpm -->
+            <!-- dummy comment-->
+            <plugin>
+                <groupId>org.codehaus.mojo</groupId>
+                <artifactId>rpm-maven-plugin</artifactId>
+                <version>2.1-alpha-2</version>
+                <extensions>true</extensions>
+                <configuration>
+                    <group>Applications/Internet</group>
+                    <copyright>Intuit</copyright>
+                    <mappings>
+                        <mapping>
+                            <directory>${appserver-deploy}</directory>
+                            <username>appadmin</username>
+                            <groupname>app</groupname>
+                            <filemode>775</filemode>
+                            <sources>
+                                <source>
+                                    <location>${project.build.directory}/deploy</location>
+                                </source>
+                            </sources>
+                        </mapping>
+
+                    </mappings>
+                </configuration>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-scm-plugin</artifactId>
+                <version>${maven-scm-plugin}</version>
+                <configuration>
+                    <connectionType>connection</connectionType>
+                </configuration>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-release-plugin</artifactId>
+                <configuration>
+                    <!--  allows binding a release against a snapshot -->
+                    <allowTimestampedSnapshots>true</allowTimestampedSnapshots>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+    <scm>
+        <connection>scm|git|git@github.intuit.com::/PTG/dataconversionsmanager-service</connection>
+        <tag>HEAD</tag>
+    </scm>
+</project>

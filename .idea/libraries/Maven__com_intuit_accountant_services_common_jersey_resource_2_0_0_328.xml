@@ -1,0 +1,13 @@
+<component name="libraryTable">
+  <library name="Maven: com.intuit.accountant.services.common:jersey-resource:2.0.0.328">
+    <CLASSES>
+      <root url="jar://$MAVEN_REPOSITORY$/com/intuit/accountant/services/common/jersey-resource/2.0.0.328/jersey-resource-2.0.0.328.jar!/" />
+    </CLASSES>
+    <JAVADOC>
+      <root url="jar://$MAVEN_REPOSITORY$/com/intuit/accountant/services/common/jersey-resource/2.0.0.328/jersey-resource-2.0.0.328-javadoc.jar!/" />
+    </JAVADOC>
+    <SOURCES>
+      <root url="jar://$MAVEN_REPOSITORY$/com/intuit/accountant/services/common/jersey-resource/2.0.0.328/jersey-resource-2.0.0.328-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

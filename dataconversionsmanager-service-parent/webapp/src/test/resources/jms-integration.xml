@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+
+       xmlns:p="http://www.springframework.org/schema/p" xmlns:jms="http://www.springframework.org/schema/jms"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans   http://www.springframework.org/schema/beans/spring-beans-3.0.xsd http://www.springframework.org/schema/jms http://www.springframework.org/schema/jms/spring-jms.xsd">
+
+    <!--  Brokers -->
+    <bean id="activeMQconnectionFactory" class="org.apache.activemq.ActiveMQConnectionFactory">
+        <property name="brokerURL" value="${CSB.SSL.Broker}"/>
+        <property name="userName" value="${messaging.broker.appid}"/>
+        <property name="password" value="${messaging.broker.secret}"/>
+    </bean>
+
+    <bean id="executorDispatchDestination" class="org.apache.activemq.command.ActiveMQQueue">
+        <property name="physicalName" value="${Intuit.global.executor.notification.Queue}" />
+    </bean>
+
+    <bean id="producerJmsTemplate" class="org.springframework.jms.core.JmsTemplate">
+        <property name="connectionFactory">
+            <!-- lets wrap in a pool to avoid creating a connection per send -->
+            <bean class="org.springframework.jms.connection.CachingConnectionFactory">
+                <property name="targetConnectionFactory" ref="activeMQconnectionFactory" />
+                <property name="sessionCacheSize" value="50" />
+            </bean>
+        </property>
+    </bean>
+
+    <bean name="managerListenerContainer"  class="org.springframework.jms.listener.DefaultMessageListenerContainer" lazy-init="true">
+        <property name="autoStartup" value="${message.container.autostartup}"/>
+        <property name="connectionFactory" ref="activeMQconnectionFactory"/>
+        <property name="destinationName" value="${Intuit.global.manager.notification.Queue}"/>
+        <property name="messageListener" ref="managerMessageListener"/>
+    </bean>
+
+    <bean name="managerDLQListenerContainer"  class="org.springframework.jms.listener.DefaultMessageListenerContainer" lazy-init="true">
+        <property name="autoStartup" value="${message.container.autostartup}"/>
+        <property name="connectionFactory" ref="activeMQconnectionFactory"/>
+        <property name="destinationName" value="${Intuit.global.manager.notification.Queue.DLQ}"/>
+        <property name="messageListener" ref="managerDLQMessageListener"/>
+    </bean>
+
+</beans>

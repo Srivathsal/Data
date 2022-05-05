@@ -1,0 +1,20 @@
+#!/usr/bin/env groovy
+
+/* Jenkinsfile for manual test
+This file is scripted pipeline */
+
+// https://github.intuit.com/PTG/jenkins-shared-libraries
+// importing shared library
+@Library('pcg-libraries') _
+
+withPodTemplate {
+    def scmVars = checkout scm
+
+    stage('Test ') {
+        checkoutGitRepo(orgName:"PTG", repoName:"dataconversionsmanager-service", branchaName:"master")
+        withBuildTools {
+                sh "ls -ltr"
+                sh "mvn -f test-suite/pom.xml clean test -DargLine=\"-Dkarate.env=aws-e2e\""
+        }
+    }
+}

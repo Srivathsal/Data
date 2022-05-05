@@ -1,0 +1,77 @@
+Feature: dcm post sendemailadmin
+
+  Background:
+    * configure headers = read('classpath:' + dcmHeaders)
+    * def signin = callonce read('classpath:ius-signin.feature') { username: #(iusUsername), password: #(iusPassword) }
+    * def ticket = signin.ticket
+    * url dcmUrlBase
+    * def realmId = signin.ticket.realmId
+
+  Scenario: post send lacerte-completed-email
+    * def payload = read('lacerte-completed.json')
+    Given path 'admin/internal/mail/send'
+    And request payload
+    When method post
+    Then status 200
+
+  Scenario: post send proseries-completed-email
+    * def payload = read('proseries-completed.json')
+    Given path 'admin/internal/mail/send'
+    And request payload
+    When method post
+    Then status 200
+
+  Scenario: post send taxonline-completed-email
+    * def payload = read('taxonline-completed.json')
+    Given path 'admin/internal/mail/send'
+    And request payload
+    When method post
+    Then status 200
+
+  Scenario: post send lacerte-cancelled-email
+    * def payload = read('lacerte-cancelled.json')
+    Given path 'admin/internal/mail/send'
+    And request payload
+    When method post
+    Then status 200
+
+  Scenario: post send proseries-cancelled-email
+    * def payload = read('proseries-cancelled.json')
+    Given path 'admin/internal/mail/send'
+    And request payload
+    When method post
+    Then status 200
+
+  Scenario: post send taxonline-cancelled-email
+    * def payload = read('taxonline-cancelled.json')
+    Given path 'admin/internal/mail/send'
+    And request payload
+    When method post
+    Then status 200
+
+  Scenario: post send taxonline-completedwithduplicates-email
+    * def payload = read('taxonline-completedwithduplicates.json')
+    Given path 'admin/internal/mail/send'
+    And request payload
+    When method post
+    Then status 200
+
+  Scenario: post send invalid-software-invalid-status-email
+    * def payload = read('invalid-software-invalid-status.json')
+    Given path 'admin/internal/mail/send'
+    And request payload
+    When method post
+    Then status 200
+
+  Scenario: post send invalid-software-valid-status-email
+    * def payload = read('invalid-software-valid-status.json')
+    Given path 'admin/internal/mail/send'
+    And request payload
+    When method post
+    Then status 200
+
+
+
+
+
+

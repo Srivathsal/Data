@@ -1,0 +1,3131 @@
+{
+    "CompetitorSoftwareConfiguration": {
+        "Softwares": [
+            {
+                "name": "ATX",
+                "instructions": {
+                    "title": [
+                        {
+                            "label": "Note: Be sure to roll over all client files from the prior year program. Failure to do so will result in those files returning with a 'corrupt' status.",
+                            "display": "block",
+                            "bold": true
+                        }
+                    ],
+                    "steps": [
+                        {
+                            "has_list": false,
+                            "labels": [
+                                {
+                                    "label": "Create a new folder on your C: drive named ConversionData before you begin the backup process (e.g., C:ConversionData).",
+                                    "display": "inline",
+                                    "bold": false
+                                }
+                            ]
+                        },
+                        {
+                            "has_list": false,
+                            "labels": [
+                                {
+                                    "label": "Open ATX, and in",
+                                    "display": "inline",
+                                    "bold": false
+                                },
+                                {
+                                    "label": "Return Manager,",
+                                    "display": "inline",
+                                    "bold": true
+                                },
+                                {
+                                    "label": "check the box for each return you want to back up or to select all clients, choose the",
+                                    "display": "inline",
+                                    "bold": false
+                                },
+                                {
+                                    "label": "View",
+                                    "display": "inline",
+                                    "bold": true
+                                },
+                                {
+                                    "label": "menu, then",
+                                    "display": "inline",
+                                    "bold": false
+                                },
+                                {
+                                    "label": "Show All Returns,",
+                                    "display": "inline",
+                                    "bold": true
+                                },
+                                {
+                                    "label": "then click",
+                                    "display": "inline",
+                                    "bold": false
+                                },
+                                {
+                                    "label": "View,",
+                                    "display": "inline",
+                                    "bold": true
+                                },
+                                {
+                                    "label": "and",
+                                    "display": "inline",
+                                    "bold": false
+                                },
+                                {
+                                    "label": "Mark All Displayed Returns.",
+                                    "display": "inline",
+                                    "bold": true
+                                }
+                            ]
+                        },
+                        {
+                            "has_list": false,
+                            "labels": [
+                                {
+                                    "label": "On the menu bar, click",
+                                    "display": "inline",
+                                    "bold": false
+                                },
+                                {
+                                    "label": "Returns,",
+                                    "display": "inline",
+                                    "bold": true
+                                },
+                                {
+                                    "label": "then",
+                                    "display": "inline",
+                                    "bold": false
+                                },
+                                {
+                                    "label": "Export Marked Returns.",
+                                    "display": "inline",
+                                    "bold": true
+                                }
+                            ]
+                        },
+                        {
+                            "has_list": false,
+                            "labels": [
+                                {
+                                    "label": "In the",
+                                    "display": "inline",
+                                    "bold": false
+                                },
+                                {
+                                    "label": "Export Marked Returns,",
+                                    "display": "inline",
+                                    "bold": true
+                                },
+                                {
+                                    "label": "dialog box, select the Drive and/or Folder for your backup (set the drive path to C:ConversionData).",
+                                    "display": "inline",
+                                    "bold": false
+                                }
+                            ]
+                        },
+                        {
+                            "has_list": false,
+                            "labels": [
+                                {
+                                    "label": "Click the",
+                                    "display": "inline",
+                                    "bold": false
+                                },
+                                {
+                                    "label": "OK",
+                                    "display": "inline",
+                                    "bold": true
+                                },
+                                {
+                                    "label": "button.",
+                                    "display": "inline",
+                                    "bold": false
+                                }
+                            ]
+                        },
+                        {
+                            "has_list": true,
+                            "labels": [
+                                {
+                                    "label": "Browse to C:ProgramDataWoltersKluwerATX 2020 ServerATX 2020 Files.",
+                                    "display": "inline",
+                                    "bold": false
+                                }
+                            ],
+                            "list": {
+                                "order": "ordered",
+                                "type": "circle",
+                                "items": [
+                                    {
+                                        "labels": [
+                                            {
+                                                "label": "Please note that C:ProgramData is a hidden folder. To access this folder, Click",
+                                                "bold": false,
+                                                "display": "inline"
+                                            },
+                                            {
+                                                "label": "Start",
+                                                "bold": true,
+                                                "display": "inline"
+                                            },
+                                            {
+                                                "label": "and type Run in Search Programs and Files and click Enter. Type C:ProgramData in the Run window and click",
+                                                "bold": false,
+                                                "display": "inline"
+                                            },
+                                            {
+                                                "label": "OK.",
+                                                "bold": true,
+                                                "display": "inline"
+                                            },
+                                            {
+                                                "label": "Navigate to the folder mentioned above.",
+                                                "bold": false,
+                                                "display": "inline"
+                                            }
+                                        ]
+                                    }
+                                ]
+                            }
+                        },
+                        {
+                            "has_list": false,
+                            "labels": [
+                                {
+                                    "label": "Right-click on the FormsetData folder and choose",
+                                    "display": "inline",
+                                    "bold": false
+                                },
+                                {
+                                    "label": "Copy.",
+                                    "display": "inline",
+                                    "bold": true
+                                }
+                            ]
+                        },
+                        {
+                            "has_list": false,
+                            "labels": [
+                                {
+                                    "label": "Browse to C:ConversionData, right-click in an empty space and choose",
+                                    "display": "inline",
+                                    "bold": false
+                                },
+                                {
+                                    "label": "Paste.",
+                                    "display": "inline",
+                                    "bold": true
+                                }
+                            ]
+                        }
+                    ]
+                },
+                "validator": "ATXBackupValidatorAndFileProvider",
+                "ValidationCriteria": {
+                    "Year": "2020",
+                    "FileValidationInformation": {
+                        "FileValidationInfo": {
+                            "FileNameHint": "atx20Export",
+                            "HintType": "EXTENSION"
+                        }
+                    },
+                    "FilesToBePresentinBackup": {
+                        "FileToBePresentinBackup": "FormsetData"
+                    }
+                },
+                "TaxYear": {
+                    "Year": "2020",
+                    "IsBillingRequired": "false",
+                    "#text": ">"
+                },
+                "ziputility": "SingleFileZipUtility",
+                "OptimalCompressionRatio": "0"
+            },
+            {
+                "name": "CrossLink",
+                "instructions": {
+                    "title": [
+                        {
+                            "label": "Please follow these instructions on backing up your data for the Intuit conversion process.",
+                            "display": "block",
+                            "bold": false
+                        },
+                        {
+                            "label": "Calculate all clients and remove locks and passwords from clients before beginning the backup process.",
+                            "display": "block",
+                            "bold": false
+                        }
+                    ],
+                    "steps": [
+                        {
+                            "has_list": false,
+                            "labels": [
+                                {
+                                    "label": "Create a new folder on your C: drive named ConversionData before you begin the backup process (e.g., C:ConversionData).",
+                                    "display": "inline",
+                                    "bold": false
+                                }
+                            ]
+                        },
+                        {
+                            "has_list": false,
+                            "labels": [
+                                {
+                                    "label": "Open your",
+                                    "display": "inline",
+                                    "bold": false
+                                },
+                                {
+                                    "label": "CrossLink 2021",
+                                    "display": "inline",
+                                    "bold": true
+                                },
+                                {
+                                    "label": "program.",
+                                    "display": "inline",
+                                    "bold": false
+                                }
+                            ]
+                        },
+                        {
+                            "has_list": false,
+                            "labels": [
+                                {
+                                    "label": "From the WIP (Work in Progress) screen, choose",
+                                    "display": "inline",
+                                    "bold": false
+                                },
+                                {
+                                    "label": "Utility -> System Utilities.",
+                                    "display": "inline",
+                                    "bold": true
+                                }
+                            ]
+                        },
+                        {
+                            "has_list": false,
+                            "labels": [
+                                {
+                                    "label": "Click the",
+                                    "display": "inline",
+                                    "bold": false
+                                },
+                                {
+                                    "label": "Reset Encryption Key",
+                                    "display": "inline",
+                                    "bold": true
+                                },
+                                {
+                                    "label": "button and click on",
+                                    "display": "inline",
+                                    "bold": false
+                                },
+                                {
+                                    "label": "Run Utility.",
+                                    "display": "inline",
+                                    "bold": true
+                                }
+                            ]
+                        },
+                        {
+                            "has_list": false,
+                            "labels": [
+                                {
+                                    "label": "Change Encryption Key to '000'. (Without the key, we cannot access the backup data. Using a predefined key ensures we can decrypt it.)",
+                                    "display": "inline",
+                                    "bold": false
+                                }
+                            ]
+                        },
+                        {
+                            "has_list": false,
+                            "labels": [
+                                {
+                                    "label": "From WIP, under",
+                                    "display": "inline",
+                                    "bold": false
+                                },
+                                {
+                                    "label": "Other Items,",
+                                    "display": "inline",
+                                    "bold": true
+                                },
+                                {
+                                    "label": "click the",
+                                    "display": "inline",
+                                    "bold": false
+                                },
+                                {
+                                    "label": "Backup Returns",
+                                    "display": "inline",
+                                    "bold": true
+                                },
+                                {
+                                    "label": "button.",
+                                    "display": "inline",
+                                    "bold": false
+                                }
+                            ]
+                        },
+                        {
+                            "has_list": false,
+                            "labels": [
+                                {
+                                    "label": "On the Backup Returns screen, click",
+                                    "display": "inline",
+                                    "bold": false
+                                },
+                                {
+                                    "label": "Select All",
+                                    "display": "inline",
+                                    "bold": true
+                                },
+                                {
+                                    "label": "to highlight all returns, or",
+                                    "display": "inline",
+                                    "bold": false
+                                },
+                                {
+                                    "label": "select individual returns by",
+                                    "display": "inline",
+                                    "bold": true
+                                },
+                                {
+                                    "label": "checking the boxes next to them.",
+                                    "display": "inline",
+                                    "bold": false
+                                }
+                            ]
+                        },
+                        {
+                            "has_list": false,
+                            "labels": [
+                                {
+                                    "label": "Click the",
+                                    "display": "inline",
+                                    "bold": false
+                                },
+                                {
+                                    "label": "Backup",
+                                    "display": "inline",
+                                    "bold": true
+                                },
+                                {
+                                    "label": "button. You will be prompted when you have successfully backed up your returns. Click the",
+                                    "display": "inline",
+                                    "bold": false
+                                },
+                                {
+                                    "label": "Close",
+                                    "display": "inline",
+                                    "bold": true
+                                },
+                                {
+                                    "label": "button.",
+                                    "display": "inline",
+                                    "bold": false
+                                }
+                            ]
+                        },
+                        {
+                            "has_list": false,
+                            "labels": [
+                                {
+                                    "label": "Browse to C:xlink20 using My Computer or Windows Explorer.",
+                                    "display": "inline",
+                                    "bold": false
+                                }
+                            ]
+                        },
+                        {
+                            "has_list": false,
+                            "labels": [
+                                {
+                                    "label": "Locate the file that begins with ar20 or bk20. Sorting the files by name or date can help you locate it, the file name will include the date of the most recent backup.",
+                                    "display": "inline",
+                                    "bold": false
+                                }
+                            ]
+                        },
+                        {
+                            "has_list": false,
+                            "labels": [
+                                {
+                                    "label": "Right-click on the file and choose",
+                                    "display": "inline",
+                                    "bold": false
+                                },
+                                {
+                                    "label": "Copy.",
+                                    "display": "inline",
+                                    "bold": true
+                                }
+                            ]
+                        },
+                        {
+                            "has_list": false,
+                            "labels": [
+                                {
+                                    "label": "Browse to C:ConversionData.",
+                                    "display": "inline",
+                                    "bold": false
+                                }
+                            ]
+                        },
+                        {
+                            "has_list": false,
+                            "labels": [
+                                {
+                                    "label": "Right-click in an empty space and choose",
+                                    "display": "inline",
+                                    "bold": false
+                                },
+                                {
+                                    "label": "Paste.",
+                                    "display": "inline",
+                                    "bold": true
+                                }
+                            ]
+                        }
+                    ]
+                },
+                "validator": "CrossLinkBackupValidatorAndFileProvider",
+                "ziputility": "SingleFileZipUtility",
+                "isFileSelectionRequired": "false",
+                "ValidationCriteria": {
+                    "Year": "2020",
+                    "FileValidationInformation": [
+                        {
+                            "FileNameHint": "ar",
+                            "HintType": "PREFIX"
+                        },
+                        {
+                            "FileNameHint": "bk",
+                            "HintType": "PREFIX"
+                        }
+                    ]
+                },
+                "TaxYear": {
+                    "Year": "2020",
+                    "IsBillingRequired": "false",
+                    "#text": ">"
+                }
+            },
+            {
+                "name": "Drake",
+                "instructions": {
+                    "title": [
+                        {
+                            "label": "Please follow these instructions on backing up your data for the Intuit conversion process.",
+                            "display": "block",
+                            "bold": false
+                        },
+                        {
+                            "label": "Calculate all clients and remove locks and passwords from clients before beginning the backup process.",
+                            "display": "block",
+                            "bold": false
+                        }
+                    ],
+                    "steps": [
+                        {
+                            "has_list": false,
+                            "labels": [
+                                {
+                                    "label": "Create a new folder on your C: drive named ConversionData before you begin the backup process (e.g., C:ConversionData).",
+                                    "display": "inline",
+                                    "bold": false
+                                }
+                            ]
+                        },
+                        {
+                            "has_list": false,
+                            "labels": [
+                                {
+                                    "label": "Open Drake, on the menu bar, click the",
+                                    "display": "inline",
+                                    "bold": false
+                                },
+                                {
+                                    "label": "Tools",
+                                    "display": "inline",
+                                    "bold": true
+                                },
+                                {
+                                    "label": "menu,",
+                                    "display": "inline",
+                                    "bold": false
+                                },
+                                {
+                                    "label": "File Maintenance,",
+                                    "display": "inline",
+                                    "bold": true
+                                },
+                                {
+                                    "label": "then",
+                                    "display": "inline",
+                                    "bold": false
+                                },
+                                {
+                                    "label": "Backup.",
+                                    "display": "inline",
+                                    "bold": true
+                                }
+                            ]
+                        },
+                        {
+                            "has_list": false,
+                            "labels": [
+                                {
+                                    "label": "In the Drake 2020 - Backup dialog box, click",
+                                    "display": "inline",
+                                    "bold": false
+                                },
+                                {
+                                    "label": "Select a backup location",
+                                    "display": "inline",
+                                    "bold": true
+                                },
+                                {
+                                    "label": "and select the drive and folder for your backup (set the location to C:ConversionData).",
+                                    "display": "inline",
+                                    "bold": false
+                                }
+                            ]
+                        },
+                        {
+                            "has_list": false,
+                            "labels": [
+                                {
+                                    "label": "Check only the box for",
+                                    "display": "inline",
+                                    "bold": false
+                                },
+                                {
+                                    "label": "Client Files.",
+                                    "display": "inline",
+                                    "bold": true
+                                }
+                            ]
+                        },
+                        {
+                            "has_list": false,
+                            "labels": [
+                                {
+                                    "label": "Click the",
+                                    "display": "inline",
+                                    "bold": false
+                                },
+                                {
+                                    "label": "Backup",
+                                    "display": "inline",
+                                    "bold": true
+                                },
+                                {
+                                    "label": "button.",
+                                    "display": "inline",
+                                    "bold": false
+                                }
+                            ]
+                        }
+                    ]
+                },
+                "validator": "DrakeBackupValidatorAndFileProvider",
+                "ziputility": "SingleFileZipUtility",
+                "isFileSelectionRequired": "false",
+                "ValidationCriteria": {
+                    "Year": "2020",
+                    "FileValidationInformation": {
+                        "FileValidationInfo": {
+                            "FileNameHint": "7z",
+                            "HintType": "EXTENSION"
+                        }
+                    }
+                },
+                "TaxYear": {
+                    "Year": "2020",
+                    "IsBillingRequired": "false",
+                    "#text": ">"
+                }
+            },
+            {
+                "name": "Lacerte",
+                "instructions": {
+                    "title": [
+                        {
+                            "label": "Please follow these instructions on backing up your data for the Intuit conversion process.",
+                            "display": "block",
+                            "bold": false
+                        },
+                        {
+                            "label": "Calculate all clients and remove locks and passwords from clients before beginning the backup process.",
+                            "display": "block",
+                            "bold": false
+                        }
+                    ],
+                    "steps": [
+                        {
+                            "has_list": false,
+                            "labels": [
+                                {
+                                    "label": "Create a new folder on your C: drive named ConversionData before you begin the backup process (e.g., C:ConversionData).",
+                                    "display": "inline",
+                                    "bold": false
+                                }
+                            ]
+                        },
+                        {
+                            "has_list": true,
+                            "labels": [
+                                {
+                                    "label": "Open",
+                                    "display": "inline",
+                                    "bold": false
+                                },
+                                {
+                                    "label": "Lacerte",
+                                    "display": "inline",
+                                    "bold": true
+                                }
+                            ],
+                            "list": {
+                                "order": "ordered",
+                                "type": "circle",
+                                "items": [
+                                    {
+                                        "labels": [
+                                            {
+                                                "label": "Note:",
+                                                "bold": true,
+                                                "display": "inline"
+                                            },
+                                            {
+                                                "label": "Please repeat the steps below for each tax type you wish to submit for conversion.",
+                                                "bold": false,
+                                                "display": "inline"
+                                            }
+                                        ]
+                                    }
+                                ]
+                            }
+                        },
+                        {
+                            "has_list": false,
+                            "labels": [
+                                {
+                                    "label": "Click the",
+                                    "display": "inline",
+                                    "bold": false
+                                },
+                                {
+                                    "label": "Client",
+                                    "display": "inline",
+                                    "bold": true
+                                },
+                                {
+                                    "label": "menu,",
+                                    "display": "inline",
+                                    "bold": false
+                                },
+                                {
+                                    "label": "Tax Type,",
+                                    "display": "inline",
+                                    "bold": true
+                                },
+                                {
+                                    "label": "and select the tax type you wish to back up.",
+                                    "display": "inline",
+                                    "bold": false
+                                }
+                            ]
+                        },
+                        {
+                            "has_list": false,
+                            "labels": [
+                                {
+                                    "label": "On the Client Tab, press and hold [Ctrl], then click each client you want to back up - OR - press F3, select ",
+                                    "display": "inline",
+                                    "bold": false
+                                },
+                                {
+                                    "label": "All Clients",
+                                    "display": "inline",
+                                    "bold": true
+                                },
+                                {
+                                    "label": "and then click",
+                                    "display": "inline",
+                                    "bold": false
+                                },
+                                {
+                                    "label": "OK.",
+                                    "display": "inline",
+                                    "bold": true
+                                }
+                            ]
+                        },
+                        {
+                            "has_list": false,
+                            "labels": [
+                                {
+                                    "label": "On the",
+                                    "display": "inline",
+                                    "bold": false
+                                },
+                                {
+                                    "label": "Client",
+                                    "display": "inline",
+                                    "bold": true
+                                },
+                                {
+                                    "label": "menu, click",
+                                    "display": "inline",
+                                    "bold": false
+                                },
+                                {
+                                    "label": "Backup.",
+                                    "display": "inline",
+                                    "bold": true
+                                }
+                            ]
+                        },
+                        {
+                            "has_list": false,
+                            "labels": [
+                                {
+                                    "label": "In the Backup Clients dialog box, enter the Destination: C:ConversionData.",
+                                    "display": "inline",
+                                    "bold": false
+                                }
+                            ]
+                        },
+                        {
+                            "has_list": false,
+                            "labels": [
+                                {
+                                    "label": "Click",
+                                    "display": "inline",
+                                    "bold": false
+                                },
+                                {
+                                    "label": "OK",
+                                    "display": "inline",
+                                    "bold": true
+                                },
+                                {
+                                    "label": "to begin the backup process.",
+                                    "display": "inline",
+                                    "bold": false
+                                }
+                            ]
+                        }
+                    ]
+                },
+                "validator": "LacerteBackupValidatorAndFileProvider",
+                "ziputility": "LacerteZipUtility",
+                "ValidationCriteria": {
+                    "Year": "2020",
+                    "FileValidationInformation": [
+                        {
+                            "FileNameHint": "ID0",
+                            "HintType": "EXTENSION"
+                        },
+                        {
+                            "FileNameHint": "SD0",
+                            "HintType": "EXTENSION"
+                        },
+                        {
+                            "FileNameHint": "CD0",
+                            "HintType": "EXTENSION"
+                        },
+                        {
+                            "FileNameHint": "PD0",
+                            "HintType": "EXTENSION"
+                        },
+                        {
+                            "FileNameHint": "FD0",
+                            "HintType": "EXTENSION"
+                        },
+                        {
+                            "FileNameHint": "RD0",
+                            "HintType": "EXTENSION"
+                        }
+                    ],
+                    "FilesToBePresentinBackup": [
+                        "BAD",
+                        "DCDATA",
+                        "DETAIL",
+                        "EF",
+                        "EXPORT",
+                        "NOTES",
+                        "RefundsN",
+                        "TBDATA",
+                        "*.MDX",
+                        "*.DBF",
+                        "*.DAT"
+                    ]
+                },
+                "TaxYear": {
+                    "Year": "2020",
+                    "IsBillingRequired": "false",
+                    "#text": ">"
+                }
+            },
+            {
+                "name": "ProSeries",
+                "instructions": {
+                    "title": [
+                        {
+                            "label": "Please follow these instructions on backing up your data for the Intuit conversion process.",
+                            "display": "block",
+                            "bold": false
+                        },
+                        {
+                            "label": "Calculate all clients and remove locks and passwords from clients before beginning the backup process.",
+                            "display": "block",
+                            "bold": false
+                        }
+                    ],
+                    "steps": [
+                        {
+                            "has_list": false,
+                            "labels": [
+                                {
+                                    "label": "Create a new folder on your C: drive named ConversionData before you begin the backup process (e.g., C:ConversionData).",
+                                    "display": "inline",
+                                    "bold": false
+                                }
+                            ]
+                        },
+                        {
+                            "has_list": false,
+                            "labels": [
+                                {
+                                    "label": "Open ProSeries and set the HomeBase View to the module you want to back up, or to All Tax Returns if you wish to submit all tax types.",
+                                    "display": "inline",
+                                    "bold": false
+                                }
+                            ]
+                        },
+                        {
+                            "has_list": false,
+                            "labels": [
+                                {
+                                    "label": "Press and hold[Ctrl]while clicking the clients you want to select for backup",
+                                    "display": "inline",
+                                    "bold": false
+                                },
+                                {
+                                    "label": "OR",
+                                    "display": "inline",
+                                    "bold": true
+                                },
+                                {
+                                    "label": "from the",
+                                    "display": "inline",
+                                    "bold": false
+                                },
+                                {
+                                    "label": "HomeBase",
+                                    "display": "inline",
+                                    "bold": true
+                                },
+                                {
+                                    "label": "menu, click",
+                                    "display": "inline",
+                                    "bold": false
+                                },
+                                {
+                                    "label": "Select All",
+                                    "display": "inline",
+                                    "bold": true
+                                },
+                                {
+                                    "label": "to select all clients.",
+                                    "display": "inline",
+                                    "bold": false
+                                }
+                            ]
+                        },
+                        {
+                            "has_list": false,
+                            "labels": [
+                                {
+                                    "label": "From the",
+                                    "display": "inline",
+                                    "bold": false
+                                },
+                                {
+                                    "label": "File",
+                                    "display": "inline",
+                                    "bold": true
+                                },
+                                {
+                                    "label": "menu, click",
+                                    "display": "inline",
+                                    "bold": false
+                                },
+                                {
+                                    "label": "Client File Maintenance,",
+                                    "display": "inline",
+                                    "bold": true
+                                },
+                                {
+                                    "label": "then click",
+                                    "display": "inline",
+                                    "bold": false
+                                },
+                                {
+                                    "label": "Copy / Backup.",
+                                    "display": "inline",
+                                    "bold": true
+                                }
+                            ]
+                        },
+                        {
+                            "has_list": false,
+                            "labels": [
+                                {
+                                    "label": "In the Copy / Backup Client Files dialog box, click the",
+                                    "display": "inline",
+                                    "bold": false
+                                },
+                                {
+                                    "label": "Set Target Directory",
+                                    "display": "inline",
+                                    "bold": true
+                                },
+                                {
+                                    "label": "button.",
+                                    "display": "inline",
+                                    "bold": false
+                                }
+                            ]
+                        },
+                        {
+                            "has_list": false,
+                            "labels": [
+                                {
+                                    "label": "Set the target directory to C:ConversionData.",
+                                    "display": "inline",
+                                    "bold": false
+                                }
+                            ]
+                        },
+                        {
+                            "has_list": false,
+                            "labels": [
+                                {
+                                    "label": "Click the",
+                                    "display": "inline",
+                                    "bold": false
+                                },
+                                {
+                                    "label": "Backup Client(s)",
+                                    "display": "inline",
+                                    "bold": true
+                                },
+                                {
+                                    "label": "button.",
+                                    "display": "inline",
+                                    "bold": false
+                                }
+                            ]
+                        }
+                    ]
+                },
+                "validator": "ProSeriesBackupValidatorAndFileProvider",
+                "ziputility": "SingleFileZipUtility",
+                "OptimalCompressionRatio": "80",
+                "ValidationCriteria": {
+                    "Year": "2020",
+                    "FileValidationInformation": [
+                        {
+                            "FileNameHint": "20i",
+                            "HintType": "EXTENSION"
+                        },
+                        {
+                            "FileNameHint": "20s",
+                            "HintType": "EXTENSION"
+                        },
+                        {
+                            "FileNameHint": "20p",
+                            "HintType": "EXTENSION"
+                        },
+                        {
+                            "FileNameHint": "20c",
+                            "HintType": "EXTENSION"
+                        }
+                    ]
+                },
+                "TaxYear": {
+                    "Year": "2020",
+                    "IsBillingRequired": "false",
+                    "#text": ">"
+                }
+            },
+            {
+                "name": "ProSystemFX",
+                "instructions": {
+                    "title": [
+                        {
+                            "label": "Please follow these instructions on backing up your data for the Intuit conversion process.",
+                            "display": "block",
+                            "bold": false
+                        },
+                        {
+                            "label": "Calculate all clients and remove locks and passwords from clients before beginning the backup process.",
+                            "display": "inline",
+                            "bold": false
+                        }
+                    ],
+                    "footer": [
+                        {
+                            "label": "Troubleshooting:",
+                            "display": "block",
+                            "bold": true,
+                            "steps": [
+                                {
+                                    "has_list": false,
+                                    "labels": [
+                                        {
+                                            "label": "If you receive an error stating",
+                                            "display": "inline",
+                                            "bold": false
+                                        },
+                                        {
+                                            "label": "Unable to copy temp. export file to %s,",
+                                            "display": "inline",
+                                            "bold": true
+                                        },
+                                        {
+                                            "label": "click",
+                                            "display": "inline",
+                                            "bold": false
+                                        },
+                                        {
+                                            "label": "OK",
+                                            "display": "inline",
+                                            "bold": true
+                                        }
+                                    ]
+                                },
+                                {
+                                    "has_list": false,
+                                    "labels": [
+                                        {
+                                            "label": "Open",
+                                            "display": "inline",
+                                            "bold": true
+                                        },
+                                        {
+                                            "label": "the installation folder found in",
+                                            "display": "inline",
+                                            "bold": false
+                                        },
+                                        {
+                                            "label": "step 11",
+                                            "display": "inline",
+                                            "bold": true
+                                        },
+                                        {
+                                            "label": "of the instructions above.",
+                                            "display": "inline",
+                                            "bold": false
+                                        }
+                                    ]
+                                },
+                                {
+                                    "has_list": false,
+                                    "labels": [
+                                        {
+                                            "label": "In that folder, navigate to the",
+                                            "display": "inline",
+                                            "bold": false
+                                        },
+                                        {
+                                            "label": "tmp",
+                                            "display": "inline",
+                                            "bold": true
+                                        },
+                                        {
+                                            "label": "folder (default is",
+                                            "display": "inline",
+                                            "bold": false
+                                        },
+                                        {
+                                            "label": "c:wfx32\tmp).",
+                                            "display": "inline",
+                                            "bold": true
+                                        },
+                                        {
+                                            "label": "Look for a file with an",
+                                            "display": "inline",
+                                            "bold": false
+                                        },
+                                        {
+                                            "label": ".Exp",
+                                            "display": "inline",
+                                            "bold": true
+                                        },
+                                        {
+                                            "label": "extension (for example: $$$3d6c.Exp).",
+                                            "display": "inline",
+                                            "bold": false
+                                        },
+                                        {
+                                            "label": "Right-click",
+                                            "display": "inline",
+                                            "bold": true
+                                        },
+                                        {
+                                            "label": "on that file and choose",
+                                            "display": "inline",
+                                            "bold": false
+                                        },
+                                        {
+                                            "label": "Copy",
+                                            "display": "inline",
+                                            "bold": true
+                                        }
+                                    ]
+                                },
+                                {
+                                    "has_list": false,
+                                    "labels": [
+                                        {
+                                            "label": "Navigate back to the",
+                                            "display": "inline",
+                                            "bold": false
+                                        },
+                                        {
+                                            "label": "C:ConversionData",
+                                            "display": "inline",
+                                            "bold": true
+                                        },
+                                        {
+                                            "label": "folder,",
+                                            "display": "inline",
+                                            "bold": false
+                                        },
+                                        {
+                                            "label": "right-click",
+                                            "display": "inline",
+                                            "bold": true
+                                        },
+                                        {
+                                            "label": "in an empty spot and choose",
+                                            "display": "inline",
+                                            "bold": false
+                                        },
+                                        {
+                                            "label": "Paste.",
+                                            "display": "inline",
+                                            "bold": true
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    ],
+                    "steps": [
+                        {
+                            "has_list": false,
+                            "labels": [
+                                {
+                                    "label": "Create a new folder on your C: drive named",
+                                    "display": "inline",
+                                    "bold": false
+                                },
+                                {
+                                    "label": "ConversionData",
+                                    "display": "inline",
+                                    "bold": true
+                                },
+                                {
+                                    "label": "before you begin the backup process (e.g.,",
+                                    "display": "inline",
+                                    "bold": false
+                                },
+                                {
+                                    "label": "C:ConversionData).",
+                                    "display": "inline",
+                                    "bold": true
+                                }
+                            ]
+                        },
+                        {
+                            "has_list": false,
+                            "labels": [
+                                {
+                                    "label": "Open the folder",
+                                    "display": "inline",
+                                    "bold": false
+                                },
+                                {
+                                    "label": "ProSystem fx Tax",
+                                    "display": "inline",
+                                    "bold": true
+                                },
+                                {
+                                    "label": "on the desktop and double-click",
+                                    "display": "inline",
+                                    "bold": false
+                                },
+                                {
+                                    "label": "Production Processing.",
+                                    "display": "inline",
+                                    "bold": true
+                                }
+                            ]
+                        },
+                        {
+                            "has_list": false,
+                            "labels": [
+                                {
+                                    "label": "Click the",
+                                    "display": "inline",
+                                    "bold": false
+                                },
+                                {
+                                    "label": "Calculate Returns",
+                                    "display": "inline",
+                                    "bold": true
+                                },
+                                {
+                                    "label": "button, then close",
+                                    "display": "inline",
+                                    "bold": false
+                                },
+                                {
+                                    "label": "Production Processing",
+                                    "display": "inline",
+                                    "bold": true
+                                },
+                                {
+                                    "label": "when it finishes.",
+                                    "display": "inline",
+                                    "bold": false
+                                }
+                            ]
+                        },
+                        {
+                            "has_list": false,
+                            "labels": [
+                                {
+                                    "label": "In the same folder, open",
+                                    "display": "inline",
+                                    "bold": false
+                                },
+                                {
+                                    "label": "Office Manager.",
+                                    "display": "inline",
+                                    "bold": true
+                                }
+                            ]
+                        },
+                        {
+                            "has_list": false,
+                            "labels": [
+                                {
+                                    "label": "Click",
+                                    "display": "inline",
+                                    "bold": false
+                                },
+                                {
+                                    "label": "Backup Client Data.",
+                                    "display": "inline",
+                                    "bold": true
+                                }
+                            ]
+                        },
+                        {
+                            "has_list": false,
+                            "labels": [
+                                {
+                                    "label": "In the Create Client List dialog box, select",
+                                    "display": "inline",
+                                    "bold": false
+                                },
+                                {
+                                    "label": "All Clients,",
+                                    "display": "inline",
+                                    "bold": true
+                                },
+                                {
+                                    "label": "then click the",
+                                    "display": "inline",
+                                    "bold": false
+                                },
+                                {
+                                    "label": "OK",
+                                    "display": "inline",
+                                    "bold": true
+                                },
+                                {
+                                    "label": "button.",
+                                    "display": "inline",
+                                    "bold": false
+                                }
+                            ]
+                        },
+                        {
+                            "has_list": false,
+                            "labels": [
+                                {
+                                    "label": "In the Select Clients for Backup window, click the clients you want, then click the",
+                                    "display": "inline",
+                                    "bold": false
+                                },
+                                {
+                                    "label": "Add",
+                                    "display": "inline",
+                                    "bold": true
+                                },
+                                {
+                                    "label": "button, click",
+                                    "display": "inline",
+                                    "bold": false
+                                },
+                                {
+                                    "label": "Add All",
+                                    "display": "inline",
+                                    "bold": true
+                                },
+                                {
+                                    "label": "to select all clients.",
+                                    "display": "inline",
+                                    "bold": false
+                                }
+                            ]
+                        },
+                        {
+                            "has_list": false,
+                            "labels": [
+                                {
+                                    "label": "Click",
+                                    "display": "inline",
+                                    "bold": false
+                                },
+                                {
+                                    "label": "Select Drive.",
+                                    "display": "inline",
+                                    "bold": true
+                                }
+                            ]
+                        },
+                        {
+                            "has_list": false,
+                            "labels": [
+                                {
+                                    "label": "In the Select Destination Drive / Directory for Backup dialog box, set the destination to",
+                                    "display": "inline",
+                                    "bold": false
+                                },
+                                {
+                                    "label": "C:ConversionData.",
+                                    "display": "inline",
+                                    "bold": true
+                                }
+                            ]
+                        },
+                        {
+                            "has_list": false,
+                            "labels": [
+                                {
+                                    "label": "Click the",
+                                    "display": "inline",
+                                    "bold": false
+                                },
+                                {
+                                    "label": "OK",
+                                    "display": "inline",
+                                    "bold": true
+                                },
+                                {
+                                    "label": "button.",
+                                    "display": "inline",
+                                    "bold": false
+                                }
+                            ]
+                        },
+                        {
+                            "has_list": false,
+                            "labels": [
+                                {
+                                    "label": "Next, open the ProSystem FX installation folder (usually C:WFX32). If you cannot locate that folder or are unsure of your installation path, open the folder ProSystem fx Tax on the desktop, right-click on 2019 Tax Preparation and choose",
+                                    "display": "inline",
+                                    "bold": false
+                                },
+                                {
+                                    "label": "Open file location.",
+                                    "display": "inline",
+                                    "bold": true
+                                }
+                            ]
+                        },
+                        {
+                            "has_list": false,
+                            "labels": [
+                                {
+                                    "label": "In that folder, find the file TDExport (or TXExport.exe) right-click and select",
+                                    "display": "inline",
+                                    "bold": false
+                                },
+                                {
+                                    "label": "Run as Administrator.",
+                                    "display": "inline",
+                                    "bold": true
+                                }
+                            ]
+                        },
+                        {
+                            "has_list": false,
+                            "labels": [
+                                {
+                                    "label": "In the Select Returns for Export window, you may choose filters for the clients to display or leave every option set to All, then click the",
+                                    "display": "inline",
+                                    "bold": false
+                                },
+                                {
+                                    "label": "OK",
+                                    "display": "inline",
+                                    "bold": true
+                                },
+                                {
+                                    "label": "button.",
+                                    "display": "inline",
+                                    "bold": false
+                                }
+                            ]
+                        },
+                        {
+                            "has_list": false,
+                            "labels": [
+                                {
+                                    "label": "Next, select the clients you want to convert and use",
+                                    "display": "inline",
+                                    "bold": false
+                                },
+                                {
+                                    "label": "Add",
+                                    "display": "inline",
+                                    "bold": true
+                                },
+                                {
+                                    "label": "or use.",
+                                    "display": "inline",
+                                    "bold": false
+                                },
+                                {
+                                    "label": "Add All",
+                                    "display": "inline",
+                                    "bold": true
+                                },
+                                {
+                                    "label": "to move all clients to the list, then click the",
+                                    "display": "inline",
+                                    "bold": false
+                                },
+                                {
+                                    "label": "OK",
+                                    "display": "inline",
+                                    "bold": true
+                                },
+                                {
+                                    "label": "button.",
+                                    "display": "inline",
+                                    "bold": false
+                                }
+                            ]
+                        },
+                        {
+                            "has_list": false,
+                            "labels": [
+                                {
+                                    "label": "In the Export Data window: Check the boxes for Interview form data and Calculated data.",
+                                    "display": "inline",
+                                    "bold": false
+                                }
+                            ]
+                        },
+                        {
+                            "has_list": false,
+                            "labels": [
+                                {
+                                    "label": "Enter the File Name as conversion.exp",
+                                    "display": "inline",
+                                    "bold": false
+                                }
+                            ]
+                        },
+                        {
+                            "has_list": false,
+                            "labels": [
+                                {
+                                    "label": "Enter '0000' in the code box.",
+                                    "display": "inline",
+                                    "bold": false
+                                }
+                            ]
+                        },
+                        {
+                            "has_list": false,
+                            "labels": [
+                                {
+                                    "label": "Enter the path created in step 1: C:ConversionData",
+                                    "display": "inline",
+                                    "bold": false
+                                }
+                            ]
+                        },
+                        {
+                            "has_list": false,
+                            "labels": [
+                                {
+                                    "label": "Press",
+                                    "display": "inline",
+                                    "bold": false
+                                },
+                                {
+                                    "label": "Enter,",
+                                    "display": "inline",
+                                    "bold": true
+                                },
+                                {
+                                    "label": "then click the",
+                                    "display": "inline",
+                                    "bold": false
+                                },
+                                {
+                                    "label": "OK",
+                                    "display": "inline",
+                                    "bold": true
+                                },
+                                {
+                                    "label": "button to begin exporting data.",
+                                    "display": "inline",
+                                    "bold": false
+                                }
+                            ]
+                        }
+                    ]
+                },
+                "validator": "ProSystemFXBackupValidatorAndFileProvider",
+                "ziputility": "SingleFileZipUtility",
+                "OptimalCompressionRatio": "0",
+                "ValidationCriteria": {
+                    "Year": "2020",
+                    "FileValidationInformation": {
+                        "FileValidationInfo": {
+                            "FileNameHint": "zip",
+                            "HintType": "EXTENSION"
+                        }
+                    },
+                    "FilesToBePresentinBackup": ["CLNTBKUP.*", "*.exp"]
+                },
+                "TaxYear": {
+                    "Year": "2020",
+                    "IsBillingRequired": "false",
+                    "#text": ">"
+                }
+            },
+            {
+                "name": "TaxAct",
+                "instructions": {
+                    "footer": [
+                        {
+                            "label": "Verify Backup",
+                            "display": "block",
+                            "bold": true
+                        },
+                        {
+                            "label": "Open",
+                            "display": "inline",
+                            "bold": false
+                        },
+                        {
+                            "label": "C:ConversionData",
+                            "display": "inline",
+                            "bold": true
+                        },
+                        {
+                            "label": "to view the files that have been backed up. A valid TaxACT backup contains files with an extension of",
+                            "display": "inline",
+                            "bold": false
+                        },
+                        {
+                            "label": ".ta8.",
+                            "display": "inline",
+                            "bold": true
+                        },
+                        {
+                            "label": "You will have one file for every client you are submitting.",
+                            "display": "inline",
+                            "bold": false
+                        }
+                    ],
+                    "title": [
+                        {
+                            "label": "Please follow these instructions on backing up your data for the Intuit conversion process.",
+                            "display": "block",
+                            "bold": false
+                        },
+                        {
+                            "label": "Calculate all clients, remove locks/passwords,",
+                            "display": "inline",
+                            "bold": false
+                        },
+                        {
+                            "label": "AND",
+                            "display": "inline",
+                            "bold": true
+                        },
+                        {
+                            "label": "remove",
+                            "display": "inline",
+                            "bold": false
+                        },
+                        {
+                            "label": "overrides",
+                            "display": "inline",
+                            "bold": true
+                        },
+                        {
+                            "label": "made on forms which create new input fields (i.e., input fields that do not exist on forms by default) before beginning the backup process.",
+                            "display": "inline",
+                            "bold": false
+                        }
+                    ],
+                    "steps": [
+                        {
+                            "has_list": false,
+                            "labels": [
+                                {
+                                    "label": "Create a new folder on your C: drive named ConversionData before you begin the backup process (e.g., C:ConversionData).",
+                                    "display": "inline",
+                                    "bold": false
+                                }
+                            ]
+                        },
+                        {
+                            "has_list": false,
+                            "labels": [
+                                {
+                                    "label": "Browse to the installation directory of your TaxAct program. The default location is: C:TaxACTTaxACT 2020 Preparer's Edition.",
+                                    "display": "inline",
+                                    "bold": false
+                                }
+                            ]
+                        },
+                        {
+                            "has_list": false,
+                            "labels": [
+                                {
+                                    "label": "Open the Client Data folder.",
+                                    "display": "inline",
+                                    "bold": false
+                                }
+                            ]
+                        },
+                        {
+                            "has_list": false,
+                            "labels": [
+                                {
+                                    "label": "Highlight all files ending with .ta8. (Your computer settings may be hiding extensions, so the files may appear with the client name and have a Tax ACT icon.)",
+                                    "display": "inline",
+                                    "bold": false
+                                }
+                            ]
+                        },
+                        {
+                            "has_list": false,
+                            "labels": [
+                                {
+                                    "label": "Right-click and choose",
+                                    "display": "inline",
+                                    "bold": false
+                                },
+                                {
+                                    "label": "Copy",
+                                    "display": "inline",
+                                    "bold": true
+                                }
+                            ]
+                        },
+                        {
+                            "has_list": false,
+                            "labels": [
+                                {
+                                    "label": "Browse to C:ConversionData.",
+                                    "display": "inline",
+                                    "bold": false
+                                }
+                            ]
+                        },
+                        {
+                            "has_list": false,
+                            "labels": [
+                                {
+                                    "label": "Right-click and choose",
+                                    "display": "inline",
+                                    "bold": false
+                                },
+                                {
+                                    "label": "Paste.",
+                                    "display": "inline",
+                                    "bold": true
+                                }
+                            ]
+                        }
+                    ]
+                },
+                "validator": "TaxActBackupValidatorAndFileProvider",
+                "ziputility": "SingleFileZipUtility",
+                "ValidationCriteria": {
+                    "Year": "2020",
+                    "FileValidationInformation": {
+                        "FileValidationInfo": {
+                            "FileNameHint": "ta0",
+                            "HintType": "EXTENSION"
+                        }
+                    }
+                },
+                "TaxYear": {
+                    "Year": "2020",
+                    "IsBillingRequired": "false",
+                    "#text": ">"
+                }
+            },
+            {
+                "name": "TaxSlayer",
+                "instructions": {
+                    "title": [
+                        {
+                            "label": "Please follow these instructions on backing up your data for the Intuit conversion process.",
+                            "display": "block",
+                            "bold": false
+                        },
+                        {
+                            "label": "Calculate all clients, remove locks/passwords,",
+                            "display": "inline",
+                            "bold": false
+                        },
+                        {
+                            "label": "AND",
+                            "display": "inline",
+                            "bold": true
+                        },
+                        {
+                            "label": "remove",
+                            "display": "inline",
+                            "bold": false
+                        },
+                        {
+                            "label": "overrides",
+                            "display": "inline",
+                            "bold": true
+                        },
+                        {
+                            "label": "made on forms which create new input fields (i.e., input fields that do not exist on forms by default) before beginning the backup process.",
+                            "display": "inline",
+                            "bold": false
+                        }
+                    ],
+                    "steps": [
+                        {
+                            "has_list": false,
+                            "labels": [
+                                {
+                                    "label": "Create a new folder on your C: drive named ConversionData before you begin the backup process (e.g., C:ConversionData).",
+                                    "display": "inline",
+                                    "bold": false
+                                }
+                            ]
+                        },
+                        {
+                            "has_list": false,
+                            "labels": [
+                                {
+                                    "label": "Open the TaxSlayer program and select",
+                                    "display": "inline",
+                                    "bold": false
+                                },
+                                {
+                                    "label": "7. Configuration.",
+                                    "display": "inline",
+                                    "bold": true
+                                }
+                            ]
+                        },
+                        {
+                            "has_list": false,
+                            "labels": [
+                                {
+                                    "label": "Select",
+                                    "display": "inline",
+                                    "bold": false
+                                },
+                                {
+                                    "label": "5. System / Network Configuration Menu.",
+                                    "display": "inline",
+                                    "bold": true
+                                }
+                            ]
+                        },
+                        {
+                            "has_list": true,
+                            "labels": [
+                                {
+                                    "label": "Look at",
+                                    "display": "inline",
+                                    "bold": false
+                                },
+                                {
+                                    "label": "1. Are You Using a Network?",
+                                    "display": "inline",
+                                    "bold": true
+                                }
+                            ],
+                            "list": {
+                                "order": "ordered",
+                                "type": "circle",
+                                "items": [
+                                    {
+                                        "labels": [
+                                            {
+                                                "label": "If it is",
+                                                "bold": false,
+                                                "display": "inline"
+                                            },
+                                            {
+                                                "label": "YES",
+                                                "bold": true,
+                                                "display": "inline"
+                                            },
+                                            {
+                                                "label": "then note the path in",
+                                                "bold": false,
+                                                "display": "inline"
+                                            },
+                                            {
+                                                "label": "4. Server Location.",
+                                                "bold": true,
+                                                "display": "inline"
+                                            }
+                                        ]
+                                    },
+                                    {
+                                        "labels": [
+                                            {
+                                                "label": "if",
+                                                "bold": false,
+                                                "display": "inline"
+                                            },
+                                            {
+                                                "label": "NO,",
+                                                "bold": true,
+                                                "display": "inline"
+                                            },
+                                            {
+                                                "label": "then select",
+                                                "bold": false,
+                                                "display": "inline"
+                                            },
+                                            {
+                                                "label": "0. Exit,",
+                                                "bold": true,
+                                                "display": "inline"
+                                            },
+                                            {
+                                                "label": "then",
+                                                "bold": false,
+                                                "display": "inline"
+                                            },
+                                            {
+                                                "label": "6. Path Menu,",
+                                                "bold": true,
+                                                "display": "inline"
+                                            },
+                                            {
+                                                "label": "and note the path in",
+                                                "bold": false,
+                                                "display": "inline"
+                                            },
+                                            {
+                                                "label": "1. Installation Path.",
+                                                "bold": true,
+                                                "display": "inline"
+                                            }
+                                        ]
+                                    }
+                                ]
+                            }
+                        },
+                        {
+                            "has_list": false,
+                            "labels": [
+                                {
+                                    "label": "Close",
+                                    "display": "inline",
+                                    "bold": true
+                                },
+                                {
+                                    "label": "the TaxSlayer program.",
+                                    "display": "inline",
+                                    "bold": false
+                                }
+                            ]
+                        },
+                        {
+                            "has_list": false,
+                            "labels": [
+                                {
+                                    "label": "Browse to the directory found in step 4 above for your TaxSlayer program. The default location is: C:TaxSlayer2019Net.",
+                                    "display": "inline",
+                                    "bold": false
+                                }
+                            ]
+                        },
+                        {
+                            "has_list": false,
+                            "labels": [
+                                {
+                                    "label": "Select the DATA folder, right-click and choose",
+                                    "display": "inline",
+                                    "bold": false
+                                },
+                                {
+                                    "label": "Copy",
+                                    "display": "inline",
+                                    "bold": true
+                                }
+                            ]
+                        },
+                        {
+                            "has_list": false,
+                            "labels": [
+                                {
+                                    "label": "Browse to",
+                                    "display": "inline",
+                                    "bold": false
+                                },
+                                {
+                                    "label": "C:ConversionData.",
+                                    "display": "inline",
+                                    "bold": true
+                                }
+                            ]
+                        },
+                        {
+                            "has_list": false,
+                            "labels": [
+                                {
+                                    "label": "Right-click and choose",
+                                    "display": "inline",
+                                    "bold": false
+                                },
+                                {
+                                    "label": "Paste",
+                                    "display": "inline",
+                                    "bold": true
+                                }
+                            ]
+                        }
+                    ]
+                },
+                "validator": "TaxSlayerBackupValidatorAndFileProvider",
+                "ziputility": "SingleFileZipUtility",
+                "isFileSelectionRequired": "false",
+                "TaxYear": {
+                    "Year": "2020",
+                    "IsBillingRequired": "false",
+                    "#text": ">"
+                }
+            },
+            {
+                "name": "TaxWise",
+                "instructions": {
+                    "title": [
+                        {
+                            "label": "Please follow these instructions on backing up your data for the Intuit conversion process.",
+                            "display": "block",
+                            "bold": false
+                        },
+                        {
+                            "label": "Calculate all clients and remove locks and passwords from clients before beginning the backup process.",
+                            "display": "block",
+                            "bold": false
+                        }
+                    ],
+                    "steps": [
+                        {
+                            "labels": [
+                                {
+                                    "label": "Create a new folder on your C: drive named ConversionData before you begin the backup process (e.g., C:ConversionData).",
+                                    "display": "inline",
+                                    "bold": false
+                                }
+                            ],
+                            "has_list": false
+                        },
+                        {
+                            "labels": [
+                                {
+                                    "label": "Open the TaxWise program.",
+                                    "display": "inline",
+                                    "bold": false
+                                }
+                            ],
+                            "has_list": false
+                        },
+                        {
+                            "labels": [
+                                {
+                                    "label": "On the",
+                                    "display": "inline",
+                                    "bold": false
+                                },
+                                {
+                                    "label": "Tools",
+                                    "display": "inline",
+                                    "bold": true
+                                },
+                                {
+                                    "label": "menu, click",
+                                    "display": "inline",
+                                    "bold": false
+                                },
+                                {
+                                    "label": "Backup to Disk.",
+                                    "display": "inline",
+                                    "bold": true
+                                }
+                            ],
+                            "has_list": false
+                        },
+                        {
+                            "labels": [
+                                {
+                                    "label": "In the Backup Options dialog box, click",
+                                    "display": "inline",
+                                    "bold": false
+                                },
+                                {
+                                    "label": "Start a new backup,",
+                                    "display": "inline",
+                                    "bold": true
+                                },
+                                {
+                                    "label": "then click the",
+                                    "display": "inline",
+                                    "bold": false
+                                },
+                                {
+                                    "label": "OK.",
+                                    "display": "inline",
+                                    "bold": true
+                                },
+                                {
+                                    "label": "button.",
+                                    "display": "inline",
+                                    "bold": false
+                                }
+                            ],
+                            "has_list": false
+                        },
+                        {
+                            "has_list": false,
+                            "labels": [
+                                {
+                                    "label": "In the Select User dialog box, click the folder containing the clients you want, then click",
+                                    "display": "inline",
+                                    "bold": false
+                                },
+                                {
+                                    "label": "OK",
+                                    "display": "inline",
+                                    "bold": true
+                                },
+                                {
+                                    "label": " - OR - To select multiple folders, press and hold",
+                                    "display": "inline",
+                                    "bold": false
+                                },
+                                {
+                                    "label": "[Ctrl]",
+                                    "display": "inline",
+                                    "bold": true
+                                },
+                                {
+                                    "label": "click each folder containing the clients you want  - OR - If you want to backup all files, click",
+                                    "display": "inline",
+                                    "bold": false
+                                },
+                                {
+                                    "label": "Select All.",
+                                    "display": "inline",
+                                    "bold": true
+                                }
+                            ]
+                        },
+                        {
+                            "has_list": true,
+                            "labels": [
+                                {
+                                    "label": "Click the",
+                                    "display": "inline",
+                                    "bold": false
+                                },
+                                {
+                                    "label": "OK",
+                                    "display": "inline",
+                                    "bold": true
+                                },
+                                {
+                                    "label": "button.",
+                                    "display": "inline",
+                                    "bold": true
+                                }
+                            ],
+                            "list": {
+                                "order": "ordered",
+                                "type": "lower-alpha",
+                                "items": [
+                                    {
+                                        "labels": [
+                                            {
+                                                "label": "Note:",
+                                                "bold": true,
+                                                "display": "inline"
+                                            },
+                                            {
+                                                "label": "if multiple folders are selected, a separate Backing Up From dialog box appears for each folder selected. You will need to repeat steps 7 and 8 for each folder selected.",
+                                                "bold": false,
+                                                "display": "inline"
+                                            }
+                                        ]
+                                    }
+                                ]
+                            }
+                        },
+                        {
+                            "labels": [
+                                {
+                                    "label": "In the Backing Up From dialog box, click the",
+                                    "display": "inline",
+                                    "bold": false
+                                },
+                                {
+                                    "label": "Select All",
+                                    "display": "inline",
+                                    "bold": true
+                                },
+                                {
+                                    "label": "button.",
+                                    "display": "inline",
+                                    "bold": false
+                                }
+                            ],
+                            "has_list": false
+                        },
+                        {
+                            "has_list": false,
+                            "labels": [
+                                {
+                                    "label": "Click the",
+                                    "display": "inline",
+                                    "bold": false
+                                },
+                                {
+                                    "label": "OK",
+                                    "display": "inline",
+                                    "bold": true
+                                },
+                                {
+                                    "label": "button.",
+                                    "display": "inline",
+                                    "bold": true
+                                }
+                            ]
+                        },
+                        {
+                            "has_list": false,
+                            "labels": [
+                                {
+                                    "label": "In the following dialog, set the drive and directory to C:ConversionData.",
+                                    "display": "inline",
+                                    "bold": false
+                                }
+                            ]
+                        },
+                        {
+                            "has_list": false,
+                            "labels": [
+                                {
+                                    "label": "Click the",
+                                    "display": "inline",
+                                    "bold": false
+                                },
+                                {
+                                    "label": "OK",
+                                    "display": "inline",
+                                    "bold": true
+                                },
+                                {
+                                    "label": "button.",
+                                    "display": "inline",
+                                    "bold": true
+                                }
+                            ]
+                        },
+                        {
+                            "has_list": false,
+                            "labels": [
+                                {
+                                    "label": "On the",
+                                    "display": "inline",
+                                    "bold": false
+                                },
+                                {
+                                    "label": "File",
+                                    "display": "inline",
+                                    "bold": true
+                                },
+                                {
+                                    "label": "menu, click",
+                                    "display": "inline",
+                                    "bold": false
+                                },
+                                {
+                                    "label": "Open Return.",
+                                    "display": "inline",
+                                    "bold": true
+                                }
+                            ]
+                        },
+                        {
+                            "has_list": false,
+                            "labels": [
+                                {
+                                    "label": "In the Return List window, click the",
+                                    "display": "inline",
+                                    "bold": false
+                                },
+                                {
+                                    "label": "Export",
+                                    "display": "inline",
+                                    "bold": true
+                                },
+                                {
+                                    "label": "button on the bottom right.",
+                                    "display": "inline",
+                                    "bold": false
+                                }
+                            ]
+                        },
+                        {
+                            "has_list": true,
+                            "labels": [
+                                {
+                                    "label": "In the Return Grid Output dialog, set the following:",
+                                    "display": "inline",
+                                    "bold": false
+                                }
+                            ],
+                            "list": {
+                                "order": "ordered",
+                                "type": "lower-alpha",
+                                "items": [
+                                    {
+                                        "labels": [
+                                            {
+                                                "label": "Export Type as Comma Separated Values (.CSV)",
+                                                "bold": false,
+                                                "display": "inline"
+                                            }
+                                        ]
+                                    },
+                                    {
+                                        "labels": [
+                                            {
+                                                "label": "Export Folder to C:ConversionData",
+                                                "bold": false,
+                                                "display": "inline"
+                                            }
+                                        ]
+                                    },
+                                    {
+                                        "labels": [
+                                            {
+                                                "label": "Export Filename to ReturnGridExport",
+                                                "bold": false,
+                                                "display": "inline"
+                                            }
+                                        ]
+                                    }
+                                ]
+                            }
+                        },
+                        {
+                            "has_list": false,
+                            "labels": [
+                                {
+                                    "label": "Click",
+                                    "display": "inline",
+                                    "bold": false
+                                },
+                                {
+                                    "label": "Export",
+                                    "display": "inline",
+                                    "bold": false
+                                }
+                            ]
+                        }
+                    ]
+                },
+                "validator": "TaxWiseBackupValidatorAndFileProvider",
+                "ziputility": "SingleFileZipUtility",
+                "isFileSelectionRequired": "false",
+                "ValidationCriteria": {
+                    "Year": "2020",
+                    "FileValidationInformation": [
+                        {
+                            "FileNameHint": "001",
+                            "HintType": "EXTENSION"
+                        },
+                        {
+                            "FileNameHint": "OPT",
+                            "HintType": "EXTENSION"
+                        }
+                    ],
+                    "FilesToBePresentinBackup": {
+                        "FileToBePresentinBackup": "*.CSV"
+                    }
+                },
+                "TaxYear": {
+                    "Year": "2020",
+                    "IsBillingRequired": "false",
+                    "#text": ">"
+                }
+            },
+            {
+                "name": "TurboTax",
+                "instructions": {
+                    "title": [
+                        {
+                            "label": "It's always a good idea to make a backup copy of your tax data file, in case you lose the original or it gets corrupted. Here's how:",
+                            "display": "block",
+                            "bold": false
+                        }
+                    ],
+                    "steps": [
+                        {
+                            "has_list": false,
+                            "labels": [
+                                {
+                                    "label": "In TurboTax, open the tax return you wish to back up.",
+                                    "display": "inline",
+                                    "bold": false
+                                }
+                            ]
+                        },
+                        {
+                            "has_list": false,
+                            "labels": [
+                                {
+                                    "label": "From the",
+                                    "display": "inline",
+                                    "bold": false
+                                },
+                                {
+                                    "label": "File",
+                                    "display": "inline",
+                                    "bold": true
+                                },
+                                {
+                                    "label": "menu in the upper-left corner of TurboTax, choose",
+                                    "display": "inline",
+                                    "bold": false
+                                },
+                                {
+                                    "label": "Save As",
+                                    "display": "inline",
+                                    "bold": true
+                                },
+                                {
+                                    "label": "(Windows) or",
+                                    "display": "inline",
+                                    "bold": false
+                                },
+                                {
+                                    "label": "Save",
+                                    "display": "inline",
+                                    "bold": true
+                                },
+                                {
+                                    "label": "(Mac).",
+                                    "display": "inline",
+                                    "bold": false
+                                }
+                            ]
+                        },
+                        {
+                            "has_list": false,
+                            "labels": [
+                                {
+                                    "label": "Browse to where you want to save your backup.",
+                                    "display": "inline",
+                                    "bold": false
+                                }
+                            ]
+                        },
+                        {
+                            "has_list": false,
+                            "labels": [
+                                {
+                                    "label": "In the",
+                                    "display": "inline",
+                                    "bold": false
+                                },
+                                {
+                                    "label": "File name",
+                                    "display": "inline",
+                                    "bold": true
+                                },
+                                {
+                                    "label": "field, enter a name that will distinguish it from the original (for example, incorporate 'Backup' or 'Copy' in the file name).",
+                                    "display": "inline",
+                                    "bold": false
+                                }
+                            ]
+                        },
+                        {
+                            "has_list": false,
+                            "labels": [
+                                {
+                                    "label": "Click",
+                                    "display": "inline",
+                                    "bold": false
+                                },
+                                {
+                                    "label": "Save",
+                                    "display": "inline",
+                                    "bold": true
+                                },
+                                {
+                                    "label": "and then close TurboTax.",
+                                    "display": "inline",
+                                    "bold": false
+                                }
+                            ]
+                        },
+                        {
+                            "has_list": false,
+                            "labels": [
+                                {
+                                    "label": "Now reopen TurboTax and open the backup you just made. It should open without incident; if you get an error or it won't open, delete it and repeat these steps to make a new backup.",
+                                    "display": "inline",
+                                    "bold": false
+                                }
+                            ]
+                        },
+                        {
+                            "has_list": false,
+                            "labels": [
+                                {
+                                    "label": "Finally, whenever you make changes to the original, repeat these steps to ensure that both files are synchronized.",
+                                    "display": "inline",
+                                    "bold": false
+                                }
+                            ]
+                        }
+                    ]
+                },
+                "validator": "TurboTaxBackupValidatorAndFileProvider",
+                "ziputility": "SingleFileZipUtility",
+                "ValidationCriteria": {
+                    "Year": "2020",
+                    "FileValidationInformation": {
+                        "FileValidationInfo": {
+                            "FileNameHint": "tax2020",
+                            "HintType": "EXTENSION"
+                        }
+                    }
+                },
+                "TaxYear": {
+                    "Year": "2020",
+                    "IsBillingRequired": "false",
+                    "#text": ">"
+                }
+            },
+            {
+                "name": "UltraTaxCS",
+                "instructions": {
+                    "footer": [
+                        {
+                            "label": "Verify Backup",
+                            "display": "block",
+                            "bold": false
+                        },
+                        {
+                            "label": "Open",
+                            "display": "inline",
+                            "bold": false
+                        },
+                        {
+                            "label": "C:ConversionData",
+                            "display": "inline",
+                            "bold": true
+                        },
+                        {
+                            "label": "to view the files that have been backed up. A valid UltraTax backup contains one folder for each tax type. Inside the",
+                            "display": "inline",
+                            "bold": false
+                        },
+                        {
+                            "label": "ConversionData",
+                            "display": "inline",
+                            "bold": true
+                        },
+                        {
+                            "label": "folder is a file named",
+                            "display": "inline",
+                            "bold": false
+                        },
+                        {
+                            "label": "CltList.WT8. Important :",
+                            "display": "inline",
+                            "bold": true
+                        },
+                        {
+                            "label": "Please",
+                            "display": "inline",
+                            "bold": false
+                        },
+                        {
+                            "label": "include all files",
+                            "display": "inline",
+                            "bold": true
+                        },
+                        {
+                            "label": "generated by the backup process in order to prevent any delays in the conversion process",
+                            "display": "inline",
+                            "bold": false
+                        }
+                    ],
+                    "title": [
+                        {
+                            "label": "Calculate all clients and remove locks and passwords before beginning the backup process.",
+                            "display": "block",
+                            "bold": false
+                        },
+                        {
+                            "label": "NOTE: ",
+                            "display": "inline",
+                            "bold": true
+                        },
+                        {
+                            "label": "If you use UltraTax Fixed Asset CS, be sure that you can open the Fixed Asset software and view the client asset data at the machine where you will be performing the backup, otherwise the asset data may not be included with the backup!",
+                            "display": "inline",
+                            "bold": false
+                        }
+                    ],
+                    "steps": [
+                        {
+                            "labels": [
+                                {
+                                    "label": "Create a new folder on your C: drive named ConversionData before you begin the backup process (e.g., C:ConversionData).",
+                                    "display": "inline",
+                                    "bold": false
+                                }
+                            ],
+                            "has_list": false
+                        },
+                        {
+                            "labels": [
+                                {
+                                    "label": "Open the C:ConversionData folder.",
+                                    "display": "inline",
+                                    "bold": false
+                                }
+                            ],
+                            "has_list": false
+                        },
+                        {
+                            "labels": [
+                                {
+                                    "label": "Create a subfolder for each tax type you need to submit for data conversion. The tiles need to be formatted as follows:",
+                                    "display": "inline",
+                                    "bold": false
+                                }
+                            ],
+                            "has_list": true,
+                            "list": {
+                                "order": "unordered",
+                                "type": "circle",
+                                "items": [
+                                    {
+                                        "labels": [
+                                            {
+                                                "label": "1040",
+                                                "bold": false,
+                                                "display": "inline"
+                                            }
+                                        ]
+                                    },
+                                    {
+                                        "labels": [
+                                            {
+                                                "label": "1065",
+                                                "bold": false,
+                                                "display": "inline"
+                                            }
+                                        ]
+                                    },
+                                    {
+                                        "labels": [
+                                            {
+                                                "label": "1120",
+                                                "bold": false,
+                                                "display": "inline"
+                                            }
+                                        ]
+                                    },
+                                    {
+                                        "labels": [
+                                            {
+                                                "label": "1120",
+                                                "bold": false,
+                                                "display": "inline"
+                                            }
+                                        ]
+                                    }
+                                ]
+                            }
+                        },
+                        {
+                            "labels": [
+                                {
+                                    "label": "Open UltraTax",
+                                    "bold": true,
+                                    "display": "inline"
+                                },
+                                {
+                                    "label": "UltraTax",
+                                    "bold": true,
+                                    "display": "inline"
+                                }
+                            ],
+                            "has_list": false
+                        },
+                        {
+                            "labels": [
+                                {
+                                    "label": "Complete the following steps for each tax type you are submitting.",
+                                    "display": "inline",
+                                    "bold": false
+                                }
+                            ],
+                            "has_list": false
+                        },
+                        {
+                            "labels": [
+                                {
+                                    "label": "On the",
+                                    "display": "inline",
+                                    "bold": false
+                                },
+                                {
+                                    "label": "File",
+                                    "display": "inline",
+                                    "bold": true
+                                },
+                                {
+                                    "label": "menu, click",
+                                    "display": "inline",
+                                    "bold": false
+                                },
+                                {
+                                    "label": "Backup...",
+                                    "display": "inline",
+                                    "bold": true
+                                }
+                            ],
+                            "has_list": false
+                        },
+                        {
+                            "labels": [
+                                {
+                                    "label": "In the Backup window, clear the box for Exclude clients unchanged since their last backup in the bottom left corner.",
+                                    "display": "inline",
+                                    "bold": false
+                                }
+                            ],
+                            "has_list": false
+                        },
+                        {
+                            "labels": [
+                                {
+                                    "label": "If you are backing up 1040 or 1065 clients:",
+                                    "display": "inline",
+                                    "bold": false
+                                }
+                            ],
+                            "has_list": true,
+                            "list": {
+                                "order": "ordered",
+                                "type": "lower-alpha",
+                                "items": [
+                                    {
+                                        "labels": [
+                                            {
+                                                "label": "Select Only One tax type under the Focus section (1040 or 1065).",
+                                                "display": "inline",
+                                                "bold": false
+                                            }
+                                        ]
+                                    },
+                                    {
+                                        "labels": [
+                                            {
+                                                "label": "Press and hold CTRL and click on each client you want, then click",
+                                                "display": "inline",
+                                                "bold": false
+                                            },
+                                            {
+                                                "label": "Select",
+                                                "display": "inline",
+                                                "bold": true
+                                            },
+                                            {
+                                                "label": "or click",
+                                                "display": "inline",
+                                                "bold": false
+                                            },
+                                            {
+                                                "label": "Select All",
+                                                "display": "inline",
+                                                "bold": true
+                                            },
+                                            {
+                                                "label": "to select all clients.",
+                                                "display": "inline",
+                                                "bold": false
+                                            }
+                                        ]
+                                    }
+                                ]
+                            }
+                        },
+                        {
+                            "has_list": true,
+                            "labels": [
+                                {
+                                    "label": "If you are backup up 1120 or 1120S clients:",
+                                    "display": "inline",
+                                    "bold": false
+                                }
+                            ],
+                            "list": {
+                                "order": "ordered",
+                                "type": "lower-alpha",
+                                "items": [
+                                    {
+                                        "labels": [
+                                            {
+                                                "label": "Select only 1120 under the Focus section.",
+                                                "bold": false,
+                                                "display": "inline"
+                                            }
+                                        ]
+                                    },
+                                    {
+                                        "labels": [
+                                            {
+                                                "label": "In the list of clients click the Entity column heading to sort the clients by entity.",
+                                                "bold": false,
+                                                "display": "inline"
+                                            }
+                                        ]
+                                    },
+                                    {
+                                        "labels": [
+                                            {
+                                                "label": "Select only one group of clients to backup by clicking on the first client of that tax type and then holding Shift while clicking on the last client of that tax type.",
+                                                "bold": false,
+                                                "display": "inline"
+                                            }
+                                        ]
+                                    },
+                                    {
+                                        "labels": [
+                                            {
+                                                "label": "Click on",
+                                                "bold": false,
+                                                "display": "inline"
+                                            },
+                                            {
+                                                "label": "Select",
+                                                "bold": true,
+                                                "display": "inline"
+                                            },
+                                            {
+                                                "label": "to select them for backup. .",
+                                                "bold": false,
+                                                "display": "inline"
+                                            }
+                                        ]
+                                    }
+                                ]
+                            }
+                        },
+                        {
+                            "labels": [
+                                {
+                                    "label": "Click",
+                                    "display": "inline",
+                                    "bold": false
+                                },
+                                {
+                                    "label": "Modify Backup Location.",
+                                    "display": "inline",
+                                    "bold": true
+                                }
+                            ],
+                            "has_list": false
+                        },
+                        {
+                            "labels": [
+                                {
+                                    "label": "In the",
+                                    "display": "inline",
+                                    "bold": false
+                                },
+                                {
+                                    "label": "Modify Location",
+                                    "display": "inline",
+                                    "bold": true
+                                },
+                                {
+                                    "label": "dialog box, set your target directory to",
+                                    "display": "inline",
+                                    "bold": false
+                                },
+                                {
+                                    "label": "C:ConversionData.",
+                                    "display": "inline",
+                                    "bold": true
+                                }
+                            ],
+                            "has_list": false
+                        },
+                        {
+                            "labels": [
+                                {
+                                    "label": "Click",
+                                    "display": "inline",
+                                    "bold": false
+                                },
+                                {
+                                    "label": "OK.",
+                                    "display": "inline",
+                                    "bold": true
+                                }
+                            ],
+                            "has_list": false
+                        },
+                        {
+                            "labels": [
+                                {
+                                    "label": "Ensure",
+                                    "display": "inline",
+                                    "bold": false
+                                },
+                                {
+                                    "label": "Encrypt client backup",
+                                    "display": "inline",
+                                    "bold": true
+                                },
+                                {
+                                    "label": "is not checked.",
+                                    "display": "inline",
+                                    "bold": false
+                                }
+                            ],
+                            "has_list": false
+                        },
+                        {
+                            "labels": [
+                                {
+                                    "label": "Click",
+                                    "display": "inline",
+                                    "bold": false
+                                },
+                                {
+                                    "label": "Backup",
+                                    "display": "inline",
+                                    "bold": true
+                                },
+                                {
+                                    "label": "to begin the backup process.",
+                                    "display": "inline",
+                                    "bold": false
+                                }
+                            ],
+                            "has_list": false
+                        },
+                        {
+                            "has_list": false,
+                            "labels": [
+                                {
+                                    "label": "An additional file is also needed from the data folder. Open the UltraTax install directory (e.g., C:WinCSI) and navigate to the UT19DATA folder.",
+                                    "display": "inline",
+                                    "bold": false
+                                }
+                            ]
+                        },
+                        {
+                            "has_list": false,
+                            "labels": [
+                                {
+                                    "label": "Find the file CltList.WT8, right-click on it and choose",
+                                    "display": "inline",
+                                    "bold": false
+                                },
+                                {
+                                    "label": "Copy.",
+                                    "display": "inline",
+                                    "bold": false
+                                }
+                            ]
+                        },
+                        {
+                            "has_list": false,
+                            "labels": [
+                                {
+                                    "label": "Browse to the C:ConversionData folder, right-click in an empty space and choose",
+                                    "display": "inline",
+                                    "bold": false
+                                },
+                                {
+                                    "label": "Paste.",
+                                    "display": "inline",
+                                    "bold": true
+                                }
+                            ]
+                        }
+                    ]
+                },
+                "ValidationCriteria": {
+                    "Year": "2020",
+                    "FilesToBePresentinBackup": {
+                        "FileToBePresentinBackup": "CltList.WT0"
+                    }
+                },
+                "ziputility": "SingleFileZipUtility",
+                "isFileSelectionRequired": "false",
+                "OptimalCompressionRatio": "35",
+                "TaxYear": {
+                    "Year": "2020",
+                    "IsBillingRequired": "false",
+                    "#text": ">"
+                }
+            }
+        ],
+        "BackupBanner": {
+            "Heading": "Before you start the client file data conversion process:<br/><br/>1. Open your current tax preparation software.<br/><br/>2. REMOVE ALL passwords from your client files.<br/><br/>3. Select Next and follow the backup instructions to start the client conversion submission process.",
+            "Content": "The Data Conversion process will copy selected items from your current tax preparation software to your new Intuit Tax Software and is not intended to convert all of your tax data nor will it allow you to generate a tax return for the purposes of side by side comparison with last year’s return."
+        },
+        "WizardText": {
+            "Heading": "Intuit Tax Data Conversion Wizard",
+            "Content": "This wizard will guide you through the process of uploading your data to Intuit for conversion.<br/><br/>To expedite your conversion process, please carefully read the instructions on each of the following steps.<br/><br/>PLEASE NOTE THAT NOT ALL DATA WILL CONVERT. State data, amounts not relevant to next-year tax preparation and some carryover amounts will not be converted during this process.<br/><br/>Thank you, and WELCOME TO INTUIT!"
+        },
+        "ConnectedServicesText": {
+            "Heading": "CONNECTED SERVICES SETUP REQUIRED!",
+            "Content": "Connected service is a feature within Intuit that connects through the internet <br/>to access functionality that stores or collects personally identifiable taxpayer  <br/>information which must be kept secure.<br/><br/>Tax Data Conversion is considered a connected service because it stores <br/>personally identifiable taxpayer information on servers accessed <br/>across the internet.<br/><br/>For Tax Year 2015, Intuit has implemented additional steps to protect the <br/>confidentiality and privacy of taxpayer data which is shared or accessed <br/>through the internet by restricting access to only authorized firm administrators  <br/>and employees.<br/><br/>IRS Guidelines for protecting taxpayer data are outlined in IRS Publication 4557"
+        },
+        "ConnectedServiceSetupCompleteText": {
+            "Heading": "Read the following carefully before you proceed!",
+            "Content": "If you are the Administrator of your company you can start with the <br/>Data Conversion right away. Just click on the \"Start Data Conversion\" button.<br/><br/>If you are not the Administrator, please contact your Administrator <br/>for your access request to be accepted."
+        },
+        "ServiceAgreement": "I have read and understand the procedures and capabilities for data conversion processing and I will be uploading my data files in an electronic format for Intuit to convert.  Once the data files are converted, Intuit will then upload the files back to me in an electronic format for me to access and download for use. I hereby release and agree to indemnify Intuit from all liability and damages relating to the conversion, storage, and transmittal of the client data files that I submit for this conversion process. <br/><br/>I agree to review my client data files after the conversion process, and I agree to assume full responsibility for the completeness and accuracy of all converted client data.  Intuit shall not be liable to me or any third party for any indirect, special, consequential, or incidental damages (including damages for loss of business profits, business interruption, loss of business information, and the like) arising out of any aspect of the conversion process and I hereby release and agree to indemnify Intuit from any such claims.",
+        "AcceptTermsText": "Please read the Data Conversion Service Agreement and check the box to confirm that you understand and agree to the terms.",
+        "EntitlementFailureTextLacerte": "There is an error processing your request. Please try again later or contact customer support at (800) 933-9999.",
+        "EntitlementFailureTextProseries": "There is an error processing your request. Please try again later or contact customer support at (800) 434-6818.",
+        "EntitlementFailureTextTaxOnline": "There is an error processing your request. Please try again later or contact customer support at http://accountants.intuit.com/support/index.jsp?product=online.",
+        "ConversionNotAllowedTextLacerte": "A Fast Path subscription is necessary for accessing this feature. Please contact customer support at (800) 933-9999.",
+        "ConversionNotAllowedTextProseries": ">A Fast Path subscription is necessary for accessing this feature. Please contact customer support at (800) 434-6818.",
+        "BillingInformationText": "Please be advised that you will be charged $20 for this submission because your license does not cover a free prior year conversion. Do you wish to continue?",
+        "BackUpInvalidMessage": "We could not find any valid files inside C:\\CONVERSIONDATA folder. Please follow the backup instructions on the screen to backup your files.",
+        "PaymentUnsuccessfulMessageLacerte": "There was an error processing your payment.<br/>Please check your credit card details.If you continue facing the problem then contact customer support at (800) 933-9999.",
+        "PaymentUnsuccessfulMessageProSeries": "There was an error processing your payment.<br/>Please check your credit card details.<br/>If you continue facing the problem then contact customer support at (800) 464-6818.",
+        "PaymentUnsuccessfulMessageTaxOnline": "There was an error processing your payment.<br/>Please check your credit card details.<br/>If you continue facing the problem then contact customer support at http://accountants.intuit.com/support/index.jsp?product=online.",
+        "DesktopIdentifierFileName": "FromDesktop.txt",
+        "DesktopIdentifierFileNameLacerte": "FromLacerte.txt",
+        "DesktopIdentifierFileNameProSeries": "FromProSeries.txt",
+        "UnExpectedServiceError": "An unexpected problem was encountered while contacting one of our backend systems. Please come back after sometime.",
+        "DownloadFailureTextLacerte": "An unexpected problem was encountered while downloading your files. Please verify your internet connection is working and try again. For further assistance please call our customer support line (800) 933-9999.",
+        "DownloadFailureTextProseries": "An unexpected problem was encountered while downloading your files. Please verify your internet connection is working and try again. For further assistance please call our customer support line (800) 434-6818.",
+        "DownloadFailureTextTaxOnline": "An unexpected problem was encountered while downloading your files. Please verify your internet connection is working and try again. For further assistance please contact customer support at http://accountants.intuit.com/support/index.jsp?product=online",
+        "LacerteTaxFilesDetectedMessage": "Prior year tax files were detected. You will need to restore the files in the Lacerte prior year program. Do you wish to continue?",
+        "LacerteConfigurationErrorMessage": "Unable to complete download and data processing. No configuration file found from Lacerte.",
+        "LacerteTaxFilesFolderBrowserMessage": "Select a folder in which to save the downloaded tax files.",
+        "InstallationKeyHelp": "Log in to PTO and click on the firm settings on the top right corner. Go to tools and select Convert Data. Look at the section marked as Important to find the Installation key."
+    },
+    "IntuitSoftwareConfiguration": {
+        "conversionsFolderSettings": {
+            "ConversionsFolderLocation": "C:/CONVERSIONDATA",
+            "ZipFileNameSuffix": "Unconverted Data",
+            "ConversionsFolderCreationErrorMessage": "Unable to create \"CONVERSIONDATA\" folder. Access is denied. Please create folder  \"CONVERSIONDATA\" (i.g. C:\\CONVERSIONDATA) and try again"
+        },
+        "uploadSettings": {
+            "UploadFileSizeLimit": "50000000"
+        },
+        "uploadFailureSettings": {
+            "UploadFailureMessage": "Cannot Upload File, please try again.<br/> <br/> <br/>Please <link>contact support</link> or by phone at (800) 434-6818 if you continue to have issues (follow the phone prompts for conversion questions).",
+            "UploadFailureMessageTaxOnline": "Cannot Upload File, please try again.<br/> <br/> <br/>Our apologies.  Please try again.<br/> <br/>If you continue to experience problems <link>click here</link> and chat with one of our Intuit ProConnect Tax care agents.",
+            "MaxSizeFailureMessage": "Unfortunately, your submission exceeds our current upload size limits will need to be submitted by mail.<br/> <br/>To submit your data conversion by mail, please visit <link>Data Conversion by Mail</link>."
+        },
+        "Softwares": [
+            {
+                "name": "Lacerte",
+                "confirmation": "\\line Your files were successfully submitted to Intuit. Based on the number of files you submitted, your conversion may take up to {{days}} to complete \\b0.\\line \\line \\line A confirmation email will be sent to \\b {{emailAddress}}\\b0  letting you know when your conversion is complete and ready to be downloaded. \\b To check on the status of your conversion or to download the files please select \"Download Converted Client Data\" from the Import Client Data Conversion menu item. \\b0  \\line \\line \\line If you need assistance or have questions, please <link>contact support</link>  or by phone at (800) 933-9999 (follow the phone prompts for conversion questions).",
+                "confirmationStandalone": "\\line Your files were successfully submitted to Intuit. Based on the number of files you submitted, your conversion may take up to {{days}} to complete \\b0.\\line \\line \\line A confirmation email will be sent to \\b {{emailAddress}}\\b0  letting you know when your conversion is complete and ready to be downloaded. \\b Log in to this application and select the \"Download Converted Data\" button.\\b0  This button may also be used to check on the status of your conversion.  \\line \\line \\line If you need assistance or have questions, please <link>contact support</link>  or by phone at (800) 933-9999 (follow the phone prompts for conversion questions).",
+                "downloadSuccessTextStandalone": "\\b Using your converted data: \\b0 \\line \\line Your converted data will be loaded by default in the following directories: \\line \\line Individual C:\\\\CONV\\\\IDATA \\line Partnership C:\\\\CONV\\\\PDATA \\line Corporation C:\\\\CONV\\\\CDATA \\line S Corporation C:\\\\CONV\\\\SDATA \\line Fiduciary C:\\\\CONV\\\\FDATA \\line \\line \\b Restore your converted data in the Lacerte Tax program \\b0 \\line \\line 1. Open the Lacerte Tax Program \\line 2. For each tax type to which you want to restore data, follow these steps: \\line        1. Click Client on the menu bar, then select Tax Type and select the applicable tax type (e.g. Individual, \\line            Partnership, etc.) \\line        2. Click Client on the menu bar again, then select Restore, and then Browse to the appropriate directory \\line            according to the table above (such as C:\\\\CONV\\\\IDATA for Individual) \\line        3. Repeat these steps for all Tax Type (e.g. Individual, Partnership, etc.)\\line \\line \\b Run the Proforma \\b0 \\line \\line Follow these steps to run the Proforma Wizard \\b once you have received the Proforma edition of the program\\b0 (scheduled to be released in November), which simply transfers your client data year over year. \\line \\line 1. Open the previous year Lacerte Tax program \\line 2. From the Clients tab, select Tools on the menu bar.\\line 3. Select Transfer Clients (Proforma to 20YY) (YY represents the current tax year) \\line 4. On the Proforma Welcome screen, click Next. \\line 5. Select Transfer all my clients for all my modules at once \\line 6. Follow the simple instructions on each \\line     wizard screen. \\line 7. After finishing the Proforma Wizard, close the Lacerte tax program. \\line 8. Open the current year Lacerte tax program to view your data files.",
+                "downloadSuccessTextAutomated": "\\line 1. The converted files will download into C:\\\\CONV\\ for you to restore into 2019.\\line 2. Open the 2019 Lacerte Tax Program.\\line 3. Click Client from the menu bar.\\line 4. Select Tax Type - Individual.\\line 5. Click Settings from the menu bar.\\line 6. Select Options.\\line 7. On the Setup tab, make a note of your current data path, then change the data path to C:\\CONV\\IDATA.\\line 8. You will either immediately see the clients or a dialog indicating they are bridging. Wait for the clients to appear before proceeding.\\line 9. Select all clients by pressing F3 and choosing All (Note: If you do not wish to put all converted clients into your database, you can select a subgroup, or unselect clients by Ctrl+clicking them.)\\line 10. Choose Client from the menu bar.\\line 11. Select Backup.\\line 12. In the Backup Clients dialog box, enter your database path from step 5 into the Destination box, or click Browse and navigate to that path.\\line 13. Click OK.\\line Note: If there are any conflicting client numbers, you will be prompted to overwrite them - you can choose not to, and then renumber those clients before attempting to back them up again.\\line 14. After the backup is complete, click Settings from the menu bar.\\line 15. Select Options and change your data path back to what it originally was (it should appear in the drop down on that box)",
+                "downloadSuccessText": "\\b Using your converted data: \\b0 \\line \\line Your converted data will be loaded by default in the following directories: \\line \\line Individual C:\\\\CONV\\\\IDATA \\line Partnership C:\\\\CONV\\\\PDATA \\line Corporation C:\\\\CONV\\\\CDATA \\line S Corporation C:\\\\CONV\\\\SDATA \\line Fiduciary C:\\\\CONV\\\\FDATA \\line \\line \\b Restore your converted data in the Lacerte Tax program \\b0 \\line \\line 1. Open the Lacerte Tax Program \\line 2. For each tax type to which you want to restore data, follow these steps: \\line        1. Click Client on the menu bar, then select Tax Type and select the applicable tax type (e.g. Individual, \\line            Partnership, etc.) \\line        2. Click Client on the menu bar again, then select Restore, and then Browse to the appropriate directory \\line            according to the table above (such as C:\\\\CONV\\\\IDATA for Individual) \\line        3. Repeat these steps for all Tax Type (e.g. Individual, Partnership, etc.)\\line \\line \\b Run the Proforma \\b0 \\line \\line Follow these steps to run the Proforma Wizard \\b once you have received the Proforma edition of the program\\b0 (scheduled to be released in November), which simply transfers your client data year over year. \\line \\line 1. Open the previous year Lacerte Tax program \\line 2. From the Clients tab, select Tools on the menu bar.\\line 3. Select Transfer Clients (Proforma to 20YY) (YY represents the current tax year) \\line 4. On the Proforma Welcome screen, click Next. \\line 5. Select Transfer all my clients for all my modules at once \\line 6. Follow the simple instructions on each \\line     wizard screen. \\line 7. After finishing the Proforma Wizard, close the Lacerte tax program. \\line 8. Open the current year Lacerte tax program to view your data files.",
+                "EstimatedTimeForAutomatedJob": "24 hours",
+                "EstimatedTimeForManualJob": "1-3 days"
+            },
+            {
+                "name": "ProSeries",
+                "confirmation": "\\line Your files were successfully submitted to Intuit. Based on the number of files you submitted, your conversion may take up to {{days}} to complete \\b0.\\line \\line \\line A confirmation email will be sent to \\b {{emailAddress}}\\b0  letting you know when your conversion is complete and ready to be downloaded. \\b To check on the status of your conversion or to download the files please select \"Download Converted Client Data\" from the Import Client Data Conversion menu item. \\b0 \\line \\line \\line If you need assistance or have questions, please <link>contact support</link>  or by phone at (800) 434-6818 (follow the phone prompts for conversion questions).",
+                "confirmationStandalone": "\\line Your files were successfully submitted to Intuit. Based on the number of files you submitted, your conversion may take up to {{days}} to complete \\b0.\\line \\line \\line A confirmation email will be sent to \\b {{emailAddress}}\\b0  letting you know when your conversion is complete and ready to be downloaded. \\b Log in to this application and select the \"Download Converted Data\" button.\\b0  This button may also be used to check on the status of your conversion. \\line \\line \\line If you need assistance or have questions, please <link>contact support</link>  or by phone at (800) 434-6818 (follow the phone prompts for conversion questions).",
+                "downloadSuccessTextStandalone": "\\b Restore your converted data \\b0 \\line \\line Your converted data will be loaded by default in the following directory: C:\\\\CONV \\line \\line \\b Restore your converted data in the ProSeries tax program \\b0 \\line \\line 1. Open the \\b previous year ProSeries Tax program \\b0 \\line 2. From \\b HomeBase \\b0, select \\b File \\b0 on the menu bar \\line 3. Select \\b Client File Maintenance \\b0, and choose \\b Restore \\b0 \\line 4. Click \\b Set Source Directory \\b0, and then browse to \\b C:\\\\CONV \\b0 \\line 5. In the \\b Type \\b0 list box, select \\b All Tax Returns \\b0 \\line 6. Click \\b Set Target Directory \\b0, and then set the data path to \\b C:\\\\PROWINYY\\\\YYDATA \\b0 (\\b YY \\b0 represents the prior tax year) \\line 7. Click \\b Select All \\b0, then click \\b Restore Clients \\b0 \\line \\line \\b Run the Year-to-Year Transfer\\b0 \\line \\line Once you have received the Year-to-Year Transfer edition of the current year ProSeries tax program (scheduled for release early November), follow these steps to run the Year-to-Year Transfer, and transfer your client data year over year. \\line \\line 1. Open the current year ProSeries Tax program. \\line 2. From HomeBase, select File on the menu bar. \\line 3. Select Transfer, and then select Transfer Clients. \\line 4. In Box 1, select All prior year tax files to current year tax files (e.g. All 20YY Tax Files to 20XX Tax Files \\line      - YY represents the prior year and XX represents the current year). \\line 5. In Box 2, browse to C:\\PROWINYY\\YYDATA (YY represents the prior tax year). \\line 6. In Box 3, browse to C:\\PROWINXX\\YYDATA (XX represents the current tax year). \\line 7. In Box 4, click Select All. \\line 8. In Box 5, click Transfer. \\line 9. In the Batch Transfer Selection dialog, select Tax Files, and then click OK.",
+                "downloadSuccessTextAutomated": [],
+                "downloadSuccessText": "\\line Your files were successfully downloaded from the Client Data conversion service. \\line \\line To restore your converted data into the ProSeries Tax Program: \\line \\line  1. Close and reopen ProSeries. \\line  2. You may first get a pop-up to transfer files from last year. You can indicate 'No' on this dialog. \\line  3. A dialog will pop-up to confirm that ProSeries has detected the converted client data that you downloaded \\line       Select 'Yes' on this dialog to transfer the converted client data into ProSeries now. \\line  4. A transfer log will appear confirming the number of clients successfully transferred, you can print or close \\line       this dialog. \\line  5. When you close the transfer log, your converted clients will appear in the HomeBase view(s). \\line \\line  \\b NOTE: \\b0 Each different return type (for example 1040 vs. 1120S) will appear on a separate HomeBase view. \\line       Use the HomeBase View drop down to change between different HomeBase views.",
+                "EstimatedTimeForAutomatedJob": "24 hours",
+                "EstimatedTimeForManualJob": "1-3 days"
+            },
+            {
+                "name": "TaxOnline",
+                "confirmation": "\\line Your files were successfully submitted to Intuit. Based on the number of files you submitted, your conversion may take up to {{days}} to complete \\b0.\\line \\line \\line A confirmation email will be sent to {{emailAddress}} when your conversion is complete and your clients are available in ProConnect Tax.",
+                "confirmationStandalone": "\\line Your files were successfully submitted to Intuit. Based on the number of files you submitted, your conversion may take up to {{days}} to complete \\b0.\\line \\line \\line A confirmation email will be sent to {{emailAddress}} when your conversion is complete and your clients are available in ProConnect Tax.",
+                "downloadSuccessTextAutomated": [],
+                "downloadSuccessText": [],
+                "downloadSuccessTextStandalone": [],
+                "EstimatedTimeForAutomatedJob": "24 hours",
+                "EstimatedTimeForManualJob": "1-3 days"
+            },
+            {
+                "name": "ProFile",
+                "confirmation": "\\line Your files were successfully submitted to Intuit. Based on the number of files you submitted, your conversion may take up to {{days}} to complete \\b0.\\line \\line \\line A confirmation email will be sent to {{emailAddress}} when your conversion is complete and your clients are available in Profile.",
+                "confirmationStandalone": "\\line Your files were successfully submitted to Intuit. Based on the number of files you submitted, your conversion may take up to {{days}} to complete \\b0.\\line \\line \\line A confirmation email will be sent to {{emailAddress}} when your conversion is complete and your clients are available in Profile.",
+                "downloadSuccessTextAutomated": [],
+                "downloadSuccessText": [],
+                "downloadSuccessTextStandalone": [],
+                "EstimatedTimeForAutomatedJob": "24 hours",
+                "EstimatedTimeForManualJob": "1-3 days"
+            }
+        ]
+    }
+}

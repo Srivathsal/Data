@@ -1,0 +1,16 @@
+Feature: dcm get health
+
+  Background:
+    * url dcmHealthUrl
+
+  Scenario: get health
+    Given path 'health/full'
+    When method get
+    Then status 200
+    And match response == 'Health Check Ok'
+
+
+
+
+
+

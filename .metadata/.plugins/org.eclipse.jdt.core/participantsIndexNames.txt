@@ -1,0 +1,5 @@
+INDEX VERSION 1.131
+/Users/sc002/eclipse-workspace/DataConversionManager/.metadata/.plugins/org.eclipse.jst.jsp.core/jspsearch/1079329230.index
+/dataconversionsmanager-service/src/main/resources
+/Users/sc002/eclipse-workspace/DataConversionManager/.metadata/.plugins/org.eclipse.jst.jsp.core/jspsearch/1008315918.index
+/dataconversionsmanager-service/src/main/java

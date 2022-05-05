@@ -1,0 +1,23 @@
+#!/usr/bin/env groovy
+
+/* Jenkinsfile for release
+This file is scripted pipeline */
+
+// https://github.intuit.com/PTG/jenkins-shared-libraries
+// importing shared library
+@Library('pcg-libraries') _
+
+withPodTemplate {
+    def scmVars = checkout scm
+
+    stage('Build app') {
+        // configBranch is an optional param to this func
+        // By default it is master always
+        buildDockerApp(buildNumber: "${env.BUILD_NUMBER}", branchName: "${env.BRANCH_NAME}")
+    }
+
+    stage ('pr build') {
+         prbuild(jenkinsPropertiesLocation: 'build/pull_request/Jenkinsfile-prbuild-aws.properties', prbuildPropsLocation: 'test-suite/props', prbuildPropsFileName: 'prbuild.properties')
+
+    }
+}

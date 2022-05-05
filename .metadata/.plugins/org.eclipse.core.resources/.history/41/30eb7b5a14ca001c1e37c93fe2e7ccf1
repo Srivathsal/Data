@@ -1,0 +1,130 @@
+<CompetitorSoftwareConfiguration>
+    <Softwares>
+        <software>
+            <name>TaxCycle_T1</name>
+            <instructions>
+                &lt;bold&gt;Note: Be sure to roll over all client files from the prior year program. Failure to do so will result in those files returning with a "corrupt" status.&lt;/bold&gt;&#xA;&#xA;1.In Return Manager,check the box for each return you want to back up &#xA;&#xA;OR&#xA;&#xA;To select all clients, on the menu bar,click View, then Show All Returns, then click View, and Mark All Displayed Returns &#xA;&#xA;2.On The menu bar,click Returns, then Export Marked Returns&#xA;&#xA;3.In the Export Marked Returns dialog box, select the Drive and/or Folder for your backup (set the drive path to C:\CONVERSIONDATA)&#xA;&#xA;4.Click OK&#xA;&#xA;5. Browse to C:\Programdata\CCH Small Firm Services\ATX 2018 Server\ATX 2018 Files, Right-click on FormsetData folder and choose copy. Browse to C:\CONVERSIONDATA. Right-click in the white space and choose paste.&#xA;&#xA;Please note that C:\Programdata is a hidden folder. To access this folder, Click Start and type Run in Search Programs and Files search box and click Enter. Type C:\Programdata in Run window and Click OK. Navigate to the folder mentioned above with step 5.
+            </instructions>
+            <validator>TaxCycleBackupValidatorAndFileProvider</validator>
+            <ziputility>SingleFileZipUtility</ziputility>
+            <isFileSelectionRequired>true</isFileSelectionRequired>
+            <ValidationCriteria>
+                <Year>2020</Year>
+                <FileValidationInformation>
+                    <FileValidationInfo>
+                        <FileNameHint>2018T1</FileNameHint>
+                        <HintType>EXTENSION</HintType>
+                    </FileValidationInfo>
+                    <FileValidationInfo>
+                        <FileNameHint>2019T1</FileNameHint>
+                        <HintType>EXTENSION</HintType>
+                    </FileValidationInfo>
+                    <FileValidationInfo>
+                        <FileNameHint>2020T1</FileNameHint>
+                        <HintType>EXTENSION</HintType>
+                    </FileValidationInfo>
+                    <FileValidationInfo>
+                        <FileNameHint>2021T1</FileNameHint>
+                        <HintType>EXTENSION</HintType>
+                    </FileValidationInfo>
+                </FileValidationInformation>
+            </ValidationCriteria>
+            <TaxYear>
+                <Year>2020</Year>
+                <IsBillingRequired>false</IsBillingRequired>
+            </TaxYear>
+            <ziputility>SingleFileZipUtility</ziputility>
+            <OptimalCompressionRatio>0</OptimalCompressionRatio>
+        </software>
+        <software>
+            <name>TaxCycle_T2</name>
+            <instructions>
+                Please follow these instructions on backing up your data for the Intuit conversion process.&#xA;&#xA;Calculate all clients and remove locks and passwords from clients before beginning the backup process.&#xA;&#xA;1. On the menu bar, click Tools, select File Maintenance, then Backup&#xA;&#xA;2.The Drake 20yy - Backup dialog box appears&#xA;&#xA;3. Click the Select a backup location button, and select the drive and folder for your backup(set the location to C:\CONVERSIONDATA)&#xA;&#xA;4. Check only the box for Client Files&#xA;&#xA;5. Click Backup&#xA;&#xA;
+            </instructions>
+            <validator>TaxCycleBackupValidatorAndFileProvider</validator>
+            <ziputility>SingleFileZipUtility</ziputility>
+            <isFileSelectionRequired>true</isFileSelectionRequired>
+            <ValidationCriteria>
+                <Year>2020</Year>
+                <FileValidationInformation>
+                    <FileValidationInfo>
+                        <FileNameHint>2016T2</FileNameHint>
+                        <HintType>EXTENSION</HintType>
+                    </FileValidationInfo>
+                    <FileValidationInfo>
+                        <FileNameHint>2017T2</FileNameHint>
+                        <HintType>EXTENSION</HintType>
+                    </FileValidationInfo>
+                    <FileValidationInfo>
+                        <FileNameHint>2018T2</FileNameHint>
+                        <HintType>EXTENSION</HintType>
+                    </FileValidationInfo>
+                    <FileValidationInfo>
+                        <FileNameHint>2019T2</FileNameHint>
+                        <HintType>EXTENSION</HintType>
+                    </FileValidationInfo>
+                    <FileValidationInfo>
+                        <FileNameHint>2020T2</FileNameHint>
+                        <HintType>EXTENSION</HintType>
+                    </FileValidationInfo>
+                    <FileValidationInfo>
+                        <FileNameHint>2021T2</FileNameHint>
+                        <HintType>EXTENSION</HintType>
+                    </FileValidationInfo>
+                </FileValidationInformation>
+            </ValidationCriteria>
+            <TaxYear>
+                <Year>2020</Year>
+                <IsBillingRequired>false</IsBillingRequired>
+            </TaxYear>
+        </software>
+    </Softwares>
+    <BackupBanner>
+        <Heading>
+            Before you start the client file data conversion process:&#xA;&#xA;1. Open your current tax preparation software.&#xA;&#xA;2. REMOVE ALL passwords from your client files.&#xA;&#xA;3. Select Next and follow the backup instructions to start the client conversion submission process.&#xA;&#xA;&#xA;&#xA;&#xA;
+        </Heading>
+        <Content>
+            The Data Conversion process will copy selected items from your current tax preparation software to your new Intuit Tax Software and is not intended to convert all of your tax data nor will it allow you to generate a tax return for the purposes of side by side comparison with last year’s return.
+        </Content>
+    </BackupBanner>
+    <WizardText>
+        <Heading>Intuit Tax Data Conversion Wizard</Heading>
+        <Content>This wizard will guide you through the process of uploading your data to Intuit for conversion.&#xA;&#xA;To expedite your conversion process, please carefully read the instructions on each of the following steps.&#xA;&#xA;PLEASE NOTE THAT NOT ALL DATA WILL CONVERT. State data, amounts not relevant to next-year tax preparation and some carryover amounts will not be converted during this process.&#xA;&#xA;Thank you, and WELCOME TO INTUIT!</Content>
+    </WizardText>
+    <ConnectedServicesText>
+        <Heading>CONNECTED SERVICES SETUP REQUIRED!</Heading>
+        <Content>Connected service is a feature within Intuit that connects through the internet &#xA;to access functionality that stores or collects personally identifiable taxpayer  &#xA;information which must be kept secure.&#xA;&#xA;Tax Data Conversion is considered a connected service because it stores &#xA;personally identifiable taxpayer information on servers accessed &#xA;across the internet.&#xA;&#xA;For Tax Year 2015, Intuit has implemented additional steps to protect the &#xA;confidentiality and privacy of taxpayer data which is shared or accessed &#xA;through the internet by restricting access to only authorized firm administrators  &#xA;and employees.&#xA;&#xA;IRS Guidelines for protecting taxpayer data are outlined in IRS Publication 4557</Content>
+    </ConnectedServicesText>
+    <ConnectedServiceSetupCompleteText>
+        <Heading>Read the following carefully before you proceed!</Heading>
+        <Content>If you are the Administrator of your company you can start with the &#xA;Data Conversion right away. Just click on the "Start Data Conversion" button.&#xA;&#xA;If you are not the Administrator, please contact your Administrator &#xA;for your access request to be accepted.</Content>
+    </ConnectedServiceSetupCompleteText>
+    <ServiceAgreement>
+        I have read and understand the procedures and capabilities for data conversion processing and I will be uploading my data files in an electronic format for Intuit to convert.  Once the data files are converted, Intuit will then upload the files back to me in an electronic format for me to access and download for use. I hereby release and agree to indemnify Intuit from all liability and damages relating to the conversion, storage, and transmittal of the client data files that I submit for this conversion process. &#xA;&#xA;I agree to review my client data files after the conversion process, and I agree to assume full responsibility for the completeness and accuracy of all converted client data.  Intuit shall not be liable to me or any third party for any indirect, special, consequential, or incidental damages (including damages for loss of business profits, business interruption, loss of business information, and the like) arising out of any aspect of the conversion process and I hereby release and agree to indemnify Intuit from any such claims.
+    </ServiceAgreement>
+    <AcceptTermsText>Please read the Data Conversion Service Agreement and check the box to confirm that you understand and agree to the terms.</AcceptTermsText>
+    <EntitlementFailureTextLacerte>There is an error processing your request. Please try again later or contact customer support at (800) 933-9999.</EntitlementFailureTextLacerte>
+    <EntitlementFailureTextProseries>There is an error processing your request. Please try again later or contact customer support at (800) 434-6818.</EntitlementFailureTextProseries>
+    <EntitlementFailureTextTaxOnline>There is an error processing your request. Please try again later or contact customer support at http://accountants.intuit.com/support/index.jsp?product=online. </EntitlementFailureTextTaxOnline>
+    <EntitlementFailureTextProfile>There is an error processing your request. Please try again later or contact customer support at http://accountants.intuit.com/support/index.jsp?product=online. </EntitlementFailureTextProfile>
+    <ConversionNotAllowedTextLacerte>A Fast Path subscription is necessary for accessing this feature. Please contact customer support at (800) 933-9999.</ConversionNotAllowedTextLacerte>
+    <ConversionNotAllowedTextProseries>>A Fast Path subscription is necessary for accessing this feature. Please contact customer support at (800) 434-6818.</ConversionNotAllowedTextProseries>
+    <BillingInformationText>Please be advised that you will be charged $20 for this submission because your license does not cover a free prior year conversion. Do you wish to continue?</BillingInformationText>
+    <BackUpInvalidMessage>We could not find any valid files inside C:\CONVERSIONDATA folder. Please follow the backup instructions on the screen to backup your files.</BackUpInvalidMessage>
+    <PaymentUnsuccessfulMessageLacerte>There was an error processing your payment.&#xA;Please check your credit card details.If you continue facing the problem then contact customer support at (800) 933-9999.</PaymentUnsuccessfulMessageLacerte>
+    <PaymentUnsuccessfulMessageProSeries>There was an error processing your payment.&#xA;Please check your credit card details.&#xA;If you continue facing the problem then contact customer support at (800) 464-6818.</PaymentUnsuccessfulMessageProSeries>
+    <PaymentUnsuccessfulMessageTaxOnline>There was an error processing your payment.&#xA;Please check your credit card details.&#xA;If you continue facing the problem then contact customer support at http://accountants.intuit.com/support/index.jsp?product=online. </PaymentUnsuccessfulMessageTaxOnline>
+    <PaymentUnsuccessfulMessageProfile>There was an error processing your payment.&#xA;Please check your credit card details.&#xA;If you continue facing the problem then contact customer support at http://accountants.intuit.com/support/index.jsp?product=online. </PaymentUnsuccessfulMessageProfile>
+    <DesktopIdentifierFileName>FromDesktop.txt</DesktopIdentifierFileName>
+    <DesktopIdentifierFileNameLacerte>FromLacerte.txt</DesktopIdentifierFileNameLacerte>
+    <DesktopIdentifierFileNameProSeries>FromProSeries.txt</DesktopIdentifierFileNameProSeries>
+    <UnExpectedServiceError>An unexpected problem was encountered while contacting one of our backend systems. Please come back after sometime.</UnExpectedServiceError>
+    <DownloadFailureTextLacerte>An unexpected problem was encountered while downloading your files. Please verify your internet connection is working and try again. For further assistance please call our customer support line (800) 933-9999.</DownloadFailureTextLacerte>
+    <DownloadFailureTextProseries>An unexpected problem was encountered while downloading your files. Please verify your internet connection is working and try again. For further assistance please call our customer support line (800) 434-6818.</DownloadFailureTextProseries>
+    <DownloadFailureTextTaxOnline>An unexpected problem was encountered while downloading your files. Please verify your internet connection is working and try again. For further assistance please contact customer support at http://accountants.intuit.com/support/index.jsp?product=online </DownloadFailureTextTaxOnline>
+    <DownloadFailureTextProfile>An unexpected problem was encountered while downloading your files. Please verify your internet connection is working and try again. For further assistance please contact customer support at http://accountants.intuit.com/support/index.jsp?product=online </DownloadFailureTextProfile>
+    <LacerteTaxFilesDetectedMessage>Prior year tax files were detected. You will need to restore the files in the Lacerte prior year program. Do you wish to continue?</LacerteTaxFilesDetectedMessage>
+    <LacerteConfigurationErrorMessage>Unable to complete download and data processing. No configuration file found from Lacerte.</LacerteConfigurationErrorMessage>
+    <LacerteTaxFilesFolderBrowserMessage>Select a folder in which to save the downloaded tax files.</LacerteTaxFilesFolderBrowserMessage>
+    <InstallationKeyHelp>To locate your installation key, please login to ProConnect Tax and click on Settings. Within the Settings menu, click on Convert Data-> Start Conversion. Address any issues presented on the Prepare conversion screen, or click Next to skip. The Installation key will be displayed on the Download conversion tool screen.</InstallationKeyHelp>
+</CompetitorSoftwareConfiguration>

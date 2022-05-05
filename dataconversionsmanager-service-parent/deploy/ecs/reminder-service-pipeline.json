@@ -1,0 +1,163 @@
+{
+    "pipeline": {
+        "roleArn": "arn:aws:iam::135026383220:role/AWS-CodePipeline-Service", 
+        "stages": [
+            {
+                "name": "Source", 
+                "actions": [
+                    {
+                        "inputArtifacts": [], 
+                        "name": "Source", 
+                        "actionTypeId": {
+                            "category": "Source", 
+                            "owner": "AWS", 
+                            "version": "1", 
+                            "provider": "S3"
+                        }, 
+                        "outputArtifacts": [
+                            {
+                                "name": "deploy"
+                            }
+                        ], 
+                        "configuration": {
+                            "S3Bucket": "reminders-service", 
+                            "PollForSourceChanges": "false", 
+                            "S3ObjectKey": "releases/reminders-service.zip"
+                        }, 
+                        "runOrder": 1
+                    }
+                ]
+            }, 
+            {
+                "name": "QAL", 
+                "actions": [
+                    {
+                        "inputArtifacts": [
+                            {
+                                "name": "deploy"
+                            }
+                        ], 
+                        "name": "ExternalDeploy", 
+                        "roleArn": "arn:aws:iam::964704459712:role/CrossAccount_CodePipeLineRole", 
+                        "actionTypeId": {
+                            "category": "Deploy", 
+                            "owner": "AWS", 
+                            "version": "1", 
+                            "provider": "ECS"
+                        }, 
+                        "outputArtifacts": [], 
+                        "configuration": {
+                            "ClusterName": "services-qal", 
+                            "ServiceName": "reminders-service-env1", 
+                            "FileName": "imagedefinitions.json"
+                        }, 
+                        "runOrder": 1
+                    }
+                ]
+            },
+            {
+                "name": "PRF",
+                "actions": [
+                    {
+                        "inputArtifacts": [
+                            {
+                                "name": "deploy"
+                            }
+                        ],
+                        "name": "ExternalDeploy",
+                        "roleArn": "arn:aws:iam::964704459712:role/CrossAccount_CodePipeLineRole",
+                        "actionTypeId": {
+                            "category": "Deploy",
+                            "owner": "AWS",
+                            "version": "1",
+                            "provider": "ECS"
+                        },
+                        "outputArtifacts": [],
+                        "configuration": {
+                            "ClusterName": "services-prf",
+                            "ServiceName": "reminders-service-env1",
+                            "FileName": "imagedefinitions.json"
+                        },
+                        "runOrder": 1
+                    }
+                ]
+            },
+            {
+                "name": "E2E",
+                "actions": [
+                    {
+                        "inputArtifacts": [
+                            {
+                                "name": "deploy"
+                            }
+                        ],
+                        "name": "ExternalDeploy",
+                        "roleArn": "arn:aws:iam::964704459712:role/CrossAccount_CodePipeLineRole",
+                        "actionTypeId": {
+                            "category": "Deploy",
+                            "owner": "AWS",
+                            "version": "1",
+                            "provider": "ECS"
+                        },
+                        "outputArtifacts": [],
+                        "configuration": {
+                            "ClusterName": "services-e2e",
+                            "ServiceName": "reminders-service-env1",
+                            "FileName": "imagedefinitions.json"
+                        },
+                        "runOrder": 1
+                    }
+                ]
+            },
+            {
+                "name": "PRD",
+                "actions": [
+                    {
+                        "name": "PushtoPRD",
+                        "actionTypeId": {
+                            "category": "Approval",
+                            "owner": "AWS",
+                            "version": "1",
+                            "provider": "Manual"
+                        },
+                        "inputArtifacts": [],
+                        "outputArtifacts": [],
+                        "runOrder": 1
+                    },
+                    {
+                        "inputArtifacts": [
+                            {
+                                "name": "deploy"
+                            }
+                        ],
+                        "name": "ExternalDeploy",
+                        "roleArn": "arn:aws:iam::964704459712:role/CrossAccount_CodePipeLineRole",
+                        "actionTypeId": {
+                            "category": "Deploy",
+                            "owner": "AWS",
+                            "version": "1",
+                            "provider": "ECS"
+                        },
+                        "outputArtifacts": [],
+                        "configuration": {
+                            "ClusterName": "services-prf",
+                            "ServiceName": "reminders-service-env1",
+                            "FileName": "imagedefinitions.json"
+                        },
+                        "runOrder": 2
+                    }
+                ]
+            }
+        ], 
+        "artifactStore": {
+            "type": "S3", 
+            "location": "codepipeline-us-west-2-869419787103", 
+            "encryptionKey": {
+                "type": "KMS", 
+                "id": "arn:aws:kms:us-west-2:135026383220:key/a905b5e8-6d90-4e53-805d-5a4cffc4a508"
+            }
+        }, 
+        "name": "reminders-service", 
+        "version": 18
+    }
+}

@@ -1,0 +1,33 @@
+version: '2'
+services:
+  dataconversionsmanager:
+    user: app
+    build: .
+    ports:
+    - "62911:62911"
+    container_name: dataconversionsmanager-service
+    volumes:
+    - "$PWD/docker/logs:/usr/local/tomcat/logs"
+    - "$PWD/docker/config:/usr/local/tomcat/webapps-config"
+    - "$PWD/docker/secrets:/run/secrets"
+    - "$PWD/docker/misc:/misc"
+    environment:
+      DC_VERSION: "1.0.8"
+      APP_ENV: env1
+      RUN_TEST: "true"
+      CFG_DC: qdc
+      CFG_SERVICE_NAME: pcgdcmanager
+      CFG_ENV: dev
+      CFG_TAG: master
+      APP_ID: Intuit.accountant.dataconversions.dcmanager
+      C_LIMIT_CPU: 1
+      ENV_PATH: dataconversionsmanager-service
+      ENV_PORT: 8080
+#      FAKE_TIME: -10d
+      CATALINA_OPTS:  "-Dcom.sun.management.jmxremote.rmi.port=9090 -Dcom.sun.management.jmxremote=true -Dcom.sun.management.jmxremote.port=9090 -Dcom.sun.management.jmxremote.ssl=false -Dcom.sun.management.jmxremote.authenticate=false -Dcom.sun.management.jmxremote.local.only=false -Djava.rmi.server.hostname=172.28.220.207 -agentlib:jdwp=transport=dt_socket,address=62911,server=y,suspend=n"
+      C_LIMIT_CPU: 1
+
+networks:
+  default:
+    external:
+      name: reverseproxy-bridge

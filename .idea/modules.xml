@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/.idea/DataConversionManager.iml" filepath="$PROJECT_DIR$/.idea/DataConversionManager.iml" />
+      <module fileurl="file://$PROJECT_DIR$/dataconversionsmanager-service-parent/dataconversionsmanager-service-parent.iml" filepath="$PROJECT_DIR$/dataconversionsmanager-service-parent/dataconversionsmanager-service-parent.iml" />
+      <module fileurl="file://$PROJECT_DIR$/dataconversionsmanager-service-parent/webapp/webapp.iml" filepath="$PROJECT_DIR$/dataconversionsmanager-service-parent/webapp/webapp.iml" />
+    </modules>
+  </component>
+</project>

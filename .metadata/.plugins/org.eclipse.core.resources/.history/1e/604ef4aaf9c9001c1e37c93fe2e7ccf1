@@ -1,0 +1,47 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>com.intuit.ptg.services</groupId>
+	<artifactId>dataconversionsmanager-service-parent</artifactId>
+	<version>0.0.1-SNAPSHOT</version>
+	<packaging>pom</packaging>
+	<name>{PARENT} dataconversionsmanager-service</name>
+	<modules>
+		<module>webapp</module>
+
+	</modules>
+
+	<properties>
+
+
+		<jskbom.version>2.11.1</jskbom.version>
+
+		<!-- webapp-->
+		<java.version>1.8</java.version>
+		<log4j.version>1.2.17</log4j.version>
+		<common-services.version>2.1.0.17</common-services.version>
+		<activemq-client.version>5.16.4</activemq-client.version>
+		<clover.version>4.0.4</clover.version>
+		<common-support.version>1.1.0.327</common-support.version>
+		<org.apache.maven.plugins-maven-surefire-plugin.version>2.19.1
+        </org.apache.maven.plugins-maven-surefire-plugin.version>
+
+		<!-- DataConversionsManagerServiceTestSuite-->
+		<karate.version>1.2.0.RC6</karate.version>
+
+
+	</properties>
+
+	<dependencyManagement>
+		<dependencies>
+			<dependency>
+				<groupId>com.intuit.platform.jsk</groupId>
+				<artifactId>jsk-bom</artifactId>
+				<version>${jskbom.version}</version>
+				<type>pom</type>
+				<scope>import</scope>
+			</dependency>
+		</dependencies>
+	</dependencyManagement>
+
+
+</project>

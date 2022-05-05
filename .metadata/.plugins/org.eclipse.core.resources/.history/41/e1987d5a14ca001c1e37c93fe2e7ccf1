@@ -1,0 +1,26 @@
+@ignore
+Feature: IUS existing user signin
+
+  Background:
+    * configure headers = read('classpath:ius-headers.js')
+
+  Scenario: Login to existing user
+    Given url mfaUrlBase
+    And path 'web', 'tickets', 'sign_in'
+    And request { username: '#(username)', password: '#(password)' }
+    When method post
+    Then status 200
+    And def ticket = response.iamTicket
+
+    Given url oiiUrlBase
+    And path 'users', ticket.userId, 'realms'
+    When method get
+    Then status 200
+    And set ticket.realmId = response.realm[0].realmId
+
+    Given path 'iamtickets', ticket.ticket
+    And param operation = 'set_realm'
+    And request ticket
+    When method put
+    Then status 200
+    And def signIn = response

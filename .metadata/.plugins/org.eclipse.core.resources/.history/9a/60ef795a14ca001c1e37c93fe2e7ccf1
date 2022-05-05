@@ -1,0 +1,67 @@
+Feature: dcm get fdp Upload and Delete Document
+
+  Background:
+    * configure headers = read('classpath:' + dcmHeaders)
+    * def signin = call read('classpath:ius-signin.feature') { username: #(iusUsername), password: #(iusPassword) }
+    * def ticket = signin.ticket
+    * url dcmUrlBase
+    * def waitUntil =
+"""
+function(x) {
+    java.lang.Thread.sleep(x);
+}
+"""
+
+
+  Scenario: get fdpUploadAndDeleteDocument
+    Given path 'document/upload'
+    When method get
+    Then status 200
+    * def docId = response.docId
+    * def bucketName = response.endpointInfo.bucketName
+    * def objectName = response.endpointInfo.objectName
+    * def accessKey = response.s3Credentials.accessKey
+    * def accessSecret = response.s3Credentials.accessSecret
+    * def accessToken = response.s3Credentials.accessToken
+
+    * print 'Waiting for 20 seconds before document upload to S3 starts'
+
+    * call waitUntil(20000);
+
+    * def uploadFlag = Java.type('com.intuit.apd.services.tests.documents.S3Operations').uploadTestDocumentToFDP(accessKey, accessSecret, accessToken, bucketName, objectName)
+
+    * print uploadFlag
+
+    * print 'Waiting for 20 seconds before document download starts'
+
+    * call waitUntil(20000);
+
+    Given path 'document/download/' + docId
+    When method get
+    Then status 200
+    * def bucketName1 = response.endpointInfo.bucketName
+    * def objectName1 = response.endpointInfo.objectName
+    * def accessKey1 = response.s3Credentials.accessKey
+    * def accessSecret1 = response.s3Credentials.accessSecret
+    * def accessToken1 = response.s3Credentials.accessToken
+
+    * print 'Waiting for 20 seconds before document download from S3 starts'
+
+    * call waitUntil(20000);
+
+    * def downloadFlag = Java.type('com.intuit.apd.services.tests.documents.S3Operations').downloadTestDocumentFromFDP(accessKey1, accessSecret1, accessToken1, bucketName1, objectName1)
+
+    * def crc = Java.type('com.intuit.apd.services.tests.documents.S3Operations').compareCheckSumCRCForBothFiles()
+
+    * print 'File compare status:' + crc
+
+    * print 'Waiting for 20 seconds before document delete starts'
+
+    * call waitUntil(20000);
+
+
+    Given path 'document/delete/' + docId
+    When method delete
+    Then status 200
+
+

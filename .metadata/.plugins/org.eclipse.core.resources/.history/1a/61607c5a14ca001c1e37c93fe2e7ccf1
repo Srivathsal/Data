@@ -1,0 +1,75 @@
+Feature: dcm get blackout status
+
+  Background:
+    * configure headers = read('classpath:' + dcmHeaders)
+    * def signin = callonce read('classpath:ius-signin.feature') { username: #(iusUsername), password: #(iusPassword) }
+    * def ticket = signin.ticket
+    * url dcmUrlBase
+
+  Scenario: get blackout happypath
+    Given path 'blackout'
+    And param CUSTOMER_ACCOUNT_NUMBER = '76543456783'
+    And param PRODUCT_TAX_YEAR = '2019'
+    And param DC_APP_VERSION = '2.0'
+    When method get
+    Then status 200
+    And match response == {"supportedYear":-1,"blackoutEnabled":false}
+
+  Scenario: get blackout for PTO
+    Given path 'blackout'
+    And param DC_APP_VERSION = '2.0'
+    When method get
+    Then status 200
+    And match response == {"supportedYear":-1,"blackoutEnabled":false}
+
+  Scenario: get blackout for PROTAX
+    Given path 'blackout'
+    And param PRODUCT_NAME = 'protax'
+    When method get
+    Then status 200
+    And match response == {"messageToDisplay":"Data Conversions is allowed for protax", "supportedYear":-1, "blackoutEnabled":true}
+
+  Scenario: get blackout for Productname null
+    Given path 'blackout'
+    And param PRODUCT_NAME = null
+    When method get
+    Then status 400
+
+  Scenario: get blackout for Productname empty
+    Given path 'blackout'
+    And param PRODUCT_NAME = ""
+    When method get
+    Then status 400
+
+  Scenario: get blackout for unsupported version
+    Given path 'blackout'
+    And param CUSTOMER_ACCOUNT_NUMBER = '76543456783'
+    And param PRODUCT_TAX_YEAR = '2017'
+    And param DC_APP_VERSION = '1.1'
+    When method get
+    Then status 200
+    And match response == {"messageToDisplay":"Your Data Conversion App is out of date. Please download the latest update in order to use Data Conversion.","supportedYear":-1,"blackoutEnabled":true}
+
+  Scenario: get badRequest for blackout
+    Given path 'blackout'
+    When method get
+    Then status 400
+
+  Scenario: get blackout blank version
+    Given path 'blackout'
+    And param CUSTOMER_ACCOUNT_NUMBER = '76543456783'
+    And param PRODUCT_TAX_YEAR = '2017'
+    And param DC_APP_VERSION = ''
+    When method get
+    Then status 400
+
+  Scenario: get blackout null version
+    Given path 'blackout'
+    And param CUSTOMER_ACCOUNT_NUMBER = '76543456783'
+    And param PRODUCT_TAX_YEAR = '2017'
+    And param DC_APP_VERSION = null
+    When method get
+    Then status 400
+
+
+

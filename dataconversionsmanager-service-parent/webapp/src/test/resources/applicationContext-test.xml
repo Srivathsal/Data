@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<beans
+		xmlns="http://www.springframework.org/schema/beans"
+		xmlns:context="http://www.springframework.org/schema/context"
+		xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:util="http://www.springframework.org/schema/util"
+		xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.2.xsd
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-3.2.xsd http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util.xsd">
+	<context:annotation-config/>
+
+	<context:property-placeholder location="classpath:dataconversionsmanager-service.properties"/>
+
+
+	<!--<util:properties id="idpsConfig" location="classpath:dataconversionsmanager-service.properties" />-->
+
+	<!--<bean class="com.intuit.accountant.services.common.auth.OfflineTicketService"/>-->
+
+	<!--<bean class="com.intuit.accountant.services.common.idps.IDPSAwarePropertyPlaceholderConfigurer">
+        <property name="locations">
+            <list>
+                <value>classpath:dataconversionsmanager-service.properties</value>
+            </list>
+        </property>
+        <property name="idpsPropertiesFileName">
+            <value>dataconversionsmanager-service.properties</value>
+        </property>
+    </bean>-->
+
+	<!--<import resource="classpath*:jms-integration.xml"/>-->
+
+	<context:component-scan base-package="
+    	com.intuit.accountant.services.dcm.services,
+    	com.intuit.accountant.services.dcm.util,
+    	com.intuit.accountant.services.dcm.resources.helpers,
+        com.intuit.accountant.services.common.offlineticket,
+        com.intuit.accountant.services.common.util,
+        com.intuit.accountant.services.common.httpclient,
+	    com.intuit.accountant.services.helpers">
+		<context:exclude-filter type="regex" expression=".*.OfflineTicketHandler"/>
+	</context:component-scan>
+
+
+	<!-- backup-->
+	<!--<context:component-scan base-package="
+        com.intuit.accountant.services.dcm 	com.intuit.accountant.services.common.jaxrs,
+        com.intuit.accountant.services.common.idps,
+        com.intuit.accountant.services.common.swagger,
+          com.intuit.accountant.services.common.health,
+        com.intuit.accountant.services.common.resource.health,
+        com.intuit.accountant.services.common.httpclient,
+        com.intuit.accountant.services.common.auth,
+        com.intuit.accountant.services.common.offlineticket,
+        com.intuit.accountant.services.common.util,
+        com.intuit.accountant.services.cassandra,
+        com.intuit.accountant.services.helpers,
+        com.intuit.support.resource,
+        com.intuit.support.auth,
+        com.intuit.accountant.services.common.performance">
+        <context:exclude-filter type="regex" expression=".*.OfflineTicketHandler"/>
+    </context:component-scan>-->
+
+</beans>

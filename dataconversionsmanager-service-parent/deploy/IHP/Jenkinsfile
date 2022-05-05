@@ -1,0 +1,48 @@
+@Library('pcg-libraries') _
+
+
+withPodTemplate {
+    stage('Git Checkout') {
+      def scmVars = checkout scm
+    }
+    stage('Deploy Service ') {
+        env.DEPLOY_SCRIPT_VERSION="4.0.0.0-ibp"
+        env.APPD_TIER="services_dataconversionsmanager-tomcat"
+        env.APP_ENV="env1"
+        env.IMAGE="docker.artifactory.a.intuit.com/accountant/accounting/services/dataconversionsmanager-service:${BUILD_VERSION}"
+        env.STACK_NAME="services-dataconversionsmanager-service"
+        env.CONFIG_BRANCH="${BUILD_VERSION}"
+        
+        if (env.CFG_ENV == 'dev') 
+        {
+            env.SERVICE_PORT=10076
+            env.NUMBER_OF_REPLICAS=1
+            env.APPD_APPLICATION="pcg_dev"
+        }
+       else if (env.CFG_ENV == 'qal')
+       {
+            env.SERVICE_PORT=11076
+            env.NUMBER_OF_REPLICAS=1
+            env.APPD_APPLICATION="pcg_qal"
+       }
+       else if (env.CFG_ENV == 'prf')
+       {
+            env.SERVICE_PORT=12076
+            env.NUMBER_OF_REPLICAS=1
+            env.APPD_APPLICATION="pcg_prf"
+       }
+       else if (env.CFG_ENV == 'e2e')
+       {
+            env.SERVICE_PORT=13076
+            env.NUMBER_OF_REPLICAS=1
+            env.APPD_APPLICATION="pcg_e2e"
+       }
+       else if (env.CFG_ENV == 'prd')
+       {
+            env.SERVICE_PORT=14076
+            env.NUMBER_OF_REPLICAS=2
+            env.APPD_APPLICATION="pcg_prd"
+       }
+        deployToIHP()
+    }
+}

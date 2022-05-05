@@ -1,0 +1,64 @@
+@ignore
+Feature: IUS create system offline ticket and assume persona
+
+  Scenario: Create System offline ticket
+    * header Authorization = 'Intuit_IAM_Authentication intuit_appid=Intuit.accountant.dataconversions.dcexecutor,intuit_app_secret=preprdzKrwZggHNT99nIhpqX3h9zgmf7jD4w7vfC'
+    * header intuit_originatingip = '123.45.67.89'
+    Given url 'https://access-e2e.platform.intuit.com'
+    And path 'v1', 'offline_tickets', 'create_for_system_user'
+    And request {"username":"e2ez67vfbfg7nx1catosgc6oyodawkilqil@robot.net","password":"qsgWYvG4eV5LHrqfiQEyfG0i6pooZ7Gy","realmId":"123148687461934","audiences":["3171677629765992383"], "maxLifeSeconds":1234567}
+    When method post
+    Then status 200
+    And def ticket = response.offlineTicket
+
+
+    * header Authorization = 'Intuit_IAM_Authentication intuit_appid=Intuit.accountant.dataconversions.dcexecutor,intuit_app_secret=preprdzKrwZggHNT99nIhpqX3h9zgmf7jD4w7vfC'
+    * header intuit_originatingip = '123.45.67.89'
+    Given url 'https://access-e2e.platform.intuit.com'
+    And path 'v1', 'offline_tickets', 'assume_persona'
+    And request {"offlineTicket":'#(ticket)',"targetRealmId":"123148568139959"}
+    When method post
+    Then status 200
+    And def ticket = response.offlineTicket
+
+    * def waitUntil =
+"""
+function(x) {
+    java.lang.Thread.sleep(x);
+}
+"""
+
+
+    * header Authorization = 'Intuit_IAM_Authentication intuit_token_type=IAM-Offline-Ticket, intuit_appid=Intuit.accountant.dataconversions.dcexecutor,intuit_app_secret=preprdzKrwZggHNT99nIhpqX3h9zgmf7jD4w7vfC, intuit_token=' + ticket
+    * header intuit_originatingip = '123.45.67.89'
+    Given url dcmUrlBase
+    And path 'document/upload'
+    When method get
+    Then status 200
+    * def docId = response.docId
+    * def bucketName = response.endpointInfo.bucketName
+    * def objectName = response.endpointInfo.objectName
+    * def accessKey = response.s3Credentials.accessKey
+    * def accessSecret = response.s3Credentials.accessSecret
+    * def accessToken = response.s3Credentials.accessToken
+
+    * print 'Waiting for 20 seconds before document upload to S3 starts'
+
+    * call waitUntil(20000);
+
+    * def uploadFlag = Java.type('com.intuit.apd.services.tests.documents.S3Operations').uploadTestDocumentToFDP(accessKey, accessSecret, accessToken, bucketName, objectName)
+
+    * print uploadFlag
+
+    * print 'Waiting for 20 seconds before document download starts'
+
+    * call waitUntil(20000);
+
+    * header Authorization = 'Intuit_IAM_Authentication intuit_token_type=IAM-Offline-Ticket, intuit_appid=Intuit.accountant.dataconversions.dcexecutor,intuit_app_secret=preprdzKrwZggHNT99nIhpqX3h9zgmf7jD4w7vfC, intuit_token=' + ticket
+    * header intuit_originatingip = '123.45.67.89'
+    Given url dcmUrlBase
+    And path 'document/download/' + docId
+    When method get
+    Then status 200
+
+

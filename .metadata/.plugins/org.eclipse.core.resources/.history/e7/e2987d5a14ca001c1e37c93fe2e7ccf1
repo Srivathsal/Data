@@ -1,0 +1,100 @@
+@ignore
+Feature: IUS new user signup
+
+  Background:
+    * def uuid = function(){ return java.util.UUID.randomUUID() + '' }
+    * def randomText = uuid()
+    * def randomUser = uuid() + '_iamtestpass@gmail.com'
+    * configure headers = read('classpath:ius-headers.js')
+
+  Scenario: Create new user
+    Given url oiiUrlBase
+    And path 'users', 'sign_up'
+    And request
+      """
+      {
+         "user":{
+            "username":'#(randomUser)',
+            "password":"password1234",
+            "email":{
+               "primary":"true",
+               "address":'#(randomUser)',
+               "type":null
+            },
+            "securityLevel":"HIGH",
+            "challengeQuestionAnswer":[
+               {
+                  "question":"Who is your all-time favorite movie character?",
+                  "answer":'#(randomText)'
+               }
+            ],
+            "phone":[
+
+            ],
+            "fullName":[
+
+            ],
+            "address":[
+
+            ],
+            "namespaceId":null,
+            "userId":null
+         }
+      }
+      """
+    When method post
+    Then status 200
+    And def ticket = response.iamticket
+
+    Given url oiiUrlBase
+    And path 'users', ticket.userId, 'realms'
+    And request
+      """
+      {
+         "displayName":[
+            '#(randomText)'
+         ],
+         "realmType":null,
+         "partnerId":null,
+         "domainName":null,
+         "realmId":null,
+         "realmName":null,
+         "email":null,
+         "product":[
+            {
+               "productId":"Intuit.apd.ito",
+               "attribute":[
+                  {
+                     "name":"enabled",
+                     "value":"true"
+                  }
+               ]
+            },
+            {
+               "productId":"Intuit.sbe.partnerplatform.APD",
+               "attribute":[
+                  {
+                     "name":"enabled",
+                     "value":"true"
+                  }
+               ]
+            }
+         ],
+         "phone":[
+
+         ],
+         "address":[
+
+         ]
+      }
+      """
+    When method post
+    Then status 200
+    And set ticket.realmId = response.realmId
+
+    Given path 'iamtickets', ticket.ticket
+    And param operation = 'set_realm'
+    And request ticket
+    When method put
+    Then status 200
+    And def signIn = response

@@ -1,0 +1,65 @@
+Feature: dcm get configurations
+
+  Background:
+    * configure headers = read('classpath:' + dcmHeaders)
+    * def signin = call read('classpath:ius-signin.feature') { username: #(iusUsername), password: #(iusPassword) }
+    * def ticket = signin.ticket
+    * url dcmUrlBase
+
+  Scenario: get configurations
+    Given path 'configurations/'
+    When method get
+    Then status 200
+    And match response == read('dcm-application-configuration.xml')
+
+  Scenario: get configurations for protax
+    Given path 'configurations'
+    And param PRODUCT_NAME = 'protax'
+    When method get
+    Then status 200
+    And match response == read('dcm-application-configuration-protax.xml')
+
+  Scenario: get configurations for profile
+    Given path 'configurations'
+    And param PRODUCT_NAME = 'profile'
+    When method get
+    Then status 200
+    And match response == read('dcm-application-configuration-protax.xml')
+
+  Scenario: get configurations for protax
+    Given path 'configurations'
+    And param PRODUCT_NAME = "  "
+    When method get
+    Then status 200
+    And match response == read('dcm-application-configuration.xml')
+
+  Scenario: get configurations for protax
+    Given path 'configurations'
+    And param PRODUCT_NAME = null
+    When method get
+    Then status 200
+    And match response == read('dcm-application-configuration.xml')
+
+  Scenario: get configurations for appfabric
+    Given path 'configurations'
+    And param PRODUCT_NAME = 'protax'
+    And param SOURCE = 'appfabric'
+    When method get
+    Then status 200
+    And match response == read('competitor-intuit-softwares.json')
+
+  Scenario: get external configurations
+    Given path 'configurations/externalsystems'
+    When method get
+    Then status 200
+
+  Scenario: get dropdowns
+    Given path 'configurations/dropdowns'
+    When method get
+    Then status 200
+
+
+
+
+
+

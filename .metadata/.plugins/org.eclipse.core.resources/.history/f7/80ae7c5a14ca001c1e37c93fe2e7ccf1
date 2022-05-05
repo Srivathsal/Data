@@ -1,0 +1,59 @@
+package com.intuit.apd.services.tests.messaging;
+
+import org.apache.activemq.ActiveMQConnection;
+import org.apache.activemq.ActiveMQConnectionFactory;
+import org.apache.activemq.ActiveMQMessageProducer;
+import org.apache.activemq.ActiveMQSession;
+
+import javax.jms.*;
+import java.util.UUID;
+
+/**
+ * Created by sshashidhar on 29/05/19.
+ */
+public class MessageSender {
+
+    //private static String url = "failover:(ssl://ctodev.message-prod.a.intuit.com:61617)";
+    private static String url = "failover:(ssl://e2e.message-preprod.a.intuit.com:61617)";
+
+    //private static String subject = "Intuit.global.prd.accountant.dataconversion.ExecutorNotificationV1.Queue";
+    private static String subject = "Intuit.global.e2e.accountant.dataconversion.ExecutorNotificationV1.Queue";
+
+    private static String userName = "Intuit.accountant.dataconversions.dcmanager";
+    private static String password = "preprdqJ1apYKq8kX9bNBHw093BqxVs5sw4vCANF";
+
+    private static ActiveMQConnectionFactory connectionFactory;
+
+    public static void main(String[] args) throws JMSException {
+
+        connectionFactory = new ActiveMQConnectionFactory(url);
+        ((ActiveMQConnectionFactory) connectionFactory).setUserName(userName);
+        ((ActiveMQConnectionFactory) connectionFactory).setPassword(password);
+
+        ActiveMQConnection connection = (ActiveMQConnection)connectionFactory.createConnection();
+        connection.start();
+
+        // Create a Session
+        ActiveMQSession session = (ActiveMQSession)connection.createSession(false, 1);
+
+        //The queue will be created automatically on the server.
+        Destination destination = session.createQueue(subject);
+
+        // MessageProducer is used for sending messages to the queue.
+        ActiveMQMessageProducer producer = (ActiveMQMessageProducer)session.createProducer(destination);
+
+        // We will send a small text message saying 'Hello World!!!'
+        TextMessage message = (TextMessage)session.createTextMessage("{\"id\":{\"type\":\"entityId\",\"value\":\"eeece0d1-f0e4-4a00-872c-34eb437f7d44\"},\"created\":{\"on\":1559019930206,\"by\":{\"type\":\"authId\",\"value\":\"193514832021819\"}},\"lastUpdated\":{\"on\":1559019930206,\"by\":{\"type\":\"authId\",\"value\":\"193514832021819\"}},\"offeringId\":\"Intuit.apd.dataconversions\",\"assignedBy\":{\"type\":\"EMAIL\",\"value\":\"PradeepDCProd@mailinator.com\"},\"inContextOf\":{\"type\":\"realmId\",\"value\":\"415338681\"},\"status\":\"New\",\"relevantYear\":0,\"content\":\"{\\\"batchNumber\\\":1000,\\\"can\\\":\\\"259453880\\\",\\\"conversionKey\\\":\\\"3102c6b1-88da-492a-b506-0fc4c316d84e\\\",\\\"conversionStatus\\\":null,\\\"convertedDocs\\\":null,\\\"destinationProduct\\\":\\\"Lacerte\\\",\\\"isAutomatedJob\\\":true,\\\"modifierId\\\":\\\"dcm-suite\\\",\\\"name\\\":\\\"259453880 Unconverted Data.zip\\\",\\\"notifyEmailAddress\\\":\\\"PradeepDCProd@mailinator.com\\\",\\\"realmId\\\":\\\"415338681\\\",\\\"reasonForFailure\\\":null,\\\"sourceDocs\\\":[{\\\"docURI\\\":\\\"8539a582-8b55-4c44-ad7b-d381ef51353f\\\",\\\"format\\\":null,\\\"md5hash\\\":null,\\\"size\\\":7774182}],\\\"sourceProduct\\\":\\\"ATX\\\",\\\"sourceRepository\\\":\\\"ACS\\\",\\\"taxYear\\\":\\\"2017\\\",\\\"toTaxYear\\\":\\\"2018\\\",\\\"totalUnConvertedFileSize\\\":7774182,\\\"userName\\\":\\\"Pradeep KL\\\"}\"}");
+        message.setStringProperty("intuit_appid", userName);
+        message.setStringProperty("intuit_offeringid", userName);
+        message.setStringProperty("intuit_tid", UUID.randomUUID().toString());
+        message.setStringProperty("intuit_locale", "en_US");
+        message.setStringProperty("intuit_country", "US");
+
+        // Here we are sending our message!
+        producer.send(message);
+
+        System.out.println("Queue printing@@ '" + message.getText() + "'");
+        connection.close();
+    }
+}

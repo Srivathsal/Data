@@ -1,0 +1,15 @@
+#docker build -f Dockerfile-baseImage .
+FROM docker.artifactory.a.intuit.com/accountant/accounting/pcg/maven:3.5.0-1.8.0_144 AS BUILD
+
+ARG BUILD_NUMBER=SNAPSHOT
+ARG SKIP_TEST=false
+ARG SOURCE_BRANCH=
+
+COPY . /app
+WORKDIR /app
+
+RUN ./build/build.sh ${BUILD_NUMBER}-${SOURCE_BRANCH}
+
+FROM docker.artifactory.a.intuit.com/accountant/accounting/pcg/maven:3.5.0-1.8.0_144 AS MAVEN
+
+COPY --from=BUILD /root/.m2/ /root/.m2/

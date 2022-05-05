@@ -1,0 +1,16 @@
+#!/usr/bin/env groovy
+
+/* Jenkinsfile for PROD deploy to AWS Green
+This file is scripted pipeline */
+
+// https://github.intuit.com/PTG/jenkins-shared-libraries
+// importing shared library
+@Library('pcg-libraries') _
+
+withPodTemplate {
+    def scmVars = checkout scm
+
+    stage('Deploy to PRD') {
+        deployAndTestDockerApp(deployEnv: "prd", versionNumber: "${env.VERSION}", branchName: "deploy-from-AWS-artifactory")
+    }
+}

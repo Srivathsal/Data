@@ -1,0 +1,2 @@
+# Running example
+`helm install --dry-run --debug  --set image.repository=docker.artifactory.a.intuit.com/accountant/accounting/walker/uisvc --set image.tag=1.1.0.88 --set environment.CFG_ENV=dev --set environment.CFG_TAG=1.1.0.88 --set ingress.ingressElb="`kubectl get services -o wide  nginx-ingress-controller -o yaml | grep "\- hostname" | awk '{print$NF}'`" --set ingress.hosts={${RELEASE}.walker-ppd.a.intuit.com} --name uisvc-dev app`

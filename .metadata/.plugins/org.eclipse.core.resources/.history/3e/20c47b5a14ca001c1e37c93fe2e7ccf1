@@ -1,0 +1,376 @@
+{
+  "CompetitorSoftwareConfiguration": {
+    "Softwares": [{
+      "name": "ATX",
+      "instructions": "<b>Note: Be sure to roll over all client files from the prior year program. Failure to do so will result in those files returning with a \"corrupt\" status.</b><br/><br/>1.In Return Manager,check the box for each return you want to back up <br/><br/>OR<br/><br/>To select all clients, on the menu bar,click View, then Show All Returns, then click View, and Mark All Displayed Returns <br/><br/>2.On The menu bar,click Returns, then Export Marked Returns<br/><br/>3.In the Export Marked Returns dialog box, select the Drive and/or Folder for your backup (set the drive path to C:\\CONVERSIONDATA)<br/><br/>4.Click OK<br/><br/>5. Browse to C:\\Programdata\\Wolters Kluwer\\ATX 2019 Server\\ATX 2019 Files, Right-click on FormsetData folder and choose copy. Browse to C:\\CONVERSIONDATA. Right-click in the white space and choose paste.<br/><br/>Please note that C:\\Programdata is a hidden folder. To access this folder, Click Start and type Run in Search Programs and Files search box and click Enter. Type C:\\Programdata in Run window and Click OK. Navigate to the folder mentioned above with step 5.",
+      "validator": "ATXBackupValidatorAndFileProvider",
+      "ValidationCriteria": {
+        "Year": "2019",
+        "FileValidationInformation": {
+          "FileValidationInfo": {
+            "FileNameHint": "atx18Export",
+            "HintType": "EXTENSION"
+          }
+        },
+        "FilesToBePresentinBackup": {
+          "FileToBePresentinBackup": "FormsetData"
+        }
+      },
+      "TaxYear": {
+        "Year": "2019",
+        "IsBillingRequired": "false",
+        "#text": ">"
+      },
+      "ziputility": "SingleFileZipUtility",
+      "OptimalCompressionRatio": "0"
+    },
+      {
+        "name": "CrossLink",
+        "instructions": "Please follow these instructions on backing up your data for the Intuit conversion process.<br/><br/>Calculate all clients and remove locks and passwords from clients before beginning the backup process.<br/><br/>1. Open the CrossLink 2020 program.<br/><br/>2. From the WIP (Work In Progress) screen.<br/><br/>3. Choose Utility > System Utilities.<br/><br/>4. Click Reset Encryption Key and click Run Utility.<br/><br/>5. Change Encryption Key to \"000\".<br/><br/>6. Create a new folder on your C: drive named CONVERSIONDATA before you begin the backup process (e.g. C:\\CONVERSIONDATA).<br/><br/>7. Open the CrossLink program.<br/><br/>8. From the WIP, under Other Items, click Backup Returns, The Backup Returns screen will open.<br/><br/>9. Click Select All to highlight all of the Returns, or select individual returns by checking the boxes next to them.<br/><br/>10. Click Backup. You will be prompted when you have successfully backed up your Returns. Click Close.<br/><br/>11. Browse to c:\\xlink19 using My Computer or Windows Explorer <br/><br/>12. Locate the file that begins with ar19  or bk19 . If you have problems locating the file you can sort the files by name. The file should have the date of the last backup.<br/><br/>13. Right-click on the file and choose copy.<br/><br/>14. Browse to c:\\CONVERSIONDATA.<br/><br/>15. Right-click in the white space and choose paste.",
+        "validator": "CrossLinkBackupValidatorAndFileProvider",
+        "ziputility": "SingleFileZipUtility",
+        "isFileSelectionRequired": "false",
+        "ValidationCriteria": {
+          "Year": "2019",
+          "FileValidationInformation": [{
+            "FileNameHint": "ar",
+            "HintType": "PREFIX"
+          },
+            {
+              "FileNameHint": "bk",
+              "HintType": "PREFIX"
+            }
+          ]
+        },
+        "TaxYear": {
+          "Year": "2019",
+          "IsBillingRequired": "false",
+          "#text": ">"
+        }
+      },
+      {
+        "name": "Drake",
+        "instructions": "Please follow these instructions on backing up your data for the Intuit conversion process.<br/><br/>Calculate all clients and remove locks and passwords from clients before beginning the backup process.<br/><br/>1. On the menu bar, click Tools, select File Maintenance, then Backup<br/><br/>2.The Drake 2020 - Backup dialog box appears<br/><br/>3. Click the Select a backup location button, and select the drive and folder for your backup(set the location to C:\\CONVERSIONDATA)<br/><br/>4. Check only the box for Client Files<br/><br/>5. Click Backup",
+        "validator": "DrakeBackupValidatorAndFileProvider",
+        "ziputility": "SingleFileZipUtility",
+        "isFileSelectionRequired": "false",
+        "ValidationCriteria": {
+          "Year": "2019",
+          "FileValidationInformation": {
+            "FileValidationInfo": {
+              "FileNameHint": "7z",
+              "HintType": "EXTENSION"
+            }
+          }
+        },
+        "TaxYear": {
+          "Year": "2019",
+          "IsBillingRequired": "false",
+          "#text": ">"
+        }
+      },
+      {
+        "name": "Lacerte",
+        "instructions": "Please follow these instructions on backing up your data for the Intuit conversion process.<br/><br/>Calculate all clients and remove locks and passwords from clients before beginning the backup process.<br/><br/>Please repeat the steps below for each tax type you wish to submit for conversion.<br/><br/>1. On the menu bar, click Tax Type, and select the tax type you wish to backup<br/><br/>2. On the Client Selection screen, press and hold [Ctrl], then click each client you want to back up.<br/>OR<br/>Press F3, select All Clients, and then click OK<br/><br/>3. On the Client menu, click Backup<br/><br/>4. In the Backup Clients dialog box, select the folder  C:\\CONVERSIONDATA.<br/>      (NOTE: files from different modules with the same file name will NOT overwrite each other.)<br/><br/>5. Click OK to begin the backup process (If the directory does not exist, click Yes to create it)<br/><br/>If the client already exists in the destination directory, the Confirm Client Replace dialog appears. You have the following options:.<br/><br/>   -&emsp;Replace the client and continue with your backup, click Yes or Yes to All.<br/><br/>   -&emsp;If you do not want to replace the client but you want to continue with the backup, click No.<br/><br/>   -&emsp;To terminate the backup completely, click Cancel.",
+        "validator": "LacerteBackupValidatorAndFileProvider",
+        "ziputility": "LacerteZipUtility",
+        "ValidationCriteria": {
+          "Year": "2019",
+          "FileValidationInformation": [{
+            "FileNameHint": "ID8",
+            "HintType": "EXTENSION"
+          },
+            {
+              "FileNameHint": "SD8",
+              "HintType": "EXTENSION"
+            },
+            {
+              "FileNameHint": "CD8",
+              "HintType": "EXTENSION"
+            },
+            {
+              "FileNameHint": "PD8",
+              "HintType": "EXTENSION"
+            },
+            {
+              "FileNameHint": "FD8",
+              "HintType": "EXTENSION"
+            },
+            {
+              "FileNameHint": "RD8",
+              "HintType": "EXTENSION"
+            }
+          ],
+          "FilesToBePresentinBackup": [
+            "BAD",
+            "DCDATA",
+            "DETAIL",
+            "EF",
+            "EXPORT",
+            "NOTES",
+            "RefundsN",
+            "TBDATA",
+            "*.MDX",
+            "*.DBF",
+            "*.DAT"
+          ]
+        },
+        "TaxYear": {
+          "Year": "2019",
+          "IsBillingRequired": "false",
+          "#text": ">"
+        }
+      },
+      {
+        "name": "ProSeries",
+        "instructions": "Please follow these instructions on backing up your data for the Intuit conversion process.<br/><br/>Calculate all clients and remove locks and passwords from clients before beginning the backup process.<br/><br/>1. Set the HomeBase View to the module(s) you want to back up or to All Tax Returns if you wish to submit all tax types.<br/><br/>2. At HomeBase, press and hold [Ctrl] while clicking the clients you want to select.<br/>OR.<br/>On the HomeBase menu, click Select All to select all clients.<br/><br/>3.&emsp;On the File menu, click Client File Maintenance, then click Copy / Backup.<br/><br/>4.&emsp;In the Copy/Backup Client Files dialog box, click Set Target Directory.<br/><br/>5. Set the appropriate target directory for your backup media to C:\\CONVERSIONDATA.<br/><br/>6. Click Backup Client(s).",
+        "validator": "ProSeriesBackupValidatorAndFileProvider",
+        "ziputility": "SingleFileZipUtility",
+        "OptimalCompressionRatio": "80",
+        "ValidationCriteria": {
+          "Year": "2019",
+          "FileValidationInformation": [{
+            "FileNameHint": "18i",
+            "HintType": "EXTENSION"
+          },
+            {
+              "FileNameHint": "18s",
+              "HintType": "EXTENSION"
+            },
+            {
+              "FileNameHint": "18p",
+              "HintType": "EXTENSION"
+            },
+            {
+              "FileNameHint": "18c",
+              "HintType": "EXTENSION"
+            }
+          ]
+        },
+        "TaxYear": {
+          "Year": "2019",
+          "IsBillingRequired": "false",
+          "#text": ">"
+        }
+      },
+      {
+        "name": "ProSystemFX",
+        "instructions": "Please follow these instructions on backing up your data for the Intuit conversion process.<br/><br/>Calculate all clients and remove locks and passwords from clients before beginning the backup process.<br/><br/>1. Create a new folder on your C: drive named <b>ConversionData</b> before you begin the backup process (e.g., C:\\ConversionData).<br/><br/>2. Open the folder <b>ProSystem fx Tax</b> on the desktop and double-click <b>Production Processing</b><br/><br/>3. Click on <b>Calculate Returns,</b> then close <b>Production Processing</b> when it finishes.<br/><br/>4. In the same folder, open the <b>Office Manager</b> program.<br/><br/>5. Click <b>Backup Client Data.</b><br/><br/>6. In the <b>Create Client List</b> dialog box, select <b>All Clients,</b> then click <b>OK.</b><br/><br/>7. In the <b>Select Clients for Backup</b> window, click the clients you want, then click <b>Add, OR</b> click <b>Add All</b> to select all clients.<br/><br/>8. Click <b>Select Drive.</b><br/><br/>9. In the <b>Select Destination Drive / Directory for Backup</b> dialog box, set the destination to <b>C:\\ConversionData.</b><br/><br/>10. Click <b>OK.</b><br/><br/>11.  Next, open the ProSystem FX installation folder (usually <b>C:\\WFX32</b>). If you cannot locate that folder or are unsure of the installation path, open the folder <b>ProSystem fx Tax</b> on the desktop again, <b>right-click</b> on <b>2019 Tax Preparation</b> and choose <b>Open file location</b>. <br/><br/>12. In that folder, find the file <b>TDExport (or TDExport.exe) right-click</b> and select <b>Run as Administrator</b>.<br/><br/>13. In the <b>Select Returns for Export</b> window, you may choose filters for the clients to display or leave every option set to <b>All,</b> then click <b>OK</b>.<br/><br/>14. Next, <b>select the clients</b> you want to convert and use <b>Add</b> to move them to the bottom section, or use <b>Add All</b> to move all clients, then press <b>OK</b><br/><br/>15.In the <b>Export Data window:</b><br/> a. Check the boxes for <b>Interview form data</b> and <b>Calculated data</b><br/> b. Enter the File Name as <b>conversion.exp</b><br/> c. Enter the path created in step 1: <b>C:\\ConversionData</b><br/> d. Press <b>Enter,</b> then click <b>OK</b> to begin exporting data.<br/><br/> <b>Troubleshooting:</b><br/><br/> 1. If you receive an error stating <b>Unable to copy temp. export file to %s</b>, click <b>OK</b><br/> 2. <b>Open</b> the installation folder found in <b>step 11</b> of the instructions above.<br/> 3. In that folder, navigate to the <b>tmp</b> folder (default is <b>c:\\wfx32\\tmp\\</b>). Look for a file with an <b>.Exp</b> extension (for example: $$$3d6c.Exp). <b>Right-click</b> on that file and choose <b>Copy.</b><br/> 4. Navigate back to the <b>C:\\ConversionData</b> folder, <b>right-click</b> in an empty spot and choose <b>Paste.</b>",
+        "validator": "ProSystemFXBackupValidatorAndFileProvider",
+        "ziputility": "SingleFileZipUtility",
+        "OptimalCompressionRatio": "0",
+        "ValidationCriteria": {
+          "Year": "2019",
+          "FileValidationInformation": {
+            "FileValidationInfo": {
+              "FileNameHint": "zip",
+              "HintType": "EXTENSION"
+            }
+          },
+          "FilesToBePresentinBackup": [
+            "CLNTBKUP.*",
+            "*.exp"
+          ]
+        },
+        "TaxYear": {
+          "Year": "2019",
+          "IsBillingRequired": "false",
+          "#text": ">"
+        }
+      },
+      {
+        "name": "TaxAct",
+        "instructions": "Please follow these instructions on backing up your data for the Intuit conversion process.<br/><br/>Calculate all clients, remove locks/passwords,  <b>AND</b>  remove  <b>overrides</b>  made on forms which create new input fields (i.e., input fields that do not exist on forms by default) before beginning the backup process.<br/><br/>     1. Create a new folder on your <b>C:</b> drive named <b>ConversionData</b> before you begin the backup process (e.g., <b>C:\\ConversionData</b>).<br/><br/>     2. Browse to the installation directory of your TaxAct program. The default location is: <b>C:\\TaxACT\\TaxACT 2019 Preparers Edition\\.</b><br/><br/>     3. Open the <b>Client Data</b> folder.<br/><br/>     4. Open the folder that contains the client data, beginning with <b>TA-</b> followed by letters and numbers<br/><br/>     5. Highlight all files ending with <b>.ta8</b>. (Your computer settings may be hiding extensions, so the files may appear with the client name and have a Tax ACT icon.)<br/><br/>     6. Right-click and choose <b>Copy</b>.<br/><br/>     7. Browse to <b>C:\\ConversionData</b>.<br/><br/>     8. Right-click and choose <b>Paste</b>.<br/><br/><br/><b>Verify Backup</b><br/><br/>Open <b>C:\\ConversionData</b> to view the files that have been backed up. A valid TaxACT backup contains files with an extension of <b>.ta8</b>. You will have one file for every client you are submitting.",
+        "validator": "TaxActBackupValidatorAndFileProvider",
+        "ziputility": "SingleFileZipUtility",
+        "ValidationCriteria": {
+          "Year": "2019",
+          "FileValidationInformation": {
+            "FileValidationInfo": {
+              "FileNameHint": "ta8",
+              "HintType": "EXTENSION"
+            }
+          }
+        },
+        "TaxYear": {
+          "Year": "2019",
+          "IsBillingRequired": "false",
+          "#text": ">"
+        }
+      },
+      {
+        "name": "TaxSlayer",
+        "instructions": "Please follow these instructions on backing up your data for the Intuit conversion process.<br/><br/>Calculate all clients, remove locks/passwords,  <b>AND</b>  remove  <b>overrides</b>  made on forms which create new input fields (i.e., input fields that do not exist on forms by default) before beginning the backup process.<br/><br/>1. Create a new folder on your <b>C:</b> drive named <b>ConversionData</b> before you begin the backup process (e.g., <b>C:\\ConversionData</b>).<br/><br/>2. Open the TaxSlayer program and select <b>7. Configuration.</b><br/><br/>3. Select  <b>5. System / Network Configuration Menu.</b><br/><br/>4. Look at <b>1. Are You Using a Network?</b><br/><br/>     1. If it is <b>YES</b> then note the path in <b>4. Server Location.</b><br/><br/>     2.If <b>NO</b>, then select <b>0. Exit</b>, then <b>6. Path Menu,</b> and note the path in <b>1. Installation Path.</b><br/><br/>5. <b>Close</b> the TaxSlayer program.<br/><br/>6. Browse to the directory found in step 4 above for your TaxSlayer program. The default location is:<b> C:\\TaxSlayer\\2019Net.</b><br/><br/>7. Select the <b>DATA</b> folder, right-click and choose <b>Copy.</b><br/><br/>8. Browse to <b>C:\\ConversionData.</b><br/><br/>9. Right-click and choose <b>Paste.</b>",
+        "validator": "TaxSlayerBackupValidatorAndFileProvider",
+        "ziputility": "SingleFileZipUtility",
+        "isFileSelectionRequired": "false",
+        "TaxYear": {
+          "Year": "2019",
+          "IsBillingRequired": "false",
+          "#text": ">"
+        }
+      },
+      {
+        "name": "TaxWise",
+        "instructions": "Please follow these instructions on backing up your data for the Intuit conversion process.<br/><br/>Calculate all clients and remove locks and passwords from clients before beginning the backup process.<br/><br/>1. On the Tools menu, click Backup to Disk<br/><br/>2. In the Backup Options dialog box, click Start a new backup, then click OK.<br/><br/>3. In the Select User dialog box, click the folder containing the clients you want, then click OK<br/>OR<br/>To select multiple folders, press and hold [Ctrl], click each folder containing the clients you want<br/>OR<br/>If you want to backup all files, click Select All<br/><br/>4. Click OK<br/><br/>Note: If multiple folders are selected, a separate Backing Up From dialog box appears for each folder selected. You will need to repeat steps 3 and 4 for each folder selected.<br/><br/>5. In the Backing Up From dialog box, click the Select All button<br/><br/>6. Click OK<br/><br/>7. In the following dialog, set the drive and directory to C:\\CONVERSIONDATA<br/><br/>8. Click OK<br/><br/>9. On the File menu, click <b>Open Return.</b><br/><br/>10. In the opened Return List window, click the <b>Export</b> button on the bottom right.<br/><br/>11. In the opened Return Grid Output dialogue, set the Export Type as Comma separated values (.CSV), Export Folder to C:\\CONVERSIONDATA and Export Filename to <b>ReturnGridExport</b> and click <b>Export</b> button.",
+        "validator": "TaxWiseBackupValidatorAndFileProvider",
+        "ziputility": "SingleFileZipUtility",
+        "isFileSelectionRequired": "false",
+        "ValidationCriteria": {
+          "Year": "2019",
+          "FileValidationInformation": [{
+            "FileNameHint": "001",
+            "HintType": "EXTENSION"
+          },
+            {
+              "FileNameHint": "OPT",
+              "HintType": "EXTENSION"
+            }
+          ],
+          "FilesToBePresentinBackup": {
+            "FileToBePresentinBackup": "*.CSV"
+          }
+        },
+        "TaxYear": {
+          "Year": "2019",
+          "IsBillingRequired": "false",
+          "#text": ">"
+        }
+      },
+      {
+        "name": "TurboTax",
+        "instructions": "Please follow these instructions on backing up your data for the Intuit conversion process.<br/><br/>Calculate all clients and remove locks and passwords from clients before beginning the backup process.<br/><br/>1.&emsp;By default, TurboTax saves tax files in the My Documents > TurboTax folder.<br/><br/>2.&emsp;Navigate to this folder and copy all client files you want to back up.<br/><br/>3.&emsp;Paste all client files in C:\\CONVERSIONDATA<br/><br/>Or<br/>4.&emsp;If the TurboTax files are not located in the My Documents > TurboTax folder.<br/><br/>5.&emsp;Click the Start menu button.<br/><br/>6.&emsp;In the Start Search field, type .taxXXXX (replace XXXX with the appropriate year).<br/><br/>7.&emsp;As you type, matching files will appear in the Search pane.<br/><br/>8.&emsp;Make a note of the file's location or path..<br/><br/>9.&emsp;After locating your file on your computer, Navigate to this folder and copy all client files you want to back up.<br/><br/>10.&emsp;Paste all client files in C:\\CONVERSIONDATA",
+        "validator": "TurboTaxBackupValidatorAndFileProvider",
+        "ziputility": "SingleFileZipUtility",
+        "ValidationCriteria": {
+          "Year": "2019",
+          "FileValidationInformation": {
+            "FileValidationInfo": {
+              "FileNameHint": "tax2019",
+              "HintType": "EXTENSION"
+            }
+          }
+        },
+        "TaxYear": {
+          "Year": "2018",
+          "IsBillingRequired": "false",
+          "#text": ">"
+        }
+      },
+      {
+        "name": "UltraTaxCS",
+        "instructions": "Calculate all clients and remove locks and passwords before beginning the backup process.<br/><b>NOTE:</b> If you use UltraTax Fixed Asset CS, be sure that you can open the Fixed Asset software and view the client asset data at the machine where you will be performing the backup, otherwise the asset data may not be included with the backup!<br/><br/>      a.Create a new folder on your <b>C:</b> drive named <b>ConversionData</b> before you begin the backup process (e.g., <b>C:\\ConversionData</b>).<br/>     b.It is necessary to separate the clients into tax types for our conversion process. Open C:\\ConversionData and create a new folder for each tax type you will be backing up, using the following names:<br/>         1.1040<br/>         2.1065<br/>         3.1120<br/>         4.1120S<br/>     c.<b>Open</b> UltraTax.<br/>     d. <b>Repeat</b>the following steps for each tax type: <br/>         1.On the <b>File</b> menu, click <b>Backup...</b><br/>         2.In the <b>Backup</b> window, <b>clear</b> the box for <b>Exclude clients unchanged since their last backup</b> in the bottom left corner.<br/>         3.If you are backing up <b>1040</b> or </b>1065:</b><br/>            3.1.<b>Select only one</b> tax type under the Focus section, e.g., <b>1040 or 1065</b><br/>            3.2.Press and hold <b>[Ctrl]</b>, click each client you want, then click <b>Select -> -</b> OR - Click <b>Select All >></b>  to select all clients.<br/>         4.If you are backing up <b>1120 or 1120S:</b><br/>             4.1.<b>Select only 1120</b> under the <b>Focus</b> section<br/>             4.2.In the list of clients, click the <b>“Entity” column heading</b> to sort the clients by Entity. This will group all of the 1120 and 1120S clients separately so they can be easily selected.<br/>             4.3.<b>Select</b> only one group of clients to back up by clicking the <b>first client</b> of that type and then holding <b>[Shift]</b> while clicking the <b>last client</b> of that type.<br/>         5.Press <b>Select -></b> to select them to backup.<br/>         6.Click <b>Modify Backup Location.</b><br/>         7.In the <b>Modify Location</b> dialog box, set your target directory to <b>C:\\ConversionData\\[tax type]</b> (Use the correct tax folder for the client type you are backing up, e.g., C:\\ConversionData\\1065)<br/>         8.Click <b>OK.</b><br/>         9.Ensure <b>Encrypt client backup</b> is not checked.<br/>         10.Click <b>Backup</b> to begin the backup process.<br/>         11.An additional file is also needed from the data folder. Open the UltraTax install directory (e.g., <b>C:\\WinCSI</b>) and navigate to the <b>UT18DATA</b> folder.<br/>             11.1 Find the file <b>CltList.WT8</b>, right-click on it and choose <b>Copy</b>.<br/>             11.2 Browse to the <b>C:\\ConversionData</b> folder, right-click in an empty space and choose <b>Paste</b>.<br/><br/><br/>Verify Backup<br/><br/>Open <b>C:\\ConversionData</b> to view the files that have been backed up. A valid UltraTax backup contains one folder for each tax type. Inside the <b>ConversionData</b> folder is a file named <b>CltList.WT8.  Important :</b> Please  <b>include all files</b>  generated by the backup process in order to prevent any delays in the conversion process.",
+        "validator": "CSIUltraTaxBackupValidatorAndFileProvider",
+        "ValidationCriteria": {
+          "Year": "2018",
+          "FilesToBePresentinBackup": {
+            "FileToBePresentinBackup": "CltList.WT8"
+          }
+        },
+        "ziputility": "SingleFileZipUtility",
+        "isFileSelectionRequired": "false",
+        "OptimalCompressionRatio": "35",
+        "TaxYear": {
+          "Year": "2018",
+          "IsBillingRequired": "false",
+          "#text": ">"
+        }
+      }
+    ],
+    "BackupBanner": {
+      "Heading": "Before you start the client file data conversion process:<br/><br/>1. Open your current tax preparation software.<br/><br/>2. REMOVE ALL passwords from your client files.<br/><br/>3. Select Next and follow the backup instructions to start the client conversion submission process.",
+      "Content": "The Data Conversion process will copy selected items from your current tax preparation software to your new Intuit Tax Software and is not intended to convert all of your tax data nor will it allow you to generate a tax return for the purposes of side by side comparison with last year’s return."
+    },
+    "WizardText": {
+      "Heading": "Intuit Tax Data Conversion Wizard",
+      "Content": "This wizard will guide you through the process of uploading your data to Intuit for conversion.<br/><br/>To expedite your conversion process, please carefully read the instructions on each of the following steps.<br/><br/>PLEASE NOTE THAT NOT ALL DATA WILL CONVERT. State data, amounts not relevant to next-year tax preparation and some carryover amounts will not be converted during this process.<br/><br/>Thank you, and WELCOME TO INTUIT!"
+    },
+    "ConnectedServicesText": {
+      "Heading": "CONNECTED SERVICES SETUP REQUIRED!",
+      "Content": "Connected service is a feature within Intuit that connects through the internet <br/>to access functionality that stores or collects personally identifiable taxpayer  <br/>information which must be kept secure.<br/><br/>Tax Data Conversion is considered a connected service because it stores <br/>personally identifiable taxpayer information on servers accessed <br/>across the internet.<br/><br/>For Tax Year 2015, Intuit has implemented additional steps to protect the <br/>confidentiality and privacy of taxpayer data which is shared or accessed <br/>through the internet by restricting access to only authorized firm administrators  <br/>and employees.<br/><br/>IRS Guidelines for protecting taxpayer data are outlined in IRS Publication 4557"
+    },
+    "ConnectedServiceSetupCompleteText": {
+      "Heading": "Read the following carefully before you proceed!",
+      "Content": "If you are the Administrator of your company you can start with the <br/>Data Conversion right away. Just click on the \"Start Data Conversion\" button.<br/><br/>If you are not the Administrator, please contact your Administrator <br/>for your access request to be accepted."
+    },
+    "ServiceAgreement": "I have read and understand the procedures and capabilities for data conversion processing and I will be uploading my data files in an electronic format for Intuit to convert.  Once the data files are converted, Intuit will then upload the files back to me in an electronic format for me to access and download for use. I hereby release and agree to indemnify Intuit from all liability and damages relating to the conversion, storage, and transmittal of the client data files that I submit for this conversion process. <br/><br/>I agree to review my client data files after the conversion process, and I agree to assume full responsibility for the completeness and accuracy of all converted client data.  Intuit shall not be liable to me or any third party for any indirect, special, consequential, or incidental damages (including damages for loss of business profits, business interruption, loss of business information, and the like) arising out of any aspect of the conversion process and I hereby release and agree to indemnify Intuit from any such claims.",
+    "AcceptTermsText": "Please read the Data Conversion Service Agreement and check the box to confirm that you understand and agree to the terms.",
+    "EntitlementFailureTextLacerte": "There is an error processing your request. Please try again later or contact customer support at (800) 933-9999.",
+    "EntitlementFailureTextProseries": "There is an error processing your request. Please try again later or contact customer support at (800) 434-6818.",
+    "EntitlementFailureTextTaxOnline": "There is an error processing your request. Please try again later or contact customer support at http://accountants.intuit.com/support/index.jsp?product=online.",
+    "ConversionNotAllowedTextLacerte": "A Fast Path subscription is necessary for accessing this feature. Please contact customer support at (800) 933-9999.",
+    "ConversionNotAllowedTextProseries": ">A Fast Path subscription is necessary for accessing this feature. Please contact customer support at (800) 434-6818.",
+    "BillingInformationText": "Please be advised that you will be charged $20 for this submission because your license does not cover a free prior year conversion. Do you wish to continue?",
+    "BackUpInvalidMessage": "We could not find any valid files inside C:\\CONVERSIONDATA folder. Please follow the backup instructions on the screen to backup your files.",
+    "PaymentUnsuccessfulMessageLacerte": "There was an error processing your payment.<br/>Please check your credit card details.If you continue facing the problem then contact customer support at (800) 933-9999.",
+    "PaymentUnsuccessfulMessageProSeries": "There was an error processing your payment.<br/>Please check your credit card details.<br/>If you continue facing the problem then contact customer support at (800) 464-6818.",
+    "PaymentUnsuccessfulMessageTaxOnline": "There was an error processing your payment.<br/>Please check your credit card details.<br/>If you continue facing the problem then contact customer support at http://accountants.intuit.com/support/index.jsp?product=online.",
+    "DesktopIdentifierFileName": "FromDesktop.txt",
+    "DesktopIdentifierFileNameLacerte": "FromLacerte.txt",
+    "DesktopIdentifierFileNameProSeries": "FromProSeries.txt",
+    "UnExpectedServiceError": "An unexpected problem was encountered while contacting one of our backend systems. Please come back after sometime.",
+    "DownloadFailureTextLacerte": "An unexpected problem was encountered while downloading your files. Please verify your internet connection is working and try again. For further assistance please call our customer support line (800) 933-9999.",
+    "DownloadFailureTextProseries": "An unexpected problem was encountered while downloading your files. Please verify your internet connection is working and try again. For further assistance please call our customer support line (800) 434-6818.",
+    "DownloadFailureTextTaxOnline": "An unexpected problem was encountered while downloading your files. Please verify your internet connection is working and try again. For further assistance please contact customer support at http://accountants.intuit.com/support/index.jsp?product=online",
+    "LacerteTaxFilesDetectedMessage": "Prior year tax files were detected. You will need to restore the files in the Lacerte prior year program. Do you wish to continue?",
+    "LacerteConfigurationErrorMessage": "Unable to complete download and data processing. No configuration file found from Lacerte.",
+    "LacerteTaxFilesFolderBrowserMessage": "Select a folder in which to save the downloaded tax files.",
+    "InstallationKeyHelp": "Log in to PTO and click on the firm settings on the top right corner. Go to tools and select Convert Data. Look at the section marked as Important to find the Installation key."
+  },
+  "IntuitSoftwareConfiguration": {
+    "conversionsFolderSettings": {
+      "ConversionsFolderLocation": "C:/CONVERSIONDATA",
+      "ZipFileNameSuffix": "Unconverted Data",
+      "ConversionsFolderCreationErrorMessage": "Unable to create \"CONVERSIONDATA\" folder. Access is denied. Please create folder  \"CONVERSIONDATA\" (i.g. C:\\CONVERSIONDATA) and try again"
+    },
+    "uploadSettings": {
+      "UploadFileSizeLimit": "50000000"
+    },
+    "uploadFailureSettings": {
+      "UploadFailureMessage": "Cannot Upload File, please try again.<br/> <br/> <br/>Please <link>contact support</link> or by phone at (800) 434-6818 if you continue to have issues (follow the phone prompts for conversion questions).",
+      "UploadFailureMessageTaxOnline": "Cannot Upload File, please try again.<br/> <br/> <br/>Our apologies.  Please try again.<br/> <br/>If you continue to experience problems <link>click here</link> and chat with one of our Intuit ProConnect Tax care agents.",
+      "MaxSizeFailureMessage": "Unfortunately, your submission exceeds our current upload size limits will need to be submitted by mail.<br/> <br/>To submit your data conversion by mail, please visit <link>Data Conversion by Mail</link>."
+    },
+    "Softwares": [{
+      "name": "Lacerte",
+      "confirmation": "\\line Your files were successfully submitted to Intuit. Based on the number of files you submitted, your conversion may take up to {{days}} to complete \\b0.\\line \\line \\line A confirmation email will be sent to \\b {{emailAddress}}\\b0  letting you know when your conversion is complete and ready to be downloaded. \\b To check on the status of your conversion or to download the files please select \"Download Converted Client Data\" from the Import Client Data Conversion menu item. \\b0  \\line \\line \\line If you need assistance or have questions, please <link>contact support</link>  or by phone at (800) 933-9999 (follow the phone prompts for conversion questions).",
+      "confirmationStandalone": "\\line Your files were successfully submitted to Intuit. Based on the number of files you submitted, your conversion may take up to {{days}} to complete \\b0.\\line \\line \\line A confirmation email will be sent to \\b {{emailAddress}}\\b0  letting you know when your conversion is complete and ready to be downloaded. \\b Log in to this application and select the \"Download Converted Data\" button.\\b0  This button may also be used to check on the status of your conversion.  \\line \\line \\line If you need assistance or have questions, please <link>contact support</link>  or by phone at (800) 933-9999 (follow the phone prompts for conversion questions).",
+      "downloadSuccessTextStandalone": "\\b Using your converted data: \\b0 \\line \\line Your converted data will be loaded by default in the following directories: \\line \\line Individual C:\\\\CONV\\\\IDATA \\line Partnership C:\\\\CONV\\\\PDATA \\line Corporation C:\\\\CONV\\\\CDATA \\line S Corporation C:\\\\CONV\\\\SDATA \\line Fiduciary C:\\\\CONV\\\\FDATA \\line \\line \\b Restore your converted data in the Lacerte Tax program \\b0 \\line \\line 1. Open the Lacerte Tax Program \\line 2. For each tax type to which you want to restore data, follow these steps: \\line        1. Click Client on the menu bar, then select Tax Type and select the applicable tax type (e.g. Individual, \\line            Partnership, etc.) \\line        2. Click Client on the menu bar again, then select Restore, and then Browse to the appropriate directory \\line            according to the table above (such as C:\\\\CONV\\\\IDATA for Individual) \\line        3. Repeat these steps for all Tax Type (e.g. Individual, Partnership, etc.)\\line \\line \\b Run the Proforma \\b0 \\line \\line Follow these steps to run the Proforma Wizard \\b once you have received the Proforma edition of the program\\b0 (scheduled to be released in November), which simply transfers your client data year over year. \\line \\line 1. Open the previous year Lacerte Tax program \\line 2. From the Clients tab, select Tools on the menu bar.\\line 3. Select Transfer Clients (Proforma to 20YY) (YY represents the current tax year) \\line 4. On the Proforma Welcome screen, click Next. \\line 5. Select Transfer all my clients for all my modules at once \\line 6. Follow the simple instructions on each \\line     wizard screen. \\line 7. After finishing the Proforma Wizard, close the Lacerte tax program. \\line 8. Open the current year Lacerte tax program to view your data files.",
+      "downloadSuccessTextAutomated": "\\line 1. The converted files will download into C:\\\\CONV\\ for you to restore into 2018.\\line 2. Open the 2018 Lacerte Tax Program.\\line 3. Click Client from the menu bar.\\line 4. Select Tax Type - Individual.\\line 5. Click Settings from the menu bar.\\line 6. Select Options.\\line 7. On the Setup tab, make a note of your current data path, then change the data path to C:\\CONV\\IDATA.\\line 8. You will either immediately see the clients or a dialog indicating they are bridging. Wait for the clients to appear before proceeding.\\line 9. Select all clients by pressing F3 and choosing All (Note: If you do not wish to put all converted clients into your database, you can select a subgroup, or unselect clients by Ctrl+clicking them.)\\line 10. Choose Client from the menu bar.\\line 11. Select Backup.\\line 12. In the Backup Clients dialog box, enter your database path from step 5 into the Destination box, or click Browse and navigate to that path.\\line 13. Click OK.\\line Note: If there are any conflicting client numbers, you will be prompted to overwrite them - you can choose not to, and then renumber those clients before attempting to back them up again.\\line 14. After the backup is complete, click Settings from the menu bar.\\line 15. Select Options and change your data path back to what it originally was (it should appear in the drop down on that box)",
+      "downloadSuccessText": "\\b Using your converted data: \\b0 \\line \\line Your converted data will be loaded by default in the following directories: \\line \\line Individual C:\\\\CONV\\\\IDATA \\line Partnership C:\\\\CONV\\\\PDATA \\line Corporation C:\\\\CONV\\\\CDATA \\line S Corporation C:\\\\CONV\\\\SDATA \\line Fiduciary C:\\\\CONV\\\\FDATA \\line \\line \\b Restore your converted data in the Lacerte Tax program \\b0 \\line \\line 1. Open the Lacerte Tax Program \\line 2. For each tax type to which you want to restore data, follow these steps: \\line        1. Click Client on the menu bar, then select Tax Type and select the applicable tax type (e.g. Individual, \\line            Partnership, etc.) \\line        2. Click Client on the menu bar again, then select Restore, and then Browse to the appropriate directory \\line            according to the table above (such as C:\\\\CONV\\\\IDATA for Individual) \\line        3. Repeat these steps for all Tax Type (e.g. Individual, Partnership, etc.)\\line \\line \\b Run the Proforma \\b0 \\line \\line Follow these steps to run the Proforma Wizard \\b once you have received the Proforma edition of the program\\b0 (scheduled to be released in November), which simply transfers your client data year over year. \\line \\line 1. Open the previous year Lacerte Tax program \\line 2. From the Clients tab, select Tools on the menu bar.\\line 3. Select Transfer Clients (Proforma to 20YY) (YY represents the current tax year) \\line 4. On the Proforma Welcome screen, click Next. \\line 5. Select Transfer all my clients for all my modules at once \\line 6. Follow the simple instructions on each \\line     wizard screen. \\line 7. After finishing the Proforma Wizard, close the Lacerte tax program. \\line 8. Open the current year Lacerte tax program to view your data files.",
+      "EstimatedTimeForAutomatedJob": "24 hours",
+      "EstimatedTimeForManualJob": "1-3 days"
+    },
+      {
+        "name": "ProSeries",
+        "confirmation": "\\line Your files were successfully submitted to Intuit. Based on the number of files you submitted, your conversion may take up to {{days}} to complete \\b0.\\line \\line \\line A confirmation email will be sent to \\b {{emailAddress}}\\b0  letting you know when your conversion is complete and ready to be downloaded. \\b To check on the status of your conversion or to download the files please select \"Download Converted Client Data\" from the Import Client Data Conversion menu item. \\b0 \\line \\line \\line If you need assistance or have questions, please <link>contact support</link>  or by phone at (800) 434-6818 (follow the phone prompts for conversion questions).",
+        "confirmationStandalone": "\\line Your files were successfully submitted to Intuit. Based on the number of files you submitted, your conversion may take up to {{days}} to complete \\b0.\\line \\line \\line A confirmation email will be sent to \\b {{emailAddress}}\\b0  letting you know when your conversion is complete and ready to be downloaded. \\b Log in to this application and select the \"Download Converted Data\" button.\\b0  This button may also be used to check on the status of your conversion. \\line \\line \\line If you need assistance or have questions, please <link>contact support</link>  or by phone at (800) 434-6818 (follow the phone prompts for conversion questions).",
+        "downloadSuccessTextStandalone": "\\b Restore your converted data \\b0 \\line \\line Your converted data will be loaded by default in the following directory: C:\\\\CONV \\line \\line \\b Restore your converted data in the ProSeries tax program \\b0 \\line \\line 1. Open the \\b previous year ProSeries Tax program \\b0 \\line 2. From \\b HomeBase \\b0, select \\b File \\b0 on the menu bar \\line 3. Select \\b Client File Maintenance \\b0, and choose \\b Restore \\b0 \\line 4. Click \\b Set Source Directory \\b0, and then browse to \\b C:\\\\CONV \\b0 \\line 5. In the \\b Type \\b0 list box, select \\b All Tax Returns \\b0 \\line 6. Click \\b Set Target Directory \\b0, and then set the data path to \\b C:\\\\PROWINYY\\\\YYDATA \\b0 (\\b YY \\b0 represents the prior tax year) \\line 7. Click \\b Select All \\b0, then click \\b Restore Clients \\b0 \\line \\line \\b Run the Year-to-Year Transfer\\b0 \\line \\line Once you have received the Year-to-Year Transfer edition of the current year ProSeries tax program (scheduled for release early November), follow these steps to run the Year-to-Year Transfer, and transfer your client data year over year. \\line \\line 1. Open the current year ProSeries Tax program. \\line 2. From HomeBase, select File on the menu bar. \\line 3. Select Transfer, and then select Transfer Clients. \\line 4. In Box 1, select All prior year tax files to current year tax files (e.g. All 20YY Tax Files to 20XX Tax Files \\line      - YY represents the prior year and XX represents the current year). \\line 5. In Box 2, browse to C:\\PROWINYY\\YYDATA (YY represents the prior tax year). \\line 6. In Box 3, browse to C:\\PROWINXX\\YYDATA (XX represents the current tax year). \\line 7. In Box 4, click Select All. \\line 8. In Box 5, click Transfer. \\line 9. In the Batch Transfer Selection dialog, select Tax Files, and then click OK.",
+        "downloadSuccessTextAutomated": [],
+        "downloadSuccessText": "\\line Your files were successfully downloaded from the Client Data conversion service. \\line \\line To restore your converted data into the ProSeries Tax Program: \\line \\line  1. Close and reopen ProSeries. \\line  2. You may first get a pop-up to transfer files from last year. You can indicate 'No' on this dialog. \\line  3. A dialog will pop-up to confirm that ProSeries has detected the converted client data that you downloaded \\line       Select 'Yes' on this dialog to transfer the converted client data into ProSeries now. \\line  4. A transfer log will appear confirming the number of clients successfully transferred, you can print or close \\line       this dialog. \\line  5. When you close the transfer log, your converted clients will appear in the HomeBase view(s). \\line \\line  \\b NOTE: \\b0 Each different return type (for example 1040 vs. 1120S) will appear on a separate HomeBase view. \\line       Use the HomeBase View drop down to change between different HomeBase views.",
+        "EstimatedTimeForAutomatedJob": "24 hours",
+        "EstimatedTimeForManualJob": "1-3 days"
+      },
+      {
+        "name": "TaxOnline",
+        "confirmation": "\\line Your files were successfully submitted to Intuit. Based on the number of files you submitted, your conversion may take up to {{days}} to complete \\b0.\\line \\line \\line A confirmation email will be sent to {{emailAddress}} when your conversion is complete and your clients are available in ProConnect Tax.",
+        "confirmationStandalone": "\\line Your files were successfully submitted to Intuit. Based on the number of files you submitted, your conversion may take up to {{days}} to complete \\b0.\\line \\line \\line A confirmation email will be sent to {{emailAddress}} when your conversion is complete and your clients are available in ProConnect Tax.",
+        "downloadSuccessTextAutomated": [],
+        "downloadSuccessText": [],
+        "downloadSuccessTextStandalone": [],
+        "EstimatedTimeForAutomatedJob": "24 hours",
+        "EstimatedTimeForManualJob": "1-3 days"
+      },
+      {
+        "name": "ProFile",
+        "confirmation": "\\line Your files were successfully submitted to Intuit. Based on the number of files you submitted, your conversion may take up to {{days}} to complete \\b0.\\line \\line \\line A confirmation email will be sent to {{emailAddress}} when your conversion is complete and your clients are available in Profile.",
+        "confirmationStandalone": "\\line Your files were successfully submitted to Intuit. Based on the number of files you submitted, your conversion may take up to {{days}} to complete \\b0.\\line \\line \\line A confirmation email will be sent to {{emailAddress}} when your conversion is complete and your clients are available in Profile.",
+        "downloadSuccessTextAutomated": [],
+        "downloadSuccessText": [],
+        "downloadSuccessTextStandalone": [],
+        "EstimatedTimeForAutomatedJob": "24 hours",
+        "EstimatedTimeForManualJob": "1-3 days"
+      }
+    ]
+  }
+}

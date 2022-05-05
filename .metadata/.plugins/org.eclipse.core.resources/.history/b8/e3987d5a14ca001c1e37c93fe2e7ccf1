@@ -1,0 +1,164 @@
+function config() {
+  karate.configure('connectTimeout', 20000);
+  karate.configure('readTimeout', 20000);
+  var env = karate.env; // get system property 'karate.env'
+  karate.log('karate.env system property was:', env);
+  if (!env) {
+    env = 'aws-e2e-blue';
+  }
+  var config = {
+    env: env
+  };
+  if (env == 'loc') {
+        // customize
+        config.appId = 'Intuit.pcg.dc.dcawsbluetestclient';
+        config.appSecret = 'preprdxxIAwEcEsqQtrS7SpLMkEw4dXZ6uIB1RRa';
+        config.mfaUrlBase = 'https://access-e2e.platform.intuit.com/v2/';
+        config.oiiUrlBase = 'https://accounts-e2e.platform.intuit.com/v1/';
+        config.dcmUrlBase = 'http://localhost:8080/dataconversionsmanager-service/v1';
+        config.dcmHeaders = 'dcm-v2-headers.js';
+        config.iusUsername = 'ylrd_chvd_iamtestpass@gmail.com';
+        config.iusPassword = 'password1234';
+        config.oinpNotifyEmailAddress = 'sharathshashidhar+iamtestpass@gmail.com';
+        config.oinpUrlBase = 'https://consumernotification-e2e.api.intuit.com';
+        config.documentUrlBase = 'https://financialdocument-e2e.platform.intuit.com';
+        config.dcmAppId = 'Intuit.accountant.dataconversions.dcmanager';
+        config.dcmAppSecret = 'preprdqJ1apYKq8kX9bNBHw093BqxVs5sw4vCANF';
+  }
+  else if(env == 'ihp-dev') {
+    // customize
+      config.appId = 'Intuit.accountant.dataconversions.dcmanager';
+      config.appSecret = 'preprdqJ1apYKq8kX9bNBHw093BqxVs5sw4vCANF';
+      config.mfaUrlBase = 'https://access-e2e.platform.intuit.com/v2/';
+      config.oiiUrlBase = 'https://accounts-e2e.platform.intuit.com/v1/';
+      config.dcmUrlBase = 'https://services-dataconversionsmanager-dev.intuit.com/dataconversionsmanager-service/v1';
+      config.dcmHeaders = 'dcm-v2-headers.js';
+      config.iusUsername = 'ylrd_chvd_iamtestpass@gmail.com';
+      config.iusPassword = 'password1234';
+      config.oinpNotifyEmailAddress = 'sharathshashidhar+iamtestpass@gmail.com';
+  }
+  else if(env == 'aws-qal-blue') {
+      // customize
+      config.appId = 'Intuit.pcg.dc.dcawsbluetestclient';
+      config.appSecret = 'preprdxxIAwEcEsqQtrS7SpLMkEw4dXZ6uIB1RRa';
+      config.mfaUrlBase = 'https://access-e2e.platform.intuit.com/v2/';
+      config.oiiUrlBase = 'https://accounts-e2e.platform.intuit.com/v1/';
+      config.dcmHealthUrl = 'https://dataconversionmanager-qal.api.intuit.com';
+      config.dcmUrlBase = 'https://dataconversionmanager-qal.api.intuit.com/v1';
+      config.dcmHeaders = 'dcm-v2-headers.js';
+      config.iusUsername = 'ylrd_chvd_iamtestpass@gmail.com';
+      config.iusPassword = 'password1234';
+      config.oinpNotifyEmailAddress = 'sharathshashidhar+iamtestpass@gmail.com';
+      config.oinpUrlBase = 'https://consumernotification-e2e.api.intuit.com';
+      config.documentUrlBase = 'https://financialdocument-e2e.platform.intuit.com';
+      config.dcmAppId = 'Intuit.accountant.dataconversions.dcmanager';
+      config.dcmAppSecret = 'preprdqJ1apYKq8kX9bNBHw093BqxVs5sw4vCANF';
+  }
+  else if(env == 'aws-qal-green') {
+      // customize
+      config.appId = 'Intuit.pcg.dc.dcawsgreentestclient';
+      config.appSecret = 'preprdX0CIajqE5Ako3G5ZrXNVfXpKFnHG7MWcyj';
+      config.mfaUrlBase = 'https://access-e2e.platform.intuit.com/v2/';
+      config.oiiUrlBase = 'https://accounts-e2e.platform.intuit.com/v1/';
+      config.dcmHealthUrl = 'https://dataconversionmanager-qal.api.intuit.com';
+      config.dcmUrlBase = 'https://dataconversionmanager-qal.api.intuit.com/v1';
+      config.dcmHeaders = 'dcm-v2-headers.js';
+      config.iusUsername = 'ylrd_chvd_iamtestpass@gmail.com';
+      config.iusPassword = 'password1234';
+      config.oinpNotifyEmailAddress = 'sharathshashidhar+iamtestpass@gmail.com';
+      config.oinpUrlBase = 'https://consumernotification-e2e.api.intuit.com';
+      config.documentUrlBase = 'https://financialdocument-e2e.platform.intuit.com';
+      config.dcmAppId = 'Intuit.accountant.dataconversions.dcmanager';
+      config.dcmAppSecret = 'preprdqJ1apYKq8kX9bNBHw093BqxVs5sw4vCANF';
+  }
+  else if(env == 'aws-e2e-blue') {
+      // customize
+      config.appId = 'Intuit.pcg.dc.dcawsbluetestclient';
+      config.appSecret = 'preprdxxIAwEcEsqQtrS7SpLMkEw4dXZ6uIB1RRa';
+      config.mfaUrlBase = 'https://access-e2e.platform.intuit.com/v2/';
+      config.oiiUrlBase = 'https://accounts-e2e.platform.intuit.com/v1/';
+      config.dcmHealthUrl = 'https://dataconversionmanager-e2e.api.intuit.com';
+      config.dcmUrlBase = 'https://dataconversionmanager-e2e.api.intuit.com/v1';
+      config.dcmHeaders = 'dcm-v2-headers.js';
+      config.iusUsername = 'ylrd_chvd_iamtestpass@gmail.com';
+      config.iusPassword = 'password1234';
+      config.oinpNotifyEmailAddress = 'sharathshashidhar+iamtestpass@gmail.com';
+      config.oinpUrlBase = 'https://consumernotification-e2e.api.intuit.com';
+      config.documentUrlBase = 'https://financialdocument-e2e.platform.intuit.com';
+      config.dcmAppId = 'Intuit.accountant.dataconversions.dcmanager';
+      config.dcmAppSecret = 'preprdqJ1apYKq8kX9bNBHw093BqxVs5sw4vCANF';
+  }
+  else if(env == 'aws-e2e-green') {
+      // customize
+      config.appId = 'Intuit.pcg.dc.dcawsgreentestclient';
+      config.appSecret = 'preprdX0CIajqE5Ako3G5ZrXNVfXpKFnHG7MWcyj';
+      config.mfaUrlBase = 'https://access-e2e.platform.intuit.com/v2/';
+      config.oiiUrlBase = 'https://accounts-e2e.platform.intuit.com/v1/';
+      config.dcmHealthUrl = 'https://dataconversionmanager-e2e.api.intuit.com';
+      config.dcmUrlBase = 'https://dataconversionmanager-e2e.api.intuit.com/v1';
+      config.dcmHeaders = 'dcm-v2-headers.js';
+      config.iusUsername = 'ylrd_chvd_iamtestpass@gmail.com';
+      config.iusPassword = 'password1234';
+      config.oinpNotifyEmailAddress = 'sharathshashidhar+iamtestpass@gmail.com';
+      config.oinpUrlBase = 'https://consumernotification-e2e.api.intuit.com';
+      config.documentUrlBase = 'https://financialdocument-e2e.platform.intuit.com';
+      config.dcmAppId = 'Intuit.accountant.dataconversions.dcmanager';
+      config.dcmAppSecret = 'preprdqJ1apYKq8kX9bNBHw093BqxVs5sw4vCANF';
+  }
+  else if (env == 'ihp-e2e') {
+    // customize
+      config.appId = 'Intuit.accountant.dataconversions.dcmanager';
+      config.appSecret = 'preprdqJ1apYKq8kX9bNBHw093BqxVs5sw4vCANF';
+      config.mfaUrlBase = 'https://access-e2e.platform.intuit.com/v2/';
+      config.oiiUrlBase = 'https://accounts-e2e.platform.intuit.com/v1/';
+      config.dcmUrlBase = 'https://services-dataconversionsmanager-e2e.intuit.com/dataconversionsmanager-service/v1';
+      config.dcmHeaders = 'dcm-v2-headers.js';
+      config.iusUsername = 'ylrd_chvd_iamtestpass@gmail.com';
+      config.iusPassword = 'password1234';
+      config.oinpNotifyEmailAddress = 'sharathshashidhar+iamtestpass@gmail.com';
+  }
+  else if (env == 'ihp-vm-prod'){
+      config.appId = 'Intuit.apd.dataconversions.services';
+      config.appSecret = 'prdEhL7DAlbwPNXJ6KSbXuLvYJmpaUBUK0AN8xqx';
+      config.mfaUrlBase = 'https://access.platform.intuit.com/v2/';
+      config.oiiUrlBase = 'https://accounts.platform.intuit.com/v1/';
+      config.dcmUrlBase = 'https://services-be-prd-qydc.accountant.intuit.net/dataconversionsmanager/v1/';
+      config.dcmHeaders = 'dcm-headers.js';
+      config.iusUsername = 'ca84bff1-b16c-47d9-895b-594b48174b78_iamtestpass@gmail.com';
+      config.iusPassword = 'password1234';
+      config.oinpNotifyEmailAddress = 'sharath_shashidhar@intuit.com';
+  }
+  else if (env == 'aws-prod-blue'){
+      config.appId = 'Intuit.pcg.dc.dcawsbluetestclient';
+      config.appSecret = 'prdoJTxLlAUqwfhrG0VlCqb0YKvBqSatuRv1rtCl';
+      config.mfaUrlBase = 'https://access.platform.intuit.com/v2/';
+      config.oiiUrlBase = 'https://accounts.platform.intuit.com/v1/';
+      config.dcmHealthUrl = 'https://dataconversionmanager.api.intuit.com';
+      config.dcmUrlBase = 'https://dataconversionmanager.api.intuit.com/v1';
+      config.dcmHeaders = 'dcm-v2-headers.js';
+      config.iusUsername = 'ca84bff1-b16c-47d9-895b-594b48174b78_iamtestpass@gmail.com';
+      config.iusPassword = 'password1234';
+      config.oinpNotifyEmailAddress = 'sharath_shashidhar@intuit.com';
+      config.oinpUrlBase = 'https://consumernotification.api.intuit.com';
+      config.documentUrlBase = 'https://financialdocument.platform.intuit.com';
+      config.dcmAppId = 'Intuit.accountant.dataconversions.dcmanager';
+      config.dcmAppSecret = '';
+  }
+  else if (env == 'aws-prod-green'){
+      config.appId = 'Intuit.pcg.dc.dcawsgreentestclient';
+      config.appSecret = 'prdUlgWpvv1IvE6oGF4PRbLNN61Zgw4bwU8LgJwV';
+      config.mfaUrlBase = 'https://access.platform.intuit.com/v2/';
+      config.oiiUrlBase = 'https://accounts.platform.intuit.com/v1/';
+      config.dcmHealthUrl = 'https://dataconversionmanager.api.intuit.com';
+      config.dcmUrlBase = 'https://dataconversionmanager.api.intuit.com/v1';
+      config.dcmHeaders = 'dcm-v2-headers.js';
+      config.iusUsername = 'ca84bff1-b16c-47d9-895b-594b48174b78_iamtestpass@gmail.com';
+      config.iusPassword = 'password1234';
+      config.oinpNotifyEmailAddress = 'sharath_shashidhar@intuit.com';
+      config.oinpUrlBase = 'https://consumernotification.api.intuit.com';
+      config.documentUrlBase = 'https://financialdocument.platform.intuit.com';
+      config.dcmAppId = 'Intuit.accountant.dataconversions.dcmanager';
+      config.dcmAppSecret = '';
+  }
+  return config;
+}

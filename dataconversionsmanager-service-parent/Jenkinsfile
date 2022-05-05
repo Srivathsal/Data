@@ -1,0 +1,243 @@
+#!groovy
+pipeline {
+  agent {
+    label "oprdscmas30b"
+  }
+  environment {
+    no_proxy="ptgnexus.corp.intuit.net, ptgchef-qdc.corp.intuit.net, .intuit.com, localhost, 127.0.0.1, 10.*.*.*"
+  }
+
+  stages {
+    // At least one stage is required.
+    stage("Setup") {
+      // Every stage must have a steps block containing at least one step.
+      steps {
+        script {
+          def props = readProperties file:'build/Jenkinsfile.properties'
+          captureUserInput(props)
+          env.STACK_NAME = props['STACK_NAME']
+          env.QAL_DEPLOY = props['qal.deploy']
+          env.QAL_REGRESSION = props['qal.regression']
+          env.E2E_DEPLOY = props['e2e.deploy']
+          env.E2E_REGRESSION = props['e2e.regression']
+          env.PRF_DEPLOY = props['prf.deploy']
+          env.PRF_REGRESSION = props['prf.regression']
+          env.COVERAGE = props['coverage']
+          env.GIT_REPO = props['GIT_REPO']
+          env.BUILD_ACCEPT="Accept: application/vnd.github.v3.raw"
+          env.BUILD_REPO="https://github.intuit.com/raw/PTG-Services/build-scripts/deploy-from-AWS-artifactory/pipeline/"
+
+          withCredentials([usernamePassword(credentialsId: 'a5e5bf34-66fb-491a-b59f-2ebe42d0a18d', passwordVariable: 'GIT_PASSWORD', usernameVariable: 'GIT_COMMITTER_NAME')]) {
+            sh '''
+            set +x
+            curl -s -o ${WORKSPACE}/build/file_list.txt --header "Authorization: token ${GIT_PASSWORD}" --header "${BUILD_ACCEPT}" --remote-name --location ${BUILD_REPO}file_list.txt
+
+            filename=${WORKSPACE}/build/file_list.txt
+            for buildfilename in `cat "$filename"`
+            do
+                curl -s -o ${WORKSPACE}/build/${buildfilename} --header "Authorization: token ${GIT_PASSWORD}" --header "${BUILD_ACCEPT}" --remote-name --location ${BUILD_REPO}${buildfilename}
+            done
+            chmod 755 ${WORKSPACE}/build/*.sh
+            '''
+          }
+        }
+      }
+    }
+
+
+
+    stage('Deploy: QAL') {
+      when {
+        expression { env.QAL_DEPLOY == 'true' }
+      }
+      steps {
+        // checkpoint to be able to restart deploy to QAL
+      	checkpoint "Before Deploy to QAL"
+        milestone(100)
+        script {
+          env.DATA_CENTER = 'both'
+          env.CFG_ENV = 'qal'
+          env.APP_ENV = 'env1'
+          env.C_LIMIT_CPU = '1'
+          env.CONFIG_BRANCH = env.BUILD_VERSION
+        }
+        withCredentials([usernamePassword(credentialsId: 'APPD_CREDS', passwordVariable: 'PCG_OPS_APPD_PWD', usernameVariable: 'PCG_OPS_APPD_USR'), usernamePassword(credentialsId: 'DOCKER_CREDS', passwordVariable: 'PCG_OPS_DCKR_PWD', usernameVariable: 'PCG_OPS_DCKR_USR'), usernamePassword(credentialsId: 'SNOW_CREDS', passwordVariable: 'PCG_OPS_SNOW_PWD', usernameVariable: 'PCG_OPS_SNOW_USR')]) {
+          sh ''' bash -x ${WORKSPACE}/build/pipeline_preprod_deploy.sh'''
+        }
+      }
+    }
+
+    stage('Regression: QAL') {
+      when {
+        expression { env.QAL_REGRESSION == 'true' }
+      }
+      steps {
+        // checkpoint to be able to restart regression on QAL
+        checkpoint "Before Running regression on QAL"
+        milestone(200)
+
+        withCredentials([usernamePassword(credentialsId: 'a5e5bf34-66fb-491a-b59f-2ebe42d0a18d', passwordVariable: 'GIT_PASSWORD', usernameVariable: 'GIT_COMMITTER_NAME')]) {
+          sh ''' ENV=qal bash -x ${WORKSPACE}/build/pipeline_regression.sh '''
+        }
+
+        //https://jenkins.io/blog/2017/02/10/declarative-html-publisher/
+        publishHTML([allowMissing: false, alwaysLinkToLastBuild: true, keepAll: true, reportDir: 'test-suite/target/site', reportFiles: 'surefire-report.html', reportName: 'QAL Regression Report'])
+      }
+    }
+
+    stage('Deploy: E2E') {
+      when {
+        expression { env.E2E_DEPLOY == 'true' }
+      }
+      steps {
+        // checkpoint to be able to restart deploy to E2E
+      	checkpoint "Before Deploy to E2E"
+        milestone(300)
+        script {
+          env.DATA_CENTER = 'both'
+          env.CFG_ENV = 'e2e'
+          env.APP_ENV = 'env1'
+          env.C_LIMIT_CPU = '1'
+          env.CONFIG_BRANCH = env.BUILD_VERSION
+        }
+
+        withCredentials([usernamePassword(credentialsId: 'APPD_CREDS', passwordVariable: 'PCG_OPS_APPD_PWD', usernameVariable: 'PCG_OPS_APPD_USR'), usernamePassword(credentialsId: 'DOCKER_CREDS', passwordVariable: 'PCG_OPS_DCKR_PWD', usernameVariable: 'PCG_OPS_DCKR_USR'), usernamePassword(credentialsId: 'SNOW_CREDS', passwordVariable: 'PCG_OPS_SNOW_PWD', usernameVariable: 'PCG_OPS_SNOW_USR')]) {
+          sh ''' bash -x ${WORKSPACE}/build/pipeline_preprod_deploy.sh'''
+        }
+      }
+    }
+
+    stage('Regression: E2E') {
+      when {
+        expression { env.E2E_REGRESSION == 'true' }
+      }
+      steps {
+        // checkpoint to be able to restart regression on E2E
+        checkpoint "Before Running regression on E2E"
+        milestone(400)
+
+        withCredentials([usernamePassword(credentialsId: 'a5e5bf34-66fb-491a-b59f-2ebe42d0a18d', passwordVariable: 'GIT_PASSWORD', usernameVariable: 'GIT_COMMITTER_NAME')]) {
+          sh ''' ENV=e2e bash -x ${WORKSPACE}/build/pipeline_regression.sh '''
+        }
+
+        //https://jenkins.io/blog/2017/02/10/declarative-html-publisher/
+        publishHTML([allowMissing: false, alwaysLinkToLastBuild: true, keepAll: true, reportDir: 'test-suite/target/site', reportFiles: 'surefire-report.html', reportName: 'E2E Regression Report'])
+      }
+    }
+
+    stage('Deploy: PRF') {
+      when {
+        expression { env.PRF_DEPLOY == 'true' }
+      }
+      steps {
+        // checkpoint to be able to restart deploy to PRF
+        checkpoint "Before Deploy to PRF"
+        milestone(500)
+        script {
+          env.DATA_CENTER = 'both'
+          env.CFG_ENV = 'prf'
+          env.APP_ENV = 'env1'
+          env.C_LIMIT_CPU = '1'
+          env.CONFIG_BRANCH = env.BUILD_VERSION
+        }
+
+        withCredentials([usernamePassword(credentialsId: 'APPD_CREDS', passwordVariable: 'PCG_OPS_APPD_PWD', usernameVariable: 'PCG_OPS_APPD_USR'), usernamePassword(credentialsId: 'DOCKER_CREDS', passwordVariable: 'PCG_OPS_DCKR_PWD', usernameVariable: 'PCG_OPS_DCKR_USR'), usernamePassword(credentialsId: 'SNOW_CREDS', passwordVariable: 'PCG_OPS_SNOW_PWD', usernameVariable: 'PCG_OPS_SNOW_USR')]) {
+          sh ''' bash -x ${WORKSPACE}/build/pipeline_preprod_deploy.sh'''
+        }
+      }
+    }
+
+    stage('Regression: PRF') {
+      when {
+        expression { env.PRF_REGRESSION == 'true' }
+      }
+      steps {
+        // checkpoint to be able to restart regression on PRF
+        checkpoint "Before Running regression on PRF"
+        milestone(600)
+
+          withCredentials([usernamePassword(credentialsId: 'a5e5bf34-66fb-491a-b59f-2ebe42d0a18d', passwordVariable: 'GIT_PASSWORD', usernameVariable: 'GIT_COMMITTER_NAME')]) {
+              sh ''' ENV=prf bash -x ${WORKSPACE}/build/pipeline_regression.sh '''
+          }
+
+        //https://jenkins.io/blog/2017/02/10/declarative-html-publisher/
+        publishHTML([allowMissing: false, alwaysLinkToLastBuild: true, keepAll: true, reportDir: 'test-suite/target/site', reportFiles: 'surefire-report.html', reportName: 'PRF Regression Report'])
+      }
+    }
+
+    stage('CoverageReport') {
+      when {
+        expression { env.COVERAGE == 'true' }
+      }
+      steps {
+        // checkpoint to be able to restart regression on PRF
+        checkpoint "Before Running Coverage"
+        milestone(700)
+       withCredentials([usernamePassword(credentialsId: 'a5e5bf34-66fb-491a-b59f-2ebe42d0a18d', passwordVariable: 'GIT_PASSWORD', usernameVariable: 'GIT_COMMITTER_NAME')]) {
+         sh '''
+         bash -x ${WORKSPACE}/docker/code_coverage.sh
+         '''
+        }
+      }
+    }
+
+  }
+  post {
+    // Always runs. And it runs before any of the other post conditions.
+    failure {
+        mail to: "Amar_Mattey@intuit.com",
+        subject: "\u2639 ${env.JOB_NAME} (${env.BUILD_NUMBER}) has failed",
+        body: """Build ${env.BUILD_URL} is failing in ${env.FAILURE_STAGE} stage!
+        |Somebody should do something about that"""
+    }
+  }
+}
+
+@NonCPS
+def captureUserInput(def props) {
+    MAX_MSG_LEN = 1000
+    def changeString = ""
+    def lastCommitMessage = ""
+
+    echo "Gathering SCM changes"
+    def changeLogSets = currentBuild.changeSets
+    for (int i = 0; i < changeLogSets.size(); i++) {
+        def entries = changeLogSets[i].items
+        for (int j = 0; j < entries.length; j++) {
+            def entry = entries[j]
+            truncated_msg = entry.msg.take(MAX_MSG_LEN)
+            changeString += " ${truncated_msg}\n"
+            if (i == 0) {
+                lastCommitMessage += " ${truncated_msg}\n"
+            }
+        }
+    }
+    // cannot use index of operation on string due to groovy/jenkins permissions issue
+    if (lastCommitMessage.contains("[")  && lastCommitMessage.contains("]")) {
+        if (lastCommitMessage.contains("ci skip")) {
+            if (lastCommitMessage.contains("ci skip all")) {
+                props['qal.deploy'] = 'false'
+                props['e2e.deploy'] = 'false'
+                props['prf.deploy'] = 'false'
+
+                props['qal.regression'] = 'false'
+                props['e2e.regression'] = 'false'
+                props['prf.regression'] = 'false'
+            } else {
+                if (lastCommitMessage.contains("qal")) {
+                    props['qal.deploy'] = 'false'
+                    props['qal.regression'] = 'false'
+                }
+                if (lastCommitMessage.contains("e2e")) {
+                    props['e2e.deploy'] = 'false'
+                    props['e2e.regression'] = 'false'
+                }
+                if (lastCommitMessage.contains("prf")) {
+                    props['prf.deploy'] = 'false'
+                    props['prf.regression'] = 'false'
+                }
+            }
+        }
+    }
+    return lastCommitMessage
+}

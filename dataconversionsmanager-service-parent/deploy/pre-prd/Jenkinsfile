@@ -1,0 +1,19 @@
+#!/usr/bin/env groovy
+/* Jenkinsfile for pre-prod deploy
+This file is scripted pipeline */
+
+// https://github.intuit.com/PTG/jenkins-shared-libraries
+// importing shared library
+@Library('pcg-libraries') _
+
+withPodTemplate {
+    def scmVars = checkout scm
+
+    stage('Deploy QAL'){
+        deployPreProdApp(deployEnv: "qal", versionNumber: "${env.VERSION}", testType: "smoke", branchName: "deploy-from-AWS-artifactory")
+    }
+
+    stage('Deploy E2E'){
+        deployPreProdApp(deployEnv: "e2e", versionNumber: "${env.VERSION}",testType: "smoke", branchName: "deploy-from-AWS-artifactory")
+    }
+}

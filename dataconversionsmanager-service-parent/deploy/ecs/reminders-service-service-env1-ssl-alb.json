@@ -1,0 +1,26 @@
+{
+    "cluster": "services-qal",
+    "serviceName": "reminders-service-env1-ssl",
+    "taskDefinition": "arn:aws:ecs:us-west-2:964704459712:task-definition/reminders-service:90",
+    "loadBalancers": [
+        {
+            "targetGroupArn": "arn:aws:elasticloadbalancing:us-west-2:964704459712:targetgroup/reminders-service-qal-env1-ssl/12d4eb879af90af5",
+            "containerName": "reminders-service",
+            "containerPort":  8443
+        }
+    ],
+    "desiredCount": 2,
+    "launchType": "EC2",
+    "role": "arn:aws:iam::964704459712:role/aws-service-role/ecs.amazonaws.com/AWSServiceRoleForECS",
+    "deploymentConfiguration": {
+        "maximumPercent": 200,
+        "minimumHealthyPercent": 50
+    },
+    "placementStrategy": [
+        {
+            "type": "spread",
+            "field": "attribute:ecs.availability-zone"
+        }
+    ],
+    "healthCheckGracePeriodSeconds": 60
+}

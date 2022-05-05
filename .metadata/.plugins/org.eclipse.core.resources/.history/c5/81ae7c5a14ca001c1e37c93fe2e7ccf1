@@ -1,0 +1,29 @@
+Feature: dcm get jmscontainerstatus
+
+  Background:
+    * configure headers = read('classpath:' + dcmHeaders)
+    * def signin = callonce read('classpath:ius-signin.feature') { username: #(iusUsername), password: #(iusPassword) }
+    * def ticket = signin.ticket
+    * url dcmUrlBase
+
+  Scenario: get jmscontainer
+    Given path 'admin/internal/jms/status'
+    When method get
+    Then status 200
+    * def queueName = 'ManagerNotificationV1'
+    Then match response ==
+  """
+  {
+  "jmsContainerName": '#(^queueName)',
+  "jmsContainerRunning": true,
+  "jmsContainerActive": true,
+  "jmsContainerAutoStartup": true,
+  "jmsContainerActiveConsumerCount": 1
+}
+  """
+
+  Scenario: get logAllQueues
+    Given path 'admin/internal/jms/log-queues'
+    When method get
+    Then status 204
+

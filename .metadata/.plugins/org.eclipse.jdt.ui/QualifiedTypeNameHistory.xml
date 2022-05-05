@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<qualifiedTypeNameHistroy>
+    <fullyQualifiedTypeName name="org.springframework.boot.autoconfigure.SpringBootApplication"/>
+    <fullyQualifiedTypeName name="org.springframework.boot.SpringApplication"/>
+    <fullyQualifiedTypeName name="javax.jms.Destination"/>
+    <fullyQualifiedTypeName name="javax.jms.TextMessage"/>
+    <fullyQualifiedTypeName name="javax.jms.JMSException"/>
+    <fullyQualifiedTypeName name="javax.jms.Session"/>
+    <fullyQualifiedTypeName name="javax.jms.Message"/>
+    <fullyQualifiedTypeName name="com.intuit.accountant.services.dcm.util.DCMUtil"/>
+</qualifiedTypeNameHistroy>

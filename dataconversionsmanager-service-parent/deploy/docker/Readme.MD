@@ -1,0 +1,1 @@
+docker run --env CFG_ENV=dev --env CFG_SERVICE_NAME=pcgdcmanager --env APP_ID=Intuit.accountant.dataconversions.dcmanager --env APP_SECRET='preprdqJ1apYKq8kX9bNBHw093BqxVs5sw4vCANF' --env CFG_DC=qdc --env DC_VERSION=1.0.3 -ti "dataconversionsmanager-service:latest"

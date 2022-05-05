@@ -1,0 +1,113 @@
+{
+    "containerDefinitions": [
+        {
+            "logConfiguration": {
+                "logDriver": "awslogs",
+                "options": {
+                    "awslogs-group": "reminders-service",
+                    "awslogs-region": "us-west-2",
+                    "awslogs-stream-prefix": "reminders-service"
+                }
+            },
+            "portMappings": [
+                {
+                    "protocol": "tcp",
+                    "containerPort": 8080
+                }
+            ],
+            "cpu": 1024,
+            "environment": [
+                {
+                    "name": "IDPS_PEM",
+                    "value": "reminders-service-idps.pem"
+                },
+                {
+                    "name": "CASS_JKS",
+                    "value": "cassandra-truststore.jks"
+                },
+                {
+                    "name": "S3_BUCKET",
+                    "value": "rmdrssvc"
+                },
+                {
+                    "name": "DC_VERSION",
+                    "value": "1.0.8"
+                },
+                {
+                    "name": "C_LIMIT_CPU",
+                    "value": "1"
+                },
+                {
+                    "name": "APP_ENV",
+                    "value": "qal"
+                },
+                {
+                    "name": "CFG_DC",
+                    "value": "usw2"
+                },
+                {
+                    "name": "CFG_SERVICE_NAME",
+                    "value": "pcgreminders"
+                },
+                {
+                    "name": "CFG_ENV",
+                    "value": "qal"
+                },
+                {
+                    "name": "APP_ID",
+                    "value": "Intuit.tax.services.reminders"
+                },
+                {
+                    "name": "CFG_BG",
+                    "value": ""
+                },
+                {
+                    "name": "CFG_TAG",
+                    "value": "master"
+                }
+            ],
+            "ulimits": [
+             {
+             "name": "nproc",
+             "softLimit": 4096,
+             "hardLimit": 4096
+            },
+            {
+             "name": "nofile",
+             "softLimit": 65536,
+             "hardLimit": 65536
+            }    
+           ],
+            "mountPoints": [],
+            "workingDirectory": "/",
+            "memory": 4096,
+            "volumesFrom": [],
+            "image": "docker.artifactory.a.intuit.com/accountant/accounting/services/reminders-service:1.1.0.118",
+            "disableNetworking": false,
+            "healthCheck": {
+                "retries": 5,
+                "command": [
+                    "CMD-SHELL",
+                    "curl -f http://localhost:8080/reminders-service/v1/health/full || exit 1"
+                ],
+                "timeout": 5,
+                "interval": 30,
+                "startPeriod": 60
+            },
+            "essential": true,
+            "user": "app",
+            "readonlyRootFilesystem": false,
+            "name": "reminders-service",
+            "dnsServers": [
+                "208.67.222.222",
+                "8.8.8.8"
+            ]
+        }
+    ],
+    "placementConstraints": [],
+    "memory": "4096",
+    "taskRoleArn": "arn:aws:iam::964704459712:role/rmdrssvc",
+    "family": "reminders-service",
+    "cpu": "1024",
+    "volumes": []
+}

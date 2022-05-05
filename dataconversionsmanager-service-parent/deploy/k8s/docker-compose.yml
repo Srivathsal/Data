@@ -1,0 +1,25 @@
+version: '2'
+services:
+  reminders:
+    user: app
+#    image: docker.artifactory.a.intuit.com/accountant/accounting/reminders-service:1.0.0.731e
+    image: pcgregistry.intuit.com/services/reminders-service:1.0.0.745
+    container_name: reminders-service-k8s
+    ports:
+    - "8080:8080"
+#    volumes:
+#    - "$PWD/logs:/usr/local/tomcat/logs"
+#    - "$PWD/../../docker/secrets:/run/secrets"
+#    - "$PWD/../../deploy/docker/start.sh:/tmp/start.sh"
+
+    environment:
+      DC_VERSION: "1.0.8"
+      APP_ENV: env1
+      CFG_DC: qdc
+      CFG_SERVICE_NAME: pcgreminders
+      CFG_ENV: qal
+      CFG_TAG: master
+      APP_ID: Intuit.tax.services.reminders
+      APP_SECRET: preprdZgM0LzAIs6ga0wspoJMGlhkfNGvQxsPXxg
+      C_LIMIT_CPU: 1
+      CATALINA_OPTS:  "-Dcom.sun.management.jmxremote.rmi.port=9090 -Dcom.sun.management.jmxremote=true -Dcom.sun.management.jmxremote.port=9090 -Dcom.sun.management.jmxremote.ssl=false -Dcom.sun.management.jmxremote.authenticate=false -Dcom.sun.management.jmxremote.local.only=false -Djava.rmi.server.hostname=172.28.220.207 -agentlib:jdwp=transport=dt_socket,address=62911,server=y,suspend=n"

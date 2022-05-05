@@ -1,0 +1,46 @@
+secrets:
+  services_reminders_service_app_secret: {external: true}
+  services_reminders_service_idps_secret: {external: true}
+services:
+  app:
+    deploy:
+      labels: [com.docker.ucp.access.label=services, 'com.intuit.pcg.service=services-reminders-service-qal-env1']
+      mode: replicated
+      replicas: 1
+      resources:
+        limits:
+          cpus: '1'
+          memory: 2G
+        reservations:
+          cpus: '1'
+          memory: 2G
+      restart_policy:
+        condition: on-failure
+        delay: 5s
+        max_attempts: 3
+        window: 300s
+      update_config:
+        delay: 10s
+        parallelism: 1
+    environment: [DC_VERSION=1.0.8, 'APP_ENV=env1', 'CFG_DC=usw2', CFG_SERVICE_NAME=pcgreminders,
+      'CFG_ENV=qal', C_LIMIT_CPU=1, APP_ID=Intuit.tax.services.reminders, 'CFG_BG=pcg', 'CFG_TAG=master']
+    image: docker.artifactory.a.intuit.com/accountant/accounting/reminders-service:1.0.0.731e
+    ports: ['${SERVICE_PORT}:8080']
+    secrets:
+      - gid: '0'
+        mode: 420
+        source: services_reminders_service_app_secret
+        target: appsecret
+        uid: '0'
+      - gid: '0'
+        mode: 420
+        source: services_reminders_service_idps_secret
+        target: reminders-service-idps.pem
+        uid: '0'
+    user: app
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8080/reminders-service/v1/health/full"]
+      interval: 5s
+      timeout: 3s
+      retries: 25
+version: '3.1'

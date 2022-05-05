@@ -1,0 +1,8 @@
+/common-config.properties
+/context.xml
+/reminder-log4j.properties
+/reminder-service.properties
+/log4j.properties
+/dataconversionsmanager-service.properties
+/log4j2.xml
+/log4j2-xinclude-properties.xml

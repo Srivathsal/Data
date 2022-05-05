@@ -1,0 +1,25 @@
+@ignore
+Feature: dependencies fdp uploadDocument & downloadDocument
+
+  Background:
+    * configure headers = read('classpath:dcm-dependency-headers.js')
+    * def signin = call read('classpath:ius-dependency-signin.feature') { username: #(iusUsername), password: #(iusPassword) }
+    * def ticket = signin.ticket
+    * url documentUrlBase
+
+  Scenario: get fdpDirectUploadTest
+    * def payload = {"commonAttributes":{"name":"test","documentType":"other","is7216":false}}
+    Given path 'v2/documents/largeFile'
+    And header intuit_resourceOwnerId = '123145847117312'
+    And header intuit_resourceOwnerType = 'realm'
+    And param large-file-content-type = 'application/x-7z-compressed'
+    And request payload
+    When method post
+    Then status 201
+
+  Scenario: get fdpDirectDocumentSourceTest
+    Given path 'v2/documents/6111d15f-106b-4d80-8f08-35113ea9bff3'
+    When method get
+    Then status 200
+
+

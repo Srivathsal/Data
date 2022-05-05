@@ -1,0 +1,36 @@
+Feature: dcm get driverXmlEdcKey
+
+  Background:
+    * configure headers = read('classpath:' + dcmHeaders)
+    * def signin = call read('classpath:ius-signin.feature') { username: #(iusUsername), password: #(iusPassword) }
+    * def ticket = signin.ticket
+    * url dcmUrlBase
+
+  Scenario: get driverXml
+    Given path 'job/driverxml'
+    And param Product = 'Lacerte'
+    And param CustomerNumber = '34565456'
+    And param Batch = '1000'
+    And param Renumbering = '1000'
+    And param Competitor = 'UltraTax'
+    And param Email = 'sharath@intuit.com'
+    And param FirstName = 'DCM'
+    And param LastName = 'Test'
+    And param Phone = '9988776655'
+    And param TaxYear = '2017'
+    And param SubmitDate = '01-01-2018'
+    When method get
+    Then status 200
+    * def someXml = response
+    * print someXml
+
+  Scenario: get edcKey
+    Given path 'job/edckey'
+    When method get
+    Then status 200
+
+
+
+
+
+

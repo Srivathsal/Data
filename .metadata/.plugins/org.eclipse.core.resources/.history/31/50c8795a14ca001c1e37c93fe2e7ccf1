@@ -1,0 +1,24 @@
+@ignore
+Feature: dcm get fdp uploadDocument & downloadDocument
+
+  Background:
+    * configure headers = read('classpath:' + dcmHeaders)
+    * def signin = call read('classpath:ius-signin.feature') { username: #(iusUsername), password: #(iusPassword) }
+    * def ticket = signin.ticket
+    * url dcmUrlBase
+
+  Scenario: get fdpUploadDocument
+    Given path 'document/upload'
+    When method get
+    Then status 200
+    * def docId = response.docId
+
+
+
+  Scenario: get fdpDownloadDocument
+    Given path 'document/download/c4b83392-7bcc-4983-a213-12a072881f6e'
+    When method get
+    Then status 200
+
+
+
